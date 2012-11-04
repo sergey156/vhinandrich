@@ -1,0 +1,131 @@
+/* Page */
+
+/* Header */
+#page > header {}
+#logo {
+	margin:25px 0;
+}
+#page > header > hgroup {
+  margin: 0 10px;
+}
+#site-name {}
+#site-name a    {}
+#site-name a:visited {}
+#site-name a:hover   {}
+#site-name a:focus   {}
+#site-name a:active  {}
+#site-slogan {}
+
+/* Page title */
+h1#page-title {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 35px;
+	letter-spacing: 8px;
+	text-transform: uppercase;
+	color: #6A8173;
+	margin-left: 10px;
+	margin-top: 0;
+	font-weight: normal;
+	margin-bottom: 0;
+	border-top: 5px solid;
+}
+
+/* Regions */
+.region-leaderboard {}
+.region-header {}
+.region-secondary-content {}
+.region-highlighted {}
+.region-content-aside {}
+.region-tertiary-content {}
+.region-footer {}
+
+/* Sidebars */
+.sidebar {}
+.region-sidebar-first {}
+.region-sidebar-second {}
+
+/* Footer - the main page footer only */
+#page > footer {}
+
+/* Feed icons */
+#feed-icons {}
+#feed-icons .feed-icon {}
+#feed-icons .feed-icon img {}
+#feed-icons a.feed-icon {}
+
+/* Search results list. */
+.search-results {}
+.search-results .search-result {}
+.search-results .title {}
+.search-results .search-snippet-info {}
+.search-results p {}
+.search-results .search-snippet {}
+.search-results .search-info {}
+
+span.search-info-type {}
+span.search-info-user {}
+span.search-info-date {}
+span.search-info-comment {}
+span.search-info-upload  {}
+
+/* Aggregator */
+.feed-item {}
+.feed-item header {}
+.feed-item-title {}
+.feed-item-meta {}
+.feed-item .content {}
+.feed-item footer {}
+.feed-source {}
+.feed-description {}
+
+/* Maintenance page */
+.maintenance-page #skip-link {
+  position: absolute;
+  top: -99em;
+}
+.maintenance-page footer {
+  margin: 10px 0 0;
+}
+.maintenance-page footer a {
+  text-decoration: none;
+  color: #ccc;
+}
+
+/* Prevent overflowing content */
+header[role=banner],
+.content-inner,
+.nav,
+.region-sidebar-first,
+.region-sidebar-second,
+.region-secondary-content,
+.region-tertiary-content,
+.region-footer {
+  overflow: visible;
+  word-wrap: break-word;
+}
+
+#branding{
+	float:left;
+}
+#main-menu{
+	float:right;
+	line-height:5em;
+}
+#main-menu ul{
+	padding:0;
+	margin:0;
+}
+#main-menu ul li{
+	display:inline;
+	list-style:none;
+}
+
+#footer-message-wrapper{
+	float:left;	
+}
+#footer-icons-wrapper{
+	float:right;
+}
+#footer-message-wrapper p{
+	color:#b6b6b6;
+}

@@ -1,0 +1,225 @@
+/* Page */
+
+#columns{
+	margin-left:240px;
+}
+
+#vhinrich-mp-rotator{
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:0;
+	height:100%;
+	overflow:hidden;
+}
+ul.vhinrich-mp-rotator{
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+ul.vhinrich-mp-rotator li img{
+	min-width:1360px;
+	position:relative;
+	top:0;
+	left:0;
+}
+ul.vhinrich-mp-rotator li div.hpr-img-wrapper{
+	min-width:1360px;
+	position:absolute;
+	top:0;
+	left:0;
+	background:url(images/homepage-rotator-img-wrapper.png) repeat-y center center;
+	z-index:3;
+	height:100%;
+}
+ul.vhinrich-mp-rotator li div.hpr-content-container{
+	position:absolute;
+	top:4px;
+	right:2px;
+	width:82%;
+	height:758px;
+	background:url(images/homepage-rotator-content-bg.png) repeat center center;
+	opacity:0;
+	z-index:98;
+	display:none;
+}
+.hpr-content-container > div:first-child{
+	margin:0 20px;
+}
+.hpr-content-button{
+	position:absolute;
+	top:10px;
+	right:30px;
+	z-index:99;
+}
+a.hpr-show-info{
+	width:30px;
+	height:28px;
+	background:url(images/homepage-rotator-info-btn.png) no-repeat top left;
+	display:block;
+}
+a.hpr-show-info:hover{
+	background:url(images/homepage-rotator-info-btn.png) no-repeat bottom left;
+}
+.hpr-content-container h1{
+	color:#444;
+	margin:8px 0;
+	text-transform:uppercase;
+	border-bottom:1px dotted #ddd;
+}
+.hpr-content-container p{
+	color:#333;
+}
+.hpr-content-container a{
+	color:#63F;
+	text-decoration:none;
+}
+.hpr-content-container img{
+	min-width:0 !important;
+}
+.hpr-content-container a:hover{
+	color:#636;
+}
+ul.vhinrich-mp-rotator li{
+	opacity:0;
+	display:none;
+}
+ul.vhinrich-mp-rotator li.active{
+	opacity:1;
+	display:block;
+}
+
+.vhinrich-container{
+	/*background:url(images/main-bg.png) no-repeat center center fixed;*/
+	min-height:765px;
+}
+
+.sidebar{
+	margin-top:187px;
+}
+
+/* Header */
+#page > header {
+	position:absolute;
+  	background:url(images/logo-bg.png) repeat-y center center;
+  	width:217px;
+	height:100%;
+	margin-left:20px;
+	z-index:2;
+}
+#logo {
+  margin: 0 10px;
+}
+#logo a img{
+	float:none;
+	margin:0 auto;
+	width:179px;
+	display:block;
+	padding:40px 0;
+}
+#page > header > hgroup {
+  margin: 0 10px;
+}
+#site-name {}
+#site-name a    {}
+#site-name a:visited {}
+#site-name a:hover   {}
+#site-name a:focus   {}
+#site-name a:active  {}
+#site-slogan {}
+
+/* Page title */
+h1#page-title 
+{
+	font-size:20px;
+	margin-top:10px;
+	color:#888;
+}
+
+/* Regions */
+.region-leaderboard {}
+.region-header {}
+.region-secondary-content {}
+.region-highlighted {}
+.region-content-aside {}
+.region-tertiary-content {}
+.region-footer {}
+
+/* Sidebars */
+.sidebar {}
+.region-sidebar-first {}
+.region-sidebar-second {}
+
+/* Footer - the main page footer only */
+#page > footer { 
+	position:absolute; 
+	bottom:0px; 
+	right:0;
+	color:#ddd;
+	text-shadow:0px 0px 3px #333;
+	z-index:99;
+}
+#page > footer .block p{
+	margin:0;
+	text-align:right;
+}
+#page > footer .block{
+	margin:0;
+}
+
+/* Feed icons */
+#feed-icons {}
+#feed-icons .feed-icon {}
+#feed-icons .feed-icon img {}
+#feed-icons a.feed-icon {}
+
+/* Search results list. */
+.search-results {}
+.search-results .search-result {}
+.search-results .title {}
+.search-results .search-snippet-info {}
+.search-results p {}
+.search-results .search-snippet {}
+.search-results .search-info {}
+
+span.search-info-type {}
+span.search-info-user {}
+span.search-info-date {}
+span.search-info-comment {}
+span.search-info-upload  {}
+
+/* Aggregator */
+.feed-item {}
+.feed-item header {}
+.feed-item-title {}
+.feed-item-meta {}
+.feed-item .content {}
+.feed-item footer {}
+.feed-source {}
+.feed-description {}
+
+/* Maintenance page */
+.maintenance-page #skip-link {
+  position: absolute;
+  top: -99em;
+}
+.maintenance-page footer {
+  margin: 10px 0 0;
+}
+.maintenance-page footer a {
+  text-decoration: none;
+  color: #ccc;
+}
+
+/* Prevent overflowing content */
+header[role=banner],
+.content-inner,
+.nav,
+.region-sidebar-first,
+.region-sidebar-second,
+.region-secondary-content,
+.region-tertiary-content,
+.region-footer {
+  overflow: visible;
+  word-wrap: break-word;
+}

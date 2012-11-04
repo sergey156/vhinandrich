@@ -1,0 +1,175 @@
+/* Page */
+
+/* Header */
+#page > header {}
+#logo {
+  margin: 0 10px;
+}
+#page > header > hgroup {
+  margin: 0 10px;
+}
+#site-name {}
+#site-name a    {}
+#site-name a:visited {}
+#site-name a:hover   {}
+#site-name a:focus   {}
+#site-name a:active  {}
+#site-slogan {}
+
+/* Page title */
+h1#page-title {}
+
+/* Regions */
+.region-leaderboard {}
+.region-header {}
+.region-secondary-content {}
+.region-highlighted {}
+.region-content-aside {}
+.region-tertiary-content {}
+.region-footer {}
+
+/* Sidebars */
+.sidebar {}
+.region-sidebar-first {}
+.region-sidebar-second {}
+
+/* Footer - the main page footer only */
+#page > footer {}
+
+/* Feed icons */
+#feed-icons {}
+#feed-icons .feed-icon {}
+#feed-icons .feed-icon img {}
+#feed-icons a.feed-icon {}
+
+/* Search results list. */
+.search-results {}
+.search-results .search-result {}
+.search-results .title {}
+.search-results .search-snippet-info {}
+.search-results p {}
+.search-results .search-snippet {}
+.search-results .search-info {}
+
+span.search-info-type {}
+span.search-info-user {}
+span.search-info-date {}
+span.search-info-comment {}
+span.search-info-upload  {}
+
+/* Aggregator */
+.feed-item {}
+.feed-item header {}
+.feed-item-title {}
+.feed-item-meta {}
+.feed-item .content {}
+.feed-item footer {}
+.feed-source {}
+.feed-description {}
+
+/* Maintenance page */
+.maintenance-page #skip-link {
+  position: absolute;
+  top: -99em;
+}
+.maintenance-page footer {
+  margin: 10px 0 0;
+}
+.maintenance-page footer a {
+  text-decoration: none;
+  color: #ccc;
+}
+
+/* Prevent overflowing content */
+header[role=banner],
+.content-inner,
+.nav,
+.region-sidebar-first,
+.region-sidebar-second,
+.region-secondary-content,
+.region-tertiary-content,
+.region-footer {
+  overflow: visible;
+  word-wrap: break-word;
+}
+
+/*-- mqcristobal starts here --*/
+body{
+	background:url(images/body-bg.png) fixed repeat center center #262626;
+}
+.main-content{
+	width:1124px;
+	margin:0 auto 2em;
+	padding:40px 0 5px;
+	background:url(images/main-content-bg.png) repeat center center;
+	min-height:300px;
+	border-radius: 0 0 10px 10px;
+}
+.main-content-container{
+	width:1024px;
+	margin:0 auto;
+	padding:0;
+}
+.content-title{
+	margin:0;
+	padding:0;
+	font-weight:normal;
+	font-family:Arial, Helvetica, sans-serif;
+	letter-spacing:5px;
+	text-shadow:0 1px 1px #333;
+	border-bottom:2px dotted #333;
+	color:#0CF;
+	text-transform:uppercase;
+}
+.header{
+	background:url(images/header-bg.png) repeat-x 0 bottom;
+	height:70px;
+	width:100%;
+	margin:0 auto;
+	/*position:fixed;*/
+}
+.header-container{
+	width:1024px;
+	margin:0 auto;
+}
+.header-image-container{
+	float:left;
+	width:318px;
+	margin-top:13px;
+}
+.header-main-menu-container{
+	float:right;
+	margin-top:15px;
+}
+.footer{
+	width:1124px;
+	margin:0 auto;
+	color:#333;
+	padding-top:20px;
+	background:url(images/main-content-bg.png) repeat center center;
+	text-shadow:0 1px 1px #111111;
+	border-radius:10px 10px 0 0;
+}
+.footer .block{
+	margin:0;
+	border:none;
+}
+.footer-container{
+	width:1024px;
+	margin:0 auto;
+	text-align:center;
+}
+#main-menu{
+}
+#main-menu li{
+	color:#fff;
+	float:right;
+}
+#main-menu li a{
+	color:#eee;
+	text-transform:uppercase;
+	font-size:14px;
+	font-family:Arial, Helvetica, sans-serif;
+	text-decoration:none;
+	text-shadow: 0px -1px 0px rgba(40,50,40,10);
+}

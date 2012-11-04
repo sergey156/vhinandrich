@@ -1,0 +1,221 @@
+/* Page */
+
+/* for youtube iframe aspect fix responsive */
+.media-youtube-video {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+.media-youtube-video iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* Header */
+#page-top > header > hgroup{
+	margin: 0 10px;
+	text-align:center;
+}
+#page-top{
+	text-align:center;
+}
+#page{
+	background:url(images/content-bg.png) repeat 0 0;
+	box-shadow:0 0 100px #111;
+}
+#page-top > header{
+	/*background:url(images/header-menu-bg.png) repeat-x center top;*/
+	/*height: 260px;*/
+	/*padding-top: 28px;*/
+}
+#page > header {}
+#logo {
+}
+#logo a img{
+	margin: 100px 0 57px;	
+}
+#page > header > hgroup {
+  margin: 0 10px;
+}
+#site-name {}
+#site-name a    {}
+#site-name a:visited {}
+#site-name a:hover   {}
+#site-name a:focus   {}
+#site-name a:active  {}
+#site-slogan {}
+
+/* Page title */
+h1#page-title {
+	color:#D7D7FF;
+	margin:20px 0 5px;
+	text-transform:uppercase;
+}
+
+/* Regions */
+.region-leaderboard {}
+.region-header {}
+.region-secondary-content {}
+.region-highlighted {}
+.region-content-aside {}
+.region-tertiary-content {}
+.region-footer {}
+
+/* Sidebars */
+.sidebar {}
+.region-sidebar-first {}
+.region-sidebar-second {}
+
+/* Footer - the main page footer only */
+#page > footer {
+	/*background:url(images/footer-separator.png) repeat-x center top;*/
+	text-align:center;
+	/*padding:82px 0 1px;*/
+	padding:10px 0;
+	color:#CCC;
+	width:100%;
+	position:inherit;
+	bottom:0;
+	margin-top:60px;
+}
+#page > footer p{
+	margin:0;
+}
+
+/* Feed icons */
+#feed-icons {}
+#feed-icons .feed-icon {}
+#feed-icons .feed-icon img {}
+#feed-icons a.feed-icon {}
+
+/* Search results list. */
+.search-results {}
+.search-results .search-result {}
+.search-results .title {}
+.search-results .search-snippet-info {}
+.search-results p {}
+.search-results .search-snippet {}
+.search-results .search-info {}
+
+span.search-info-type {}
+span.search-info-user {}
+span.search-info-date {}
+span.search-info-comment {}
+span.search-info-upload  {}
+
+/* Aggregator */
+.feed-item {}
+.feed-item header {}
+.feed-item-title {}
+.feed-item-meta {}
+.feed-item .content {}
+.feed-item footer {}
+.feed-source {}
+.feed-description {}
+
+/* Maintenance page */
+.maintenance-page #skip-link {
+  position: absolute;
+  top: -99em;
+}
+.maintenance-page footer {
+  margin: 10px 0 0;
+}
+.maintenance-page footer a {
+  text-decoration: none;
+  color: #ccc;
+}
+
+/* Prevent overflowing content */
+header[role=banner],
+.content-inner,
+.nav,
+.region-sidebar-first,
+.region-sidebar-second,
+.region-secondary-content,
+.region-tertiary-content,
+.region-footer {
+  overflow: visible;
+  word-wrap: break-word;
+}
+
+.vhinrich-mp-rotator{
+	list-style:none;
+	margin:20px auto;
+	padding:0;
+	max-width:879px;
+}
+.vhinrich-mp-rotator li{
+	display:none;
+}
+.vhinrich-mp-rotator li.active{
+	display:block;
+}
+
+.view-id-videos thead{
+	display:none;
+}
+.view-id-videos tbody{
+	border:none;
+}
+.view-id-videos table tr.odd{
+	background:#231A36;
+	border:none;
+}
+.view-id-videos table tr.even{
+	background:#26193D;
+	border:none;
+}
+.view-id-videos table tr td.views-field-field-video{
+	width:21%;
+}
+.view-id-videos table tr td.views-field-title{
+	width:79%;
+}
+.view-id-videos table tr td.views-field-title a{
+	text-decoration:none;
+	color:#FC0;
+	font-size:18px;
+}
+.view-id-videos table tr td.views-field-title a:hover{
+	color:#FF0;
+}
+
+.views-row{
+	padding:30px 0;
+	border-bottom:1px dotted #336; 
+}
+.views-field-title a, .views-field-title-1 a{
+	text-decoration:none;
+	color:#FC0;
+	font-size:18px;
+}
+.views-field-title a:hover, .views-field-title-1 a:hover{
+	color:#FF0;
+}
+.views-image img, .views-field-field-video img{
+	width:100%;
+}
+.sharethis-wrapper{
+	text-align:right;
+}
+.views-field.views-field-field-addthis{
+	padding:0 0 10px;
+}
+.views-field.views-field-field-addthis .addthis_toolbox{
+	float:right;
+}
+.field.field-name-field-addthis{
+	padding:0 0 40px;
+}
+.field.field-name-field-addthis .addthis_toolbox{
+	float:right;
+}
+.views-field.views-field-field-video{
+	display:block;
+	margin-bottom:5px;
+}

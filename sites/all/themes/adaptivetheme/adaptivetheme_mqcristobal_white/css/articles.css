@@ -1,0 +1,77 @@
+/* Articles (nodes) */
+.article {
+  margin-bottom: 30px;
+  	box-shadow:0px 0px 5px #ddd;
+	border-radius:8px;
+	padding:20px;
+	background:#fff;
+}
+
+.article > header {}
+
+/* Title */
+.article-title {
+	font-size: 38px;
+	text-transform: uppercase;
+	font-weight: normal;
+	font-family: arial,helvetica;
+	letter-spacing: -4px;
+}
+.article-title a:link,
+.article-title a:visited,
+.article-title a:active {
+	color: #0085FF
+}
+
+.article-title a:hover,
+.article-title a:focus {
+	color: #00CCFF;
+}
+
+/* User Picture */
+.article .user-picture {}
+.article .user-picture img {}
+
+/* Submitted */
+.article .submitted {}
+.article .submitted  a {}
+.article .submitted  a:hover {}
+.article .submitted  p.author-datetime {
+	font-size: 11px;
+	color: #A5CAD3;
+	padding:0;
+	margin:-15px 2px 15px;
+}
+.article .submitted  time {}
+
+/* Links */
+.article nav {}
+.article ul.links {}
+.article ul.links li {}
+.article ul.links li a {}
+.article ul.links li.node-read-more a {}
+.article ul.links li.comment-add a {}
+.article ul.links li.comment-comments a {}
+.article ul.links li.comment-new-comments a {}
+.article ul.links li.blog-sernames-blog a {}
+.article ul.links li.print-html a {}
+.article ul.links li.print-email a {}
+.article ul.links li.print-pdf a {}
+
+/* UL link first and last classes */
+.article ul.links li.first {}
+.article ul.links li.last  {}
+
+/* Workflow states */
+.article-add    {}
+.article-edit   {}
+.article-delete {}
+.article-preview  {}
+.article-sticky   {}
+.article-promoted {}
+
+/* Status */
+.article-unpublished {}
+
+/* Theme the teaser */
+.article-teaser {}

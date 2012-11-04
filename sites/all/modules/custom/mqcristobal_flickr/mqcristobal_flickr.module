@@ -1,0 +1,375 @@
+<?php
+
+/** hook_menu **/
+function mqcristobal_flickr_menu(){
+	/**$items['admin/config/media/flickr'] = array(
+		'title' => 'Flickr',
+		'page callback' => 'drupal_get_form',
+		'page arguments' => array('flickr_admin_settings'),
+		'access arguments' => array('administer site configuration'),
+		'description' => 'Change settings for the flickr module.',
+		'file' => 'flickr.admin.inc',
+	);
+	return $items;**/
+	$items['mqcristobal-flickr-albums'] = array(
+		'menu_name' => 'mqc_flickr_albums',
+		'page callback' => 'mqc_flickr_albums',
+		'page arguments' => array(1),
+		'title' => t('Photo Gallery'),
+		'access arguments' => array('access content'),
+	);
+	$items['mqcristobal-flickr-view-album/%'] = array(
+		'page callback' => 'mqc_flickr_view_album',
+		'page arguments' => array(1,2),
+		'title callback' => 'mqc_flickr_view_album_title',
+		'title arguments' => array(1),
+		'access arguments' => array('access content'),
+	);
+	$items['mqcristobal-flickr-frontpage-get-photo'] = array(
+		'page callback' => 'mqc_flickr_frontpage_get_photo',
+		'page arguments' => array(1),
+		'access arguments' => array('access content'),
+	);
+	$items['admin/structure/mqcristobal-flickr-import'] = array(
+		'page callback' => 'drupal_get_form',
+		'title' => t('Flickr Import Settings'),
+		'page arguments' => array('mqc_flickr_import_settings'),
+		'access arguments' => array('administer mqc_flickr settings')
+	);
+	return $items;
+}
+
+function mqc_flickr_import_settings_validate($form, &$form_state){
+	//dsm($form_state);
+	
+	$data = field_info_instances("node",$form_state['input']['mqc_image_content_type']);
+	//dsm($data);
+	if(!array_key_exists('field_image',$data)){
+		form_set_error('mqc_image_content_type', t('Invalid Image content type selected. Image content type should have "field_image" field.'));
+	}else{
+		if($data['field_image']['widget']['module'] != 'image'){
+			form_set_error('mqc_image_content_type', t('Invalid Image content type selected. "field_image" should be an image field.'));
+		}
+	}
+	$data = field_info_instances("node",$form_state['input']['mqc_page_content_type']);
+	//dsm($data);
+	if(!array_key_exists('field_image_reference',$data)){
+		form_set_error('mqc_page_content_type', t('Invalid Page content type selected. Page content type should have "field_image_reference" field.'));
+	}else{
+		if($data['field_image_reference']['widget']['module'] != 'node_reference'){
+			form_set_error('mqc_page_content_type', t('Invalid Page content type selected. "field_image_reference" should be a node reference field.'));
+		}
+	}
+}
+
+function mqc_flickr_import_settings(){
+	
+	$node_types = node_type_get_types();
+	$options_content_type = array();
+	foreach($node_types as $node_type){
+		$options_content_type[$node_type->type] = $node_type->name;
+	}
+	$form['mqc_image_content_type'] = array(
+		'#type' => 'select',
+		'#title' => t('Image Content Type'),
+		'#description' => t('Select you Image content type. The Image content type should have this field: "field_image". If you do not have this content type please create.'),
+		'#options' => $options_content_type,
+		'#default_value' => variable_get('mqc_image_content_type', null),
+	);
+	
+	$form['mqc_page_content_type'] = array(
+		'#type' => 'select',
+		'#title' => t('Page Content Type'),
+		'#description' => t('Select you Page content type. The Page content type should have this field: "field_image_reference", this field should be a node reference. If you do not have this content type please create.'),
+		'#options' => $options_content_type,
+		'#default_value' => variable_get('mqc_page_content_type', null),
+	);
+	
+	$form['mqc_start_import'] = array(
+		'#type' => 'submit',
+		'#submit' => array('mqc_flickr_import_sets'),
+		'#value' => t('Start import'),
+	);
+	return system_settings_form($form);
+}
+
+function  mqcristobal_flickr_cron(){
+	mqc_flickr_import_sets();
+}
+
+function mqc_flickr_import_sets(){
+	$nsid = variable_get('flickr_default_userid');
+	$response = flickr_photoset_get_list($nsid);
+	//dsm($response);
+	
+	$sets = array();
+	$saved_sets = array();
+	$not_saved_sets = array();
+	foreach($response as $set){
+		$res = array();
+		$res = db_select('field_data_field_flickr_set_id', 's')
+				->fields('s')
+				->condition('field_flickr_set_id_value', $set['id'], '=')
+				->execute()
+				->fetchAssoc();
+		
+		//$res = db_query($sql, array(':title' => $set['title']['_content'], ':type' => variable_get('mqc_page_content_type', null)));
+		$already_saved = false;
+		$nid = 0;
+		if(is_array($res) && array_key_exists('entity_id', $res)){
+			$already_saved = true;
+			$nid = $res['entity_id'];
+		}
+		if(!$already_saved){
+			$nodes = _create_images_from_set($set['id']);
+			
+			//dsm($set);
+			$node = new stdClass();
+			$node->type = variable_get('mqc_page_content_type', null);
+			node_object_prepare($node);
+			foreach($nodes as $photo_node){
+				$node->field_image_reference['und'][]['nid'] = $photo_node->nid;
+			}
+			$node->title = $set['title']['_content'];
+			$node->body = $set['description']['_content'];
+			$node->language = LANGUAGE_NONE;
+			$node->field_flickr_set_id['und'][]['value'] = $set['id'];
+			node_save($node);
+			$saved_sets[] = array($set, $node);
+			
+		}else{
+			$node = node_load($nid);
+			$nodes = _create_images_from_set($set['id']);
+			foreach($nodes as $photo_node){
+				$node->field_image_reference['und'][]['nid'] = $photo_node->nid;
+			}
+			node_save($node); //no update needed 16-09-2012
+			
+			$not_saved_sets[] = array($set);
+		}
+		//$sets[] = $set;
+	}
+	if($not_saved_sets){
+		foreach($not_saved_sets as $set){
+			watchdog('mqc_flickr_import', '":settitle" set not imported/updated.', array(':settitle' => $set[0]['title']['_content']), $severity = WATCHDOG_NOTICE, $link = NULL);
+		}
+	}
+	foreach($saved_sets as $set){
+		if(array_key_exists('title', $set)){
+			watchdog('mqc_flickr_import', '":settitle" set imported.', array(':settitle' => $set[0]['title']['_content']), $severity = WATCHDOG_NOTICE, $link = NULL);
+		}
+	}
+	drupal_set_message($message = 'Import done!', $type = 'status', $repeat = TRUE);
+}
+
+function _create_images_from_set($setid){
+	$response = flickr_photoset_get_photos($setid);
+	$nodes = array();
+	foreach($response['photoset']['photo'] as $photo){
+		$res = array();
+		$res = db_select('field_data_field_flickr_photo_id', 'p')
+				->fields('p')
+				->condition('field_flickr_photo_id_value', $photo['id'], '=')
+				->execute()
+				->fetchAssoc(); //commented to allow saving of the same image 16-09-2012
+		$already_saved = false;
+		$nid = 0;
+		if(is_array($res) && array_key_exists('entity_id', $res)){
+			$already_saved = true;
+			$nid = $res['entity_id'];
+		}
+		
+		if(!$already_saved){
+			//dsm($photo);
+			$photo_size_response = flickr_photo_get_sizes($photo['id']);
+			//dsm($photo_size_response);
+			$url = $photo_size_response[sizeof($photo_size_response) - 1]['source'];
+			//dsm( 	drupal_basename($url));
+			$path = system_retrieve_file($url, 'public://' . drupal_basename($url) . '/', TRUE);
+			//dsm($path);
+			
+			$node = new stdClass();
+			$node->type = variable_get('mqc_image_content_type', null);
+			node_object_prepare($node);
+			$node->field_image['und'][0]['fid'] = $path->fid;
+			$node->title = $photo['title'];
+			$node->language = LANGUAGE_NONE;
+			$node->field_flickr_photo_id['und'][]['value'] = $photo['id'];
+			node_save($node);
+			$nodes[] = $node;
+			//dsm($node);
+		}
+	}
+	return $nodes;
+}
+
+/** hook_block_info **/
+function mqcristobal_flickr_block_info() {
+	$blocks = array();
+	$blocks[0] = array(
+		'info' => t('MQC FrontPage Rotator'),
+		'status' => 1,
+		'pages' => '<front>'
+	);
+	return $blocks;
+}
+
+/** hook_block_view **/
+function mqcristobal_flickr_block_view($delta=''){
+	$block = array();
+
+    switch($delta){
+    case 0:
+        //$block['subject'] = 'MQC Front Page Rotator';
+        /*$content['filtr'] = array(
+            '#type' => 'submit',
+            '#value' => 'Filtruj',
+            '#submit' => array('ustaw_filtry'),
+            );*/
+
+        $block['content'] = mqcristobal_flickr_frontpage_rotator_display();
+        break;
+    }
+    return $block;
+}
+
+/** hook_theme **/
+function mqcristobal_flickr_theme(){
+	$themes = array (
+        'mqc_frontpage_rotator' => array(
+            'template' => '/templates/mqc-frontpage-rotator', // your template file called custompage.tpl.php
+            'variables' => array('args' => NULL),
+        ),
+		'mqc_frontpage_rotator_photo' => array(
+			'template' => '/templates/mqc-frontpage-rotator-photo',
+			'variables' => array('args' => NULL),
+		),
+		'mqc_album_list' => array(
+			'template' => '/templates/mqc-album-list',
+			'variables' => array('args' => NULL),
+		),
+		'mqc_album_primary' => array(
+			'template' => '/templates/mqc-album-primary',
+			'variables' => array('args' => NULL),
+		),
+		'mqc_view_album' => array(
+			'template' => '/templates/mqc-view-album',
+			'variables' => array('args' => NULL),
+		),
+		'mqc_view_album_main' => array(
+			'template' => '/templates/mqc-view-album-main',
+			'variables' => array('args' => NULL),
+		),
+		'mqc_view_album_thumb' => array(
+			'template' => '/templates/mqc-view-album-thumb',
+			'variables' => array('args' => NULL),
+		),
+		
+    );
+    return $themes;
+}
+
+function mqcristobal_flickr_block_random($nsid, $show_n) {
+  $output = '';
+  $random_photos = array();
+  $ret_random_photos = array();
+  if ($photos = flickr_photos_search($nsid, 1, array('per_page' => 500))) {
+    $page_count = $photos['pages'];
+    // we shouldn't try to return more than the total number of photos
+    $to = min($show_n, $photos['total']);
+    $output = '';
+    for ($i = 0; $i < $to; $i++) {
+      sleep(0.125);
+      // request a random page
+      $photos = flickr_photos_search($nsid, rand(1, $page_count), array('per_page' => 500));
+      // then select a random photo
+      $index = rand(0, count($photos['photo']) - 1);
+      $photo_id = $photos['photo'][$index]['id'];
+      if (in_array($photo_id, $random_photos)) {
+        $i--; // photo already added 
+      } 
+      else {
+        $random_photos[] = $photo_id; 
+		//$output .= theme('flickr_block_photo', array('photo' => $photos['photo'][$index], 'size' => $size));
+		$ret_random_photos[] = $photos['photo'][$index];
+      }
+    }
+  } 
+  return $ret_random_photos;
+}
+
+function mqcristobal_flickr_frontpage_rotator_display(){
+	$nsid = variable_get('flickr_default_userid');
+	$photos = mqcristobal_flickr_block_random($nsid, 10);
+	
+	$args = array(
+		'photos' => $photos,
+	);
+	
+	return theme('mqc_frontpage_rotator', array('args' => $args));
+}
+
+function mqc_flickr_frontpage_get_photo($photoid){
+	$response = flickr_photo_get_sizes($photoid);
+	$args = array(
+		'photoid' => $photoid,
+		'photo' => $response,
+	);
+	//return theme('mqc_frontpage_rotator_photo', array('args' => $args));
+	echo drupal_json_encode( array('data' => theme('mqc_frontpage_rotator_photo', array('args' => $args)) ));
+}
+
+function mqc_flickr_albums($photoid){
+	$nsid = variable_get('flickr_default_userid');
+	if(!$photoid){
+		$response = flickr_photoset_get_list($nsid);
+		$args = array(
+			'photosets' => $response,
+		);
+		return theme('mqc_album_list', array('args' => $args));
+	}else{
+		$response = flickr_photo_get_sizes($photoid);
+		$args = array(
+			'photoid' => $photoid,
+			'photo' => $response,
+		);
+		echo drupal_json_encode( array('data' => theme('mqc_album_primary', array('args' => $args))) );
+		//return theme('mqc_album_primary', array('args' => $args));
+	}
+}
+
+function flickr_photoset_get_photos($photoset_id) {
+  $response = flickr_request('flickr.photosets.getPhotos',
+  array(
+    'photoset_id' => $photoset_id,
+    'per_page' => 500,
+    'extras' => 'owner',
+    )
+  );
+  if ($response) {
+    return $response;
+  }
+  return FALSE;
+}
+
+function mqc_flickr_view_album_title($photosetid){
+	$response = flickr_photoset_get_info($photosetid);
+	return $response['title']['_content'];
+} 
+
+function mqc_flickr_view_album($photosetid, $photoid = null){
+	if(empty($photoid)){
+		$response = flickr_photoset_get_photos($photosetid);
+		$args = array(
+			'photos' => $response,
+		);
+		return theme('mqc_view_album', array('args' => $args));
+	}else{
+		$response = flickr_photo_get_sizes($photoid);
+		$args = array(
+			'photoid' => $photoid,
+			'photo' => $response,
+		);
+		echo drupal_json_encode( array('main' => theme('mqc_view_album_main', array('args' => $args)), 'thumb' => theme('mqc_view_album_thumb', array('args' => $args)) ) );
+	}
+}
