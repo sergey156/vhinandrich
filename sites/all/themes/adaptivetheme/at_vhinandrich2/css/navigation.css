@@ -1,19 +1,70 @@
 /* CSS for major navigation elements such as menus, pager, superfish etc */
 
-#primary-menu-bar{
-	background: url("images/header-menu-bg.png") repeat-x scroll center top transparent;
-    box-shadow: 0 0 50px #000000;
+#top-menu-bar{
     clear: both;
-    height: 70px;
+	left:0;
     position: fixed;
     width: 100%;
-    z-index: 500;	
-	left:0;
-}
-#primary-menu-bar nav{
-	margin-top:29px;	
+    z-index: 500;
 }
 
+#primary-menu-bar{
+	background: url("images/header-menu-bg.png") repeat-x scroll center bottom transparent;
+    height: 60px;
+	position:relative;
+	z-index:1;
+	box-shadow: 0 5px 20px #000000;
+}
+#primary-menu-bar nav{
+}
+#primary-menu-bar nav ul{
+	line-height:59px;
+	list-style-image:none;
+}
+#primary-menu-bar nav ul li a{
+	font-size:16px;
+}
+#primary-menu-bar nav ul li.expanded ul{
+	display:none;
+}
+
+.primary-menu-bar-submenu{
+	position:absolute;
+	width:100%;
+	z-index:0;
+	box-shadow: 0 5px 10px #000000;
+	left:0;
+}
+.primary-menu-bar-submenu ul{
+	background: url("images/header-submenu-bg.png") repeat-x scroll center bottom transparent;
+	left:0;
+	width:100%;
+	display:inline !important;
+	list-style:none !important;
+	list-style-image:none !important;
+	padding:0 !important;
+	margin:0 !important;
+	line-height:40px !important;
+	height:0;
+}
+.primary-menu-bar-submenu ul li{
+	display:none;
+	padding:0 !important;
+	margin:0 10px !important;
+	position:relative !important;
+	visibility:hidden;
+	opacity:0;
+}
+.primary-menu-bar-submenu ul li a{
+	color:#666 !important;
+	text-decoration:none;
+	text-shadow:1px 0 0 #fff;
+	font-size:15px;
+	position:relative;
+}
+.primary-menu-bar-submenu ul li a:hover{
+	color:#aaa !important;
+}
 a {}
 a:link    {}
 a:visited {}
@@ -44,14 +95,14 @@ a:focus {}
 }
 .nav li,
 .nav .menu li {
-  display: inline;
+  display: inline-block;
   list-style: none;
 }
 .nav li a,
 .nav .menu li a {
   white-space: nowrap;
   padding: 0 10px;
-  color: #eee;
+  color: #D1D7FA;
   text-decoration: none;
   text-transform: uppercase;
 }
@@ -64,19 +115,15 @@ a:focus {}
 
 .nav ul li ul {
 	position: absolute;
-	display:none;
-	margin-left:-8.5em !important;
-	margin-top:10px !important;
-	padding-top:10px !important;
 }
 .nav ul li a:hover{
 	color:#F90 !important;
 }
 .nav ul li ul li a{
-	color:#bbb !important;
+	/*color:#bbb !important;*/
 }
 .nav ul li ul li a:hover{
-	color:#F90 !important;
+	color:#333 !important;
 }
 
 /* Menu bar block */
