@@ -412,7 +412,7 @@
   <?php print render($page['tertiary_content']); ?>
 
   
-    <div id="back-to-top-wrapper" style="text-align:center;background:#636;opacity:.5;padding:10px 0;margin:10px 0 0">
+    <div id="back-to-top-wrapper" style="text-align:center;background:#333;opacity:.5;padding:10px 0;">
     	<a href="#" style="color:white;text-decoration:none;font-weight:bold" id="back-to-top">Scroll to top</a>
     </div>
     
