@@ -20,8 +20,14 @@
     padding-top: 41px;
 }
 
+#main-content > header{
+	margin:0;
+	padding:5px 10px;
+	background:url("images/content-bg.png") repeat scroll 0 0 transparent;
+}
 #content{
-	min-height:720px;	
+	min-height:720px;
+	background:url("images/content-bg.png") repeat scroll 0 0 transparent;
 }
 
 /* Header */
