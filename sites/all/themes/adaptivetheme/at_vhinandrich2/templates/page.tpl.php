@@ -324,7 +324,12 @@
         <?php print render($title_suffix); ?>
        
         <?php if(!drupal_is_front_page()): ?>
-        	<div id="content"><?php print render($page['content']); ?></div>
+        	<div id="content">
+				<?php print render($page['content']); ?>
+            	<div id="back-to-top-wrapper" style="text-align:center;opacity:.5;padding:10px 0;">
+                    <a href="#" style="color:white;text-decoration:none;font-weight:bold;font-size:16px;text-transform:capitalize" id="back-to-top">Scroll to top</a>
+                </div>
+            </div>
 		<?php else: ?>
               <?php 
 			$homepage_rotator_view = views_get_view_result('home_page_rotator', 'default');
@@ -411,11 +416,6 @@
 
   <?php print render($page['tertiary_content']); ?>
 
-  
-    <div id="back-to-top-wrapper" style="text-align:center;background:#333;opacity:.5;padding:10px 0;">
-    	<a href="#" style="color:white;text-decoration:none;font-weight:bold" id="back-to-top">Scroll to top</a>
-    </div>
-    
   <?php if ($page['footer']): ?>
     <footer role="contentinfo"><?php print render($page['footer']); ?></footer>
   <?php endif; ?>

@@ -168,8 +168,8 @@ ul.menu li.last  {}
 
 /* Breadcrumbs - AT7 builds brumbcrumb trails as an ordered list. */
 #breadcrumb {
-	padding:0 0 1em;
-	margin:0;
+	margin: 0 10px;
+    padding: 0 0 1em;
 }
 #breadcrumb ol {
   margin: 0;
