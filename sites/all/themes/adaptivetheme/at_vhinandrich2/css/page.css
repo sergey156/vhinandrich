@@ -174,7 +174,7 @@ header[role=banner],
 	height:720px;
 	padding:10px;
 	background:#eee;
-	box-shadow:0 0 15px #eee;
+	box-shadow:0 0 15px #ddd;
 }
 .vhinrich-mp-rotator-active li{
 	display:block;
