@@ -58,23 +58,21 @@
 .article-teaser {}
 
 .article-content{
-	background:#230F29;
 	padding:10px;
 }
 .article-content a{
-	color:#E2C44A;
 	text-decoration:none;
 }
 .article-content a:hover{
-	color:#66F;
+	
 }
 .article-content p{
-	color:#D1C4E9;
+	color:#333;
 }
 .pane-content{
-	background:#230F29;
+	background:#eee;
 	padding:10px;
 }
 .pane-content p{
-	color:#D1C4E9;
+	color:#333;
 }

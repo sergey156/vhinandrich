@@ -13,7 +13,7 @@
     height: 60px;
 	position:relative;
 	z-index:1;
-	box-shadow: 0 5px 20px #000000;
+	box-shadow: 0 0 50px #666;
 }
 #primary-menu-bar nav{
 }
@@ -36,7 +36,8 @@
 	left:0;
 }
 .primary-menu-bar-submenu ul{
-	background: url("images/header-submenu-bg.png") repeat-x scroll center bottom transparent;
+	/*background: url("images/header-submenu-bg.png") repeat-x scroll center bottom transparent;*/
+	background:white;
 	left:0;
 	width:100%;
 	display:inline !important;
@@ -102,7 +103,7 @@ a:focus {}
 .nav .menu li a {
   white-space: nowrap;
   padding: 0 10px;
-  color: #D1D7FA;
+  color: #726767;
   text-decoration: none;
   text-transform: uppercase;
 }
@@ -117,7 +118,7 @@ a:focus {}
 	position: absolute;
 }
 .nav ul li a:hover{
-	color:#F90 !important;
+	color:#888 !important;
 }
 .nav ul li ul li a{
 	/*color:#bbb !important;*/
@@ -168,28 +169,31 @@ ul.menu li.last  {}
 
 /* Breadcrumbs - AT7 builds brumbcrumb trails as an ordered list. */
 #breadcrumb {
-	margin: 0 10px;
-    padding: 0 0 1em;
+	border-top: 2px dashed #BBB;
+	padding: 0;
+	margin: 0;
+	padding: 5px 10px;
 }
 #breadcrumb ol {
-  margin: 0;
-  padding: 0;
+  	margin: 0;
+	padding: 0;
+	text-align: right;
 }
 #breadcrumb li {
   list-style: none;
   display: inline;
-  color:#C60;
+  color:#bbb;
 }
 #breadcrumb a {
-	color:#C90;
-	text-decoration:none;
+	color: #999;
+	text-decoration: none;
 }
 #breadcrumb a:link {
 
 }
 #breadcrumb a:visited {}
 #breadcrumb a:hover {
-	color:#CC3;
+	color:#09F;
 }
 #breadcrumb a:focus {}
 #breadcrumb a:active {}

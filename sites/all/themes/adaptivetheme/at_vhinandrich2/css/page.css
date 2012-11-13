@@ -16,17 +16,18 @@
 }
 
 .region-footer{
-	border-top: 2px dashed #31312F;
-    padding-top: 41px;
+	padding-top: 41px;
 }
 
 #main-content > header{
-	background: url("images/content-bg.png") repeat scroll 0 0 transparent;
-    margin: 0 auto;
-    max-width: 1115px;
+	background: #DDD;
+	margin: 0 auto;
+	max-width: 1115px;
+	padding: 1px 0 0;
 }
 #content{
-	background: url("images/content-bg.png") repeat scroll 0 0 transparent;
+	/*background: url("images/content-bg.png") repeat scroll 0 0 transparent;*/
+	background:#eee;
     margin: 0 auto 20px;
     max-width: 1115px;
     min-height: 720px;
@@ -68,10 +69,11 @@
 
 /* Page title */
 h1#page-title {
-	color: #ECE0E0;
-    font-size: 24px;
-    margin: 20px 10px 5px;
-    text-transform: uppercase;
+	color: #6D6D6D;
+	font-size: 24px;
+	margin: 20px 10px 5px;
+	text-transform: uppercase;
+	text-shadow: 0 1px 0px #EEE;
 }
 
 /* Regions */
@@ -91,14 +93,15 @@ h1#page-title {
 /* Footer - the main page footer only */
 #page > footer {
 	/*background:url(images/footer-separator.png) repeat-x center top;*/
-	background:url(images/content-bg.png) repeat 0 0;
-	text-align:center;
+	background:url(images/footer-bg.png) repeat 0 0;
 	/*padding:82px 0 1px;*/
 	padding:10px 0;
-	color:#CCC;
 	width:100%;
 	position:inherit;
 	bottom:0;
+	color: #555555;
+    text-align: center;
+    text-shadow: 0 1px 0 #EEEEEE;
 	/*margin-top:60px;*/
 }
 #page > footer p{
@@ -225,15 +228,15 @@ header[role=banner],
 
 .views-row{
 	padding:30px 0;
-	border-bottom:1px dotted #336; 
+	border-bottom:1px dashed #DADADA; 
 }
 .views-field-title a, .views-field-title-1 a{
 	text-decoration:none;
-	color:#FC0;
+	color:#2875B1;
 	font-size:18px;
 }
 .views-field-title a:hover, .views-field-title-1 a:hover{
-	color:#FF0;
+	color:#275058;
 }
 .views-image img, .views-field-field-video img{
 	width:100%;

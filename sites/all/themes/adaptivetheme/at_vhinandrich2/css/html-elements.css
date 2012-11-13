@@ -11,6 +11,13 @@ html {
   font-size: 81.3%;
   color:#CCCCCC;
 }
+a{
+	color:#2875B1;
+	text-decoration:none;
+}
+a:hover{
+	color:#275058;
+}
 body {
 	font-family:Georgia, "Times New Roman", Times, serif;
   line-height: 1.5;

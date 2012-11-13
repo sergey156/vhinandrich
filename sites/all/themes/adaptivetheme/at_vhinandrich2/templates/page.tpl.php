@@ -83,13 +83,16 @@
 		var curr_menu = null;
 		jQuery('#primary-menu-bar ul li.expanded').hover(
 			function(e){
+				
+				jQuery(this).css('background','white');
+					
 				if(timer){
 					clearTimeout(timer);
 					timer = null;
 				}
 				curr_menu = jQuery(this);
 				timer = setTimeout(function(){
-						
+					
 					//jQuery(this).children('ul.menu').css('display','inline');
 					jQuery('.primary-menu-bar-submenu ul li').css('opacity','0');
 					jQuery('.primary-menu-bar-submenu ul li').css('display','inline');
@@ -113,6 +116,8 @@
 			},
 			function(e){
 				//jQuery(this).children('ul.menu').css('display','none');
+				jQuery(this).css('background','none');
+				
 				if(timer){
 					clearTimeout(timer);
 					timer = null;
@@ -327,7 +332,7 @@
         	<div id="content">
 				<?php print render($page['content']); ?>
             	<div id="back-to-top-wrapper" style="text-align:center;opacity:.5;padding:10px 0;">
-                    <a href="#" style="color:white;text-decoration:none;font-weight:bold;font-size:16px;text-transform:capitalize" id="back-to-top">Scroll to top</a>
+                    <a href="#" style="color:#06F;text-decoration:none;font-weight:bold;font-size:16px;text-transform:capitalize" id="back-to-top">Scroll to top</a>
                 </div>
             </div>
 		<?php else: ?>
