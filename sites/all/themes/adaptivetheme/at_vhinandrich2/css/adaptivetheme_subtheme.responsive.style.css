@@ -18,6 +18,9 @@
 	.video-listing .views-field.views-field-field-addthis{
 		display: none;
 	}
+	#content-column{
+		background:#EEEEEE;	
+	}
 }
 
 /* Smartphone landscape */
@@ -35,6 +38,9 @@
 	.video-listing .views-field.views-field-field-addthis{
 		display: none;
 	}
+	#content-column{
+		background:#EEEEEE;	
+	}
 }
 
 /* Tablet portrait */
@@ -51,6 +57,9 @@
 	.video-listing .views-field.views-field-field-addthis{
 		display: none;
 	}
+	#content-column{
+		background:#EEEEEE;	
+	}
 }
 
 /* Tablet landscape */
@@ -66,6 +75,9 @@
 	}
 	.video-listing .views-field.views-field-field-addthis{
 		display: none;
+	}
+	#content-column{
+		background:#EEEEEE;	
 	}
 }
 
