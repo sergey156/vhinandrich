@@ -6,6 +6,14 @@
 
 /* Smartphone portrait */
 @media only screen and (max-width:320px) {
+	.images-listing .views-field.views-field-field-image{
+		background:none;
+		padding:0;	
+	}
+	.video-listing .views-field.views-field-field-video{
+		background:none;
+		padding:0;
+	}
 	.images-listing .views-field.views-field-title-1{
 		display: none;
 	}
@@ -25,7 +33,14 @@
 
 /* Smartphone landscape */
 @media only screen and (min-width:321px) and (max-width:480px) {
-	
+	.images-listing .views-field.views-field-field-image{
+		background:none;
+		padding:0;	
+	}
+	.video-listing .views-field.views-field-field-video{
+		background:none;
+		padding:0;
+	}
 	.images-listing .views-field.views-field-title-1{
 		display: none;
 	}
@@ -45,6 +60,14 @@
 
 /* Tablet portrait */
 @media only screen and (min-width:481px) and (max-width:768px) {
+	.images-listing .views-field.views-field-field-image{
+		background:none;
+		padding:0;	
+	}
+	.video-listing .views-field.views-field-field-video{
+		background:none;
+		padding:0;
+	}
 	.images-listing .views-field.views-field-title-1{
 		display: none;
 	}
@@ -64,6 +87,14 @@
 
 /* Tablet landscape */
 @media only screen and (min-width:769px) and (max-width:1024px) {
+	.images-listing .views-field.views-field-field-image{
+		background:none;
+		padding:0;	
+	}
+	.video-listing .views-field.views-field-field-video{
+		background:none;
+		padding:0;
+	}
 	.images-listing .views-field.views-field-title-1{
 		display: none;
 	}
@@ -89,23 +120,26 @@
 	.images-listing .views-field.views-field-field-image{
 		display: inline-block;
 		width: 70%;
+		background:url(images/video-listing-side-separator.png) repeat-y right top;
+		padding-right:20px;
 	}
 	.images-listing .views-field.views-field-title-1{
 		display: inline-block;
-		margin-left: 10px;
+		/*margin-left: 10px;*/
 		position: absolute;
-		background: #fff;
+		/*background: #fff;*/
+		border-bottom:1px dashed #ddd;
 		width: 26%;
-		padding: 10px 10px 10px 17px;
+		padding: 10px 10px 10px 0px;
 	}
 	.images-listing .views-field.views-field-field-addthis{
 		display: inline-block;
 		margin-left: 10px;
 		margin-top: 47px;
 		position: absolute;
-		background: white;
+		/*background: white;*/
 		width: 26%;
-		padding: 10px 16px 17px 11px;
+		padding: 10px 16px 17px 0px;
 	}
 	.views-field.views-field-field-addthis-1{
 		padding:0;
@@ -130,23 +164,26 @@
 	.video-listing .views-field.views-field-field-video{
 		display: inline-block;
 		width: 70%;
+		background:url(images/video-listing-side-separator.png) repeat-y right top;
+		padding-right:20px;
 	}
 	
 	.video-listing .views-field.views-field-title-1{
 		display: inline-block;
-		margin-left: 10px;
+		/*margin-left: 10px;*/
 		position: absolute;
-		background: #fff;
+		/*background: #fff;*/
+		border-bottom:1px dashed #ddd;
 		width: 26%;
-		padding: 10px 10px 10px 17px;
+		padding: 10px 10px 10px 0px;
 	}
 	.video-listing .views-field.views-field-field-addthis{
 		display: inline-block;
 		margin-left: 10px;
 		margin-top: 47px;
 		position: absolute;
-		background: white;
+		/*background: white;*/
 		width: 26%;
-		padding: 10px 16px 17px 11px;
+		padding: 10px 16px 17px 0px;
 	}
 }

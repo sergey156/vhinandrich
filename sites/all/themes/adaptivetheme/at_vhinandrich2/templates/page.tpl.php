@@ -13,10 +13,10 @@
 		
 		if(jQuery(window).width() < max_width){
 			jQuery('.vhinrich-mp-rotator-active').css('display','none');
-			jQuery('.vhinrich-mp-rotator').css('display','block');
+			jQuery('.vhinrich-mp-rotator-mobile').css('display','block');
 		}else{
 			jQuery('.vhinrich-mp-rotator-active').css('display','block');
-			jQuery('.vhinrich-mp-rotator').css('display','none');
+			jQuery('.vhinrich-mp-rotator-mobile').css('display','none');
 		}
 		
 		jQuery(window).scroll(function(e) {
@@ -34,10 +34,10 @@
 		jQuery(window).resize(function(){
 			if(jQuery(window).width() < max_width){
 				jQuery('.vhinrich-mp-rotator-active').css('display','none');
-				jQuery('.vhinrich-mp-rotator').css('display','block');
+				jQuery('.vhinrich-mp-rotator-mobile').css('display','block');
 			}else{
 				jQuery('.vhinrich-mp-rotator-active').css('display','block');
-				jQuery('.vhinrich-mp-rotator').css('display','none');
+				jQuery('.vhinrich-mp-rotator-mobile').css('display','none');
 			}
 		});
 		
@@ -369,6 +369,50 @@
 						$img_arr = array(
 							'item' => $main_image_node->field_image['und'][0],
 							'image_style' => 'home-page-rotator-3'
+						);
+						$image_rotator = theme_image_formatter($img_arr);
+						$i++;
+					?>
+					<li id="hpr-item-<?php print $i; ?>" class="hpr-item <?php if($i == 1){ print 'active';} ?>">
+						<?php print $image_rotator; ?>
+                        <!--
+                        <div class="hpr-content-button"><a class="hpr-show-info" href="#" title="click here to display/hide info."></a></div>
+                        <div class="hpr-content-container">
+                        	<div>
+                            	<section>
+                        			<header>
+                                		<h1><?php print $hpr_node->title; ?></h1>
+                                	</header>                                    
+                                    <div style="float:right;">
+									<?php					
+										// First get all of the options for the sharethis widget from the database:
+//										$data_options = sharethis_get_options_array();
+//										$mPath =  url(drupal_get_path_alias('node/' . $hpr_node->nid), array('absolute' => TRUE));
+//										$mTitle = drupal_get_title();
+//										print sharethis_get_button_HTML($data_options, $mPath, $mTitle);
+                                    ?></div>
+									<?php if($hpr_node->body): ?>
+                                        <div>
+                                            <?php print $hpr_node->body['und'][0]['value']; ?>
+                                        </div>
+                                    <?php endif; ?>
+                                </section>
+                        	</div>
+                        </div>
+                        -->
+                    </li>
+				<?php endforeach; ?>
+			</ul>
+            
+            <ul class="vhinrich-mp-rotator-mobile"  style="display:none">
+				<?php $i = 0; ?>
+				<?php foreach($homepage_rotator_view as $homepage_rotator): ?>
+					<?php 
+						$hpr_node = node_load($homepage_rotator->nid);
+						$main_image_node = node_load($hpr_node->field_main_image['und'][0]['nid']); 
+						$img_arr = array(
+							'item' => $main_image_node->field_image['und'][0],
+							'image_style' => 'home-page-rotator-mobile'
 						);
 						$image_rotator = theme_image_formatter($img_arr);
 						$i++;

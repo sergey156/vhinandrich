@@ -197,6 +197,19 @@ header[role=banner],
 	display:block;
 }
 
+.vhinrich-mp-rotator-mobile{
+	list-style:none;
+	margin:20px auto;
+	padding:0;
+	max-width:1024px;
+}
+.vhinrich-mp-rotator-mobile li{
+	display:block;
+}
+.vhinrich-mp-rotator-mobile li.active{
+	display:block;
+}
+
 .view-id-videos thead{
 	display:none;
 }
