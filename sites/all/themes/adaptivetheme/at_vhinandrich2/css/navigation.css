@@ -13,7 +13,7 @@
     height: 60px;
 	position:relative;
 	z-index:1;
-	box-shadow: 0 0 50px #666;
+	box-shadow: 0 -20px 50px #000;
 }
 #primary-menu-bar nav{
 }
