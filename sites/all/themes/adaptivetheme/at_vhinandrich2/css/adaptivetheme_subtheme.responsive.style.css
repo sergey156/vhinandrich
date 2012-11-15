@@ -121,7 +121,7 @@
 		display: inline-block;
 		width: 70%;
 		background:url(images/video-listing-side-separator.png) repeat-y right top;
-		padding-right:20px;
+		padding-right:10px;
 	}
 	.images-listing .views-field.views-field-title-1{
 		display: inline-block;
@@ -131,6 +131,7 @@
 		border-bottom:1px dashed #ddd;
 		width: 26%;
 		padding: 10px 10px 10px 0px;
+		margin-left:10px;
 	}
 	.images-listing .views-field.views-field-field-addthis{
 		display: inline-block;
@@ -165,7 +166,7 @@
 		display: inline-block;
 		width: 70%;
 		background:url(images/video-listing-side-separator.png) repeat-y right top;
-		padding-right:20px;
+		padding-right:10px;
 	}
 	
 	.video-listing .views-field.views-field-title-1{
@@ -176,6 +177,7 @@
 		border-bottom:1px dashed #ddd;
 		width: 26%;
 		padding: 10px 10px 10px 0px;
+		margin-left:10px;
 	}
 	.video-listing .views-field.views-field-field-addthis{
 		display: inline-block;

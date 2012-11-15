@@ -47,7 +47,7 @@
 	margin:0 !important;
 	line-height:40px !important;
 	height:0;
-	box-shadow: 0 7px 10px #CCCCCC;
+	box-shadow: 0 9px 10px rgba(50, 50, 50, 0.20);
 }
 .primary-menu-bar-submenu ul li{
 	display:none;
@@ -178,7 +178,7 @@ ul.menu li.last  {}
 #breadcrumb ol {
   	margin: 0;
 	padding: 0;
-	text-align: right;
+	text-align: left;
 }
 #breadcrumb li {
   list-style: none;
@@ -188,6 +188,7 @@ ul.menu li.last  {}
 #breadcrumb a {
 	color: #999;
 	text-decoration: none;
+	text-shadow:0 1px 0px #F3F3F3;
 }
 #breadcrumb a:link {
 
