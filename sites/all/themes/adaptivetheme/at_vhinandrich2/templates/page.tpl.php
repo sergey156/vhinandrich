@@ -354,7 +354,7 @@
 						$i++;
 					?>
                     <?php if($i<=2): ?>
-                        <li id="hpr-item-<?php print $i; ?>" class="hpr-item <?php if($i == 1){ print 'active';} ?>" style="z-index:<?php print 2-$i; ?>">
+                        <li id="hpr-active-item-<?php print $i; ?>" class="hpr-item <?php if($i == 1){ print 'active';} ?>" style="z-index:<?php print 2-$i; ?>">
                             <?php print $image_rotator; ?>
                         </li>
                     <?php endif; ?>
@@ -417,7 +417,7 @@
 						$image_rotator = theme_image_formatter($img_arr);
 						$i++;
 					?>
-					<li id="hpr-item-<?php print $i; ?>" class="hpr-item <?php if($i == 1){ print 'active';} ?>">
+					<li id="hpr-mobile-item-<?php print $i; ?>" class="hpr-item <?php if($i == 1){ print 'active';} ?>">
 						<?php print $image_rotator; ?>
                         <!--
                         <div class="hpr-content-button"><a class="hpr-show-info" href="#" title="click here to display/hide info."></a></div>
