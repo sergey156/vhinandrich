@@ -114,9 +114,10 @@
                 	<?php 
 						$hpr_node = node_load($homepage_rotator->nid);
 						$main_image_node = node_load($hpr_node->field_main_image['und'][0]['nid']); 
+						$main_image_node->field_image['und'][0]['alt'] = $hpr_node->title;
 						$img_arr = array(
 							'item' => $main_image_node->field_image['und'][0],
-							'image_style' => 'home-page-rotator-3'
+							'image_style' => 'home-page-rotator-3',
 						);
 						$image_rotator = theme_image_formatter($img_arr);
 						$i++;
@@ -134,9 +135,10 @@
 					<?php 
 						$hpr_node = node_load($homepage_rotator->nid);
 						$main_image_node = node_load($hpr_node->field_main_image['und'][0]['nid']); 
+						$main_image_node->field_image['und'][0]['alt'] = $hpr_node->title;
 						$img_arr = array(
 							'item' => $main_image_node->field_image['und'][0],
-							'image_style' => 'home-page-rotator-3'
+							'image_style' => 'home-page-rotator-3',
 						);
 						$image_rotator = theme_image_formatter($img_arr);
 						$i++;
@@ -178,9 +180,10 @@
 					<?php 
 						$hpr_node = node_load($homepage_rotator->nid);
 						$main_image_node = node_load($hpr_node->field_main_image['und'][0]['nid']); 
+						$main_image_node->field_image['und'][0]['alt'] = $hpr_node->title;
 						$img_arr = array(
 							'item' => $main_image_node->field_image['und'][0],
-							'image_style' => 'home-page-rotator-mobile'
+							'image_style' => 'home-page-rotator-mobile',
 						);
 						$image_rotator = theme_image_formatter($img_arr);
 						$i++;
