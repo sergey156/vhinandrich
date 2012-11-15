@@ -1,4 +1,4 @@
-<script type="text/javascript" language="javascript">
+<script type="text/javascript">
 	var hpr_timer = null;
 	var hpr_interval = 8000;
 	clearInterval(hpr_timer);
