@@ -228,9 +228,10 @@ jQuery(document).ready(function(e) {
 			
 			jQuery('.vhinrich-mp-rotator-active .hpr-item').css('z-index',0);
 			jQuery('.vhinrich-mp-rotator-active .hpr-item.active').css('z-index',1);
-		});
 			
-		hpr_timer = setInterval('hpr_slide()', hpr_interval);
+			
+			hpr_timer = setInterval('hpr_slide()', hpr_interval);
+		});
     });
 });
 
