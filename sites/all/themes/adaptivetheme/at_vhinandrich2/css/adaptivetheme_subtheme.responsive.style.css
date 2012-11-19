@@ -29,6 +29,9 @@
 	#content-column{
 		background:#EEEEEE;	
 	}
+	#primary-menu-bar ul.menu li.last{
+		display:none;
+	}
 }
 
 /* Smartphone landscape */
@@ -55,6 +58,9 @@
 	}
 	#content-column{
 		background:#EEEEEE;	
+	}
+	#primary-menu-bar ul.menu li.last{
+		display:none;
 	}
 }
 
