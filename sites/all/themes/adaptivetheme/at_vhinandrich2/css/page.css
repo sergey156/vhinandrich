@@ -184,6 +184,28 @@ header[role=banner],
 	display:block;
 }
 
+.vhinrich-mp-rotator-nav{
+	list-style:none;
+	margin:20px auto;
+	padding:0;
+	max-width:1080px;
+	padding:10px;
+	display:block;
+	text-align:center;
+}
+.vhinrich-mp-rotator-nav li{
+	display:inline-block;
+}
+.vhinrich-mp-rotator-nav li div.active{
+	background-position:-21px center;
+}
+.vhinrich-mp-rotator-nav li div{
+	background:url(images/rotator-nav-button.png) no-repeat 0 center;
+	height:15px;
+	width:19px;
+	cursor:pointer;
+}
+
 .vhinrich-mp-rotator{
 	list-style:none;
 	margin:20px auto;
