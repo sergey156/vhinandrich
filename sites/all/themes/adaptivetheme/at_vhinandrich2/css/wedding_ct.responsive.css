@@ -95,3 +95,96 @@
 		margin: 0 auto;
 	}
 }
+
+
+/* Smartphone landscape */
+@media only screen and (min-width:321px) and (max-width:480px) {
+	.wedding_ct_container{
+		text-align:center;
+	}
+	
+	.wedding_ct_titles{
+		display:block;
+		margin:-27px 0 27px;
+		padding:0;
+	}
+	.wedding_ct_titles li{
+		display:inline;
+		font-size:10px;
+		margin:0;
+		padding:0;
+	}
+	.wedding_ct_titles li:after{
+		content: '\2022';
+	}
+	.wedding_ct_titles li.last:after{
+		content:'';
+	}
+	
+	.wedding_ct_title{
+		font-size:50px;
+		color:#333;
+	}
+	.wedding_ct_title_container{
+	}
+	.wedding_ct_top_1_line{
+		border-bottom:4px solid #bbb;
+		width:100%;
+		margin: 60px auto 0;
+	}
+	
+	.wedding_ct_title2_container{
+		position: relative;
+		width: 30%;
+		background: #EEE;
+		margin: -40px auto 0;
+	}
+	.wedding_ct_title2{
+		color:#8D1E80;
+	}
+	.wedding_ct_title2_middle{
+		color:#FF6AB5;
+		clear:both;
+		display:block;	
+	}
+	
+	.wedding_ct_top_2{
+	}
+	.wedding_ct_date_container{
+		width:30%;
+		font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+		color:#333;
+		float:left;
+	}
+	.wedding_ct_date_month{
+		font-size:25px;
+	}
+	.wedding_ct_date_day{
+		font-size:15px;
+	}
+	.wedding_ct_date_year{
+		font-size:30px;
+	}
+	
+	.wedding_ct_location_container{
+		width:69%;
+		font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+		float:left;
+		color:#999;
+		border-left:2px dashed #A7A7A7;
+		margin:0 0 15px;
+	}
+	.wedding_ct_location_church{
+		font-size:20px;
+		color:#058FCF;	
+	}
+	.wedding_ct_location_reception{
+		font-size:20px;
+		color:#058FCF;	
+	}
+	.wedding_ct_top_2_line{
+		border-bottom:4px solid #bbb;
+		width:100%;
+		margin: 0 auto;
+	}
+}
