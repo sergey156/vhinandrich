@@ -298,3 +298,8 @@ header[role=banner],
 	display:block;
 	margin-bottom:5px;
 }
+
+
+.menu-up, .menu-down{
+	display:none;
+}

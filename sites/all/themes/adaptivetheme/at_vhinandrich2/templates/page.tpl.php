@@ -6,6 +6,8 @@
   <header class="clearfix vhinrich-header" role="banner">
 
 	<div id="top-menu-bar">
+    	<div class="menu-up"><a href="#">▲</a></div>
+    	<div class="menu-down"><a href="#">▼</a></div>
         <div class="nav" id="primary-menu-bar"><nav class="clearfix">
         <?php 
             $main_menu = variable_get('menu_main_links_source', 'main-menu');
