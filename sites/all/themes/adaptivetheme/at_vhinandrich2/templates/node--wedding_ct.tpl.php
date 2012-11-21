@@ -2,6 +2,12 @@
 	drupal_add_js(path_to_theme() . '/../at_vhinandrich2/js/wedding_ct.js');
 	drupal_add_css(path_to_theme() . '/../at_vhinandrich2/css/wedding_ct.css');
 	drupal_add_css(path_to_theme() . '/../at_vhinandrich2/css/wedding_ct.responsive.css');
+	
+	$datetime = $node->field_date['und'][0]['value'];
+	$month = date('F',$datetime);
+	$day = date('d',$datetime);
+	$day = "twenty-six";
+	$year = date('Y',$datetime);
 ?>
 <div class="wedding_ct_container">
 	<div class="wedding_ct_top_1">
@@ -22,15 +28,15 @@
     </div>
     <div class="wedding_ct_top_2">
         <div class="wedding_ct_date_container">
-            <h3 class="wedding_ct_date_month">APRIL</h3>
-            <h3 class="wedding_ct_date_day">twenty six</h3>
-            <h3 class="wedding_ct_date_year">2013</h3>
+            <h3 class="wedding_ct_date_month"><?php print $month; ?></h3>
+            <h3 class="wedding_ct_date_day"><?php print $day; ?></h3>
+            <h3 class="wedding_ct_date_year"><?php print $year; ?></h3>
         </div>
         <div class="wedding_ct_location_container">
-        	<h3 class="wedding_ct_location_church">Santuario De San Jose</h3>
-            <h3>Buffalo Street, Greenhills East, Mandaluyong</h3>
-            <h3 class="wedding_ct_location_reception">The Oasis Manila</h3>
-            <h3>New Manila, Quezon City</h3>
+        	<?php foreach($node->field_location_ref['und'] as $node_loc): ?>
+                <h3 class="wedding_ct_location_church"><?php print $node_loc['node']->title; ?></h3>
+                <h3><?php print $node_loc['node']->field_location['und'][0]['street'];?>, <?php print $node_loc['node']->field_location['und'][0]['city']; ?>, <?php print $node_loc['node']->field_location['und'][0]['country_name']; ?></h3>
+			<?php endforeach; ?>
         </div>
         <div style="clear:both">
         </div>
