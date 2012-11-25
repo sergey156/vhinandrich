@@ -1,6 +1,9 @@
 .block-inner{
 	margin:0 !important;
 }
+#content{
+	background:white !important;
+}
 
 .wedding_ct_container{
 	text-align:center;
@@ -40,7 +43,8 @@
 	position: relative;
 	width: 20%;
 	background: #EEE;
-	margin: -12px auto 0;
+	margin: -16px auto 0;
+	border:1px solid #BBB;
 }
 .wedding_ct_title2{
 	color:#8D1E80;
@@ -91,7 +95,7 @@
 }
 
 .wedding_ct_top_3{
-	background:#E2E2E2;
+	background:#fff;
 	padding-bottom:20px;
 }
 
@@ -99,7 +103,7 @@
 	font-size:30px;
 	color:#A06AA0;
 	letter-spacing:20px;
-	font-family:Arial, Helvetica, sans-serif;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 .wedding_ct_godmothers{
 	float:left;
@@ -146,4 +150,27 @@
 	border-bottom:2px solid #ccc;
 	width:100%;
 	margin: 0 auto;
+}
+
+
+.wedding_ct_top_4{
+	background:#fff;
+}
+.wedding_ct_entourage_title{
+	font-size: 32px;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	color: #54548F;
+	letter-spacing: 10px;
+}
+.wedding_ct_brides_maid{
+	float:left;
+	width:50%	
+}
+.wedding_ct_maid_of_honor{
+	float:left;	
+	width:50%;
+}
+.wedding_ct_best_man{
+	float:left;
+	width:50%;
 }

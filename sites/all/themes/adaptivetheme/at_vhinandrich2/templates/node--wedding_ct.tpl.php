@@ -8,6 +8,12 @@
 	$day = date('d',$datetime);
 	$day = "twenty-six";
 	$year = date('Y',$datetime);
+	
+	function calculate_time_remaining(){
+		$tmptime = $datetime - strtotime('now');
+		return $tmptime;
+	}
+	
 ?>
 <div class="wedding_ct_container">
 	<div class="wedding_ct_top_1">
@@ -46,7 +52,7 @@
     
     <div class="wedding_ct_top_3">
     	<div class="wedding_ct_godparents_title">
-        	<h1>THE GODPARENTS</h1>
+        	<h1>GODPARENTS</h1>
         </div>
         <div class="wedding_ct_godmothers">
         	<div>
@@ -67,4 +73,22 @@
         <div style="clear:both">
         </div>
     </div>
+    <!--<div class="wedding_ct_top_4">
+    	<div class="wedding_ct_entourage_title">
+        	<h1>ENTOURAGE</h1>
+        </div>
+        <div class="wedding_ct_maid_of_honor">
+        	<h2>Maid of Honor</h2>
+            <div>
+            	<p><?php print $node->field_maid_of_honor['und'][0]['value']; ?></p>
+            </div>
+        </div>
+        <div class="wedding_ct_best_man">
+        	<h2>Best Man</h2>
+            <div>
+            	<p><?php print $node->field_best_man['und'][0]['value']; ?></p>
+            </div>
+        </div>
+        <div style="clear:both"></div>
+    </div>-->
 </div>
