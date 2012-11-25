@@ -11,7 +11,9 @@ jQuery(document).ready(function(e) {
 		}
 		
 		jQuery('.wedding_ct_top_1_line').css('width',  (100 - scroll_perc) + "%");
-		jQuery('.wedding_ct_top_2_line').css('width',  (100 - scroll_perc) + "%")
-    });
+		jQuery('.wedding_ct_top_2_line').css('width',  (100 - scroll_perc) + "%");
+		jQuery('.wedding_ct_top_3_line').css('width',  (100 - scroll_perc) + "%");
+		
+	});
 	
 });

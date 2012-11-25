@@ -43,4 +43,28 @@
         <div class="wedding_ct_top_2_line">
         </div>
     </div>
+    
+    <div class="wedding_ct_top_3">
+    	<div class="wedding_ct_godparents_title">
+        	<h1>THE GODPARENTS</h1>
+        </div>
+        <div class="wedding_ct_godmothers">
+        	<div>
+                <h3 class="wedding_ct_godparent_h3">GODMOTHERS</h3>
+                <?php foreach($node->field_godmother_name['und'] as $godmother): ?>
+                    <p><?php print $godmother['value']; ?></p>
+                <?php endforeach; ?>
+            </div>
+        </div>
+        <div class="wedding_ct_godfathers">
+        	<div>
+                <h3 class="wedding_ct_godparent_h3">GODFATHERS</h3>
+                <?php foreach($node->field_godfather_name['und'] as $godfather): ?>
+                    <p><?php print $godfather['value']; ?></p>
+                <?php endforeach; ?>
+            </div>
+        </div>
+        <div style="clear:both">
+        </div>
+    </div>
 </div>
