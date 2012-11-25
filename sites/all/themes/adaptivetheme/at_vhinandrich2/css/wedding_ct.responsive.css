@@ -83,11 +83,13 @@
 	}
 	.wedding_ct_location_church{
 		font-size:20px;
-		color:#058FCF;	
+		color:#058FCF;
+		letter-spacing:0;
 	}
 	.wedding_ct_location_reception{
 		font-size:20px;
 		color:#058FCF;	
+		letter-spacing:0;
 	}
 	.wedding_ct_top_2_line{
 		border-bottom:4px solid #bbb;
@@ -201,10 +203,12 @@
 	.wedding_ct_location_church{
 		font-size:20px;
 		color:#058FCF;	
+		letter-spacing:0;
 	}
 	.wedding_ct_location_reception{
 		font-size:20px;
 		color:#058FCF;	
+		letter-spacing:0;
 	}
 	.wedding_ct_top_2_line{
 		border-bottom:4px solid #bbb;
