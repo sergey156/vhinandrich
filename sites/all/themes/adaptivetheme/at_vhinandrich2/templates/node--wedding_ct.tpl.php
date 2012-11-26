@@ -57,17 +57,21 @@
         <div class="wedding_ct_godmothers">
         	<div>
                 <h3 class="wedding_ct_godparent_h3">GODMOTHERS</h3>
-                <?php foreach($node->field_godmother_name['und'] as $godmother): ?>
-                    <p><?php print $godmother['value']; ?></p>
-                <?php endforeach; ?>
+                <ul>
+					<?php foreach($node->field_godmother_name['und'] as $godmother): ?>
+                        <li><?php print $godmother['value']; ?></li>
+                    <?php endforeach; ?>
+                </ul>
             </div>
         </div>
         <div class="wedding_ct_godfathers">
         	<div>
                 <h3 class="wedding_ct_godparent_h3">GODFATHERS</h3>
-                <?php foreach($node->field_godfather_name['und'] as $godfather): ?>
-                    <p><?php print $godfather['value']; ?></p>
-                <?php endforeach; ?>
+                <ul>
+					<?php foreach($node->field_godfather_name['und'] as $godfather): ?>
+                        <li><?php print $godfather['value']; ?></li>
+                    <?php endforeach; ?>
+                </ul>
             </div>
         </div>
         <div style="clear:both">

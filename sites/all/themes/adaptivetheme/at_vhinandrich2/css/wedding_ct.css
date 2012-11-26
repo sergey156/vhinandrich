@@ -127,20 +127,27 @@
 	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	display:none;
 }
-.wedding_ct_top_3 p{
+.wedding_ct_top_3 ul{
+	margin:0;
+	padding:0;
+}
+.wedding_ct_top_3 ul li{
+	list-style:none;
 	font-size:20px;
-	color:#7E7C7C;
+	color:#555;
 	padding:0;
 	margin:0;
 	letter-spacing:5px;
 	word-spacing:10px;
+	margin:0;
+	padding:0;
 }
-.wedding_ct_top_3 p:before{
+.wedding_ct_top_3 ul li:before{
 	content:"•";
 	margin-right:10px;
 	color:#bbb;
 }
-.wedding_ct_top_3 p:after{
+.wedding_ct_top_3 ul li:after{
 	content:"•";
 	margin-left:10px;
 	color:#bbb;

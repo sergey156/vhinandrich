@@ -107,7 +107,7 @@
 		foat:none;
 		width:100%;
 	}
-	.wedding_ct_top_3 p{
+	.wedding_ct_top_3 ul li{
 		letter-spacing:0;
 		word-spacing:0;
 		font-size:16px;
@@ -225,7 +225,7 @@
 		foat:none;
 		width:100%;
 	}
-	.wedding_ct_top_3 p{
+	.wedding_ct_top_3 ul li{
 		letter-spacing:0;
 		word-spacing:0;
 		font-size:16px;
@@ -243,7 +243,7 @@
 /* Tablet portrait */
 @media only screen and (min-width:481px) and (max-width:768px) {
 	/* godparents */
-	.wedding_ct_top_3 p{
+	.wedding_ct_top_3 ul li{
 		letter-spacing:0;
 		word-spacing:0;
 		font-size:18px;
