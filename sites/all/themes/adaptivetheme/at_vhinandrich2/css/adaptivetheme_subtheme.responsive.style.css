@@ -52,9 +52,18 @@
 	.menu-down{
 		display:block;
 		position:fixed;left:0;top:0;z-index:99;width:100%;
-		background:#ddd;
+		background:url("images/header-menu-bg.png") repeat-x scroll center bottom transparent;
 		box-shadow:0 2px 10px #575757;
 		overflow:hidden;
+	}
+	#primary-menu-bar nav{
+		margin:0;
+	}
+	#primary-menu-bar nav ul{
+		background:url("images/header-menu-bg.png") repeat-x scroll center bottom #d9d4d4;
+	}
+	#primary-menu-bar nav ul li ul{
+		background:#fff;
 	}
 	.menu-down a{
 		font-size:40px;
