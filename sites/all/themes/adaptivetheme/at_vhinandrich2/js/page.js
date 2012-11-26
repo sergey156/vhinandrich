@@ -33,6 +33,8 @@ jQuery(document).ready(function(e) {
 	});
 	
 	jQuery(window).resize(function(){
+		jQuery('#primary-menu-bar').removeAttr('style');
+		jQuery('.menu-down').removeAttr('style');
 		if(jQuery(window).width() < max_width){
 			jQuery('.vhinrich-mp-rotator-active').css('display','none');
 			jQuery('.vhinrich-mp-rotator-nav').css('display','none');
@@ -42,7 +44,6 @@ jQuery(document).ready(function(e) {
 			jQuery('.vhinrich-mp-rotator-nav').css('display','block');
 			jQuery('.vhinrich-mp-rotator-mobile').css('display','none');
 		}
-		jQuery('#primary-menu-bar').css('top',0);
 	});
 	
 	if(jQuery('.pager-load-more').length == 0){
