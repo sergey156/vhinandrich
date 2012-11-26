@@ -42,26 +42,7 @@ jQuery(document).ready(function(e) {
 			jQuery('.vhinrich-mp-rotator-nav').css('display','block');
 			jQuery('.vhinrich-mp-rotator-mobile').css('display','none');
 		}
-		
-		jQuery(this).css('background','none');
-			
-			
-			jQuery('.primary-menu-bar-submenu ul li').css('display','none');
-			jQuery('.primary-menu-bar-submenu ul li').css('visibility','hidden');
-			jQuery('.primary-menu-bar-submenu ul li').css('opacity','0');
-			jQuery('.primary-menu-bar-submenu ul').animate(
-				{height:0},100,function(){
-					jQuery('.primary-menu-bar-submenu ul li').animate(
-						{
-							opacity:0
-						},100,function(){
-							jQuery('.primary-menu-bar-submenu ul li').css('display','none');
-							jQuery('.primary-menu-bar-submenu ul li').css('visibility','hiddedn');
-							jQuery('.primary-menu-bar-submenu ul li').css('opacity','0');
-						}
-					);
-				}
-			);
+		jQuery('#primary-menu-bar').css('top',0);
 	});
 	
 	if(jQuery('.pager-load-more').length == 0){
