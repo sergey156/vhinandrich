@@ -40,7 +40,7 @@
         </div>
         <div class="wedding_ct_location_container">
         	<?php foreach($node->field_location_ref['und'] as $node_loc): ?>
-                <h3 class="wedding_ct_location_church"><?php print $node_loc['node']->title; ?></h3>
+                <h3 class="wedding_ct_location_church"><a href="<?php print drupal_get_path_alias('node/' . $node_loc['node']->vid); ?>"><?php print $node_loc['node']->title; ?></a></h3>
                 <h3><?php print $node_loc['node']->field_location['und'][0]['street'];?>, <?php print $node_loc['node']->field_location['und'][0]['city']; ?>, <?php print $node_loc['node']->field_location['und'][0]['country_name']; ?></h3>
 			<?php endforeach; ?>
         </div>
