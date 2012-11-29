@@ -148,6 +148,7 @@ jQuery(document).ready(function(e) {
 			jQuery('.primary-menu-bar-submenu ul li').css('display','none');
 			jQuery('.primary-menu-bar-submenu ul li').css('visibility','hidden');
 			jQuery('.primary-menu-bar-submenu ul li').css('opacity','0');
+			
 			jQuery('.primary-menu-bar-submenu ul').animate(
 				{height:0},100,function(){
 					jQuery('.primary-menu-bar-submenu ul li').animate(
@@ -155,7 +156,7 @@ jQuery(document).ready(function(e) {
 							opacity:0
 						},100,function(){
 							jQuery('.primary-menu-bar-submenu ul li').css('display','none');
-							jQuery('.primary-menu-bar-submenu ul li').css('visibility','hiddedn');
+							jQuery('.primary-menu-bar-submenu ul li').css('visibility','hidden');
 							jQuery('.primary-menu-bar-submenu ul li').css('opacity','0');
 						}
 					);

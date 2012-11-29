@@ -161,8 +161,12 @@
 	.images-listing .views-field.views-field-field-image{
 		display: inline-block;
 		width: 70%;
-		background:url(images/video-listing-side-separator.png) repeat-y right top;
-		padding-right:10px;
+		/*background:url(images/video-listing-side-separator.png) repeat-y right top;*/
+		border-right: 1px dashed #F7F7F7;
+	}
+	.images-listing .views-field.views-field-field-image .field-content.views-image{
+		border-right: 1px dashed #DADADA;
+		padding-right: 8px;
 	}
 	.images-listing .views-field.views-field-title-1{
 		display: inline-block;
@@ -206,8 +210,12 @@
 	.video-listing .views-field.views-field-field-video{
 		display: inline-block;
 		width: 70%;
-		background:url(images/video-listing-side-separator.png) repeat-y right top;
-		padding-right:10px;
+		/*background:url(images/video-listing-side-separator.png) repeat-y right top;*/
+		border-right: 1px dashed #F7F7F7;
+	}
+	.video-listing .views-field.views-field-field-video .field-content{
+		border-right: 1px dashed #DADADA;
+		padding-right: 8px;
 	}
 	
 	.video-listing .views-field.views-field-title-1{
