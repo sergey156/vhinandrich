@@ -303,3 +303,41 @@ header[role=banner],
 .menu-up, .menu-down{
 	display:none;
 }
+
+/* homepage banner */
+#vhinrich-mp-banner{
+	border-top:1px dashed #D1D1D1;
+}
+#vhinrich-mp-banner ul{
+	text-align: center;
+	margin:20px 0 0 0;
+	padding:0;
+}
+#vhinrich-mp-banner ul li{
+	display:inline;
+	list-style-type:none;
+}
+#vhinrich-mp-banner ul li:after{
+	content: '';
+	border-left: 1px solid #D1D1D1;
+	border-right: 1px solid #F3F3F3;
+	margin: 0;
+	padding:0;
+	height: 80px;
+	display: inline-block;
+	vertical-align: middle;
+}
+#vhinrich-mp-banner ul li:last-child:after{
+	border:none;
+	margin:0;
+}
+#vhinrich-mp-banner ul li a p{
+	color:#888;
+}
+#vhinrich-mp-banner ul li a{
+	display: inline-block;
+	vertical-align: middle;
+	width: 30%;
+	height: auto;
+	overflow: hidden;
+}

@@ -35,6 +35,14 @@ function content_types_node_info() {
       'title_label' => t('Title'),
       'help' => '',
     ),
+    'home_page_banner' => array(
+      'name' => t('Home Page Banner'),
+      'base' => 'node_content',
+      'description' => t('Homepage Banner'),
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
     'home_page_rotator' => array(
       'name' => t('Home Page Rotator'),
       'base' => 'node_content',

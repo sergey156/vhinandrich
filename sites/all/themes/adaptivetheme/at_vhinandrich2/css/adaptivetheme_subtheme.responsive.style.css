@@ -69,6 +69,23 @@
 		font-size:40px;
 		color:#726767;
 	}
+	
+	#vhinrich-mp-banner ul li{
+		display:block;
+	}
+	#vhinrich-mp-banner ul li:after{
+		content: '';
+		border-top: 1px solid #D1D1D1;
+		border-bottom: 1px solid #fff;
+		margin: 0;
+		padding:0;
+		height: 0px;
+		display: block;
+		vertical-align: middle;
+	}
+	#vhinrich-mp-banner ul li a{
+		width:100%;
+	}
 }
 
 /* Smartphone landscape */
@@ -97,6 +114,22 @@
 		background:#EEEEEE;	
 	}
 	
+	#vhinrich-mp-banner ul li{
+		display:block;
+	}
+	#vhinrich-mp-banner ul li:after{
+		content: '';
+		border-top: 1px solid #D1D1D1;
+		border-bottom: 1px solid #fff;
+		margin: 0;
+		padding:0;
+		height: 0px;
+		display: block;
+		vertical-align: middle;
+	}
+	#vhinrich-mp-banner ul li a{
+		width:100%;
+	}
 }
 
 /* Tablet portrait */

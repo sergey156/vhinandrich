@@ -108,6 +108,7 @@
 		<?php else: ?>
               <?php 
 			$homepage_rotator_view = views_get_view_result('home_page_rotator', 'default');
+			$homepage_banner_view = views_get_view_result('home_page_banner', 'default');
 		?>
 		<div id="vhinrich-mp-rotator">
         	<ul class="vhinrich-mp-rotator-active">
@@ -241,6 +242,32 @@
 				<?php endforeach; ?>
 			</ul>
 		</div>
+        
+        <div id="vhinrich-mp-banner">
+        	<ul>
+            	<?php $i=0; ?>
+            	<?php foreach($homepage_banner_view as $homepage_banner): ?>
+					<?php 
+                    	$hpb_node = node_load($homepage_banner->nid);
+						//$main_image_node = node_load($hpb_node->field_main_image['und'][0]['nid']); 
+						//$main_image_node->field_image['und'][0]['alt'] = $hpb_node->title;
+						//$img_arr = array(
+						//	'item' => $main_image_node->field_image['und'][0],
+						//	'image_style' => 'home-page-rotator-mobile',
+						//);
+						//$image_rotator = theme_image_formatter($img_arr);
+						$i++;
+                    ?>
+                    <li id="hpb-mobile-item-<?php print $i; ?>" class="hpb-mobile-item">
+                    	<a href="<?php print $hpb_node->field_url['und'][0]['value']; ?>">
+                            <h2><?php print $hpb_node->title; ?></h2>
+                            <p><?php print $hpb_node->body['und'][0]['value']; ?></p>
+                            <?php //print $image_rotator; ?>
+                        </a>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
         
 		<?php endif; ?>
         
