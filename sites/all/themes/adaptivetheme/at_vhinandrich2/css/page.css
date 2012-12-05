@@ -23,7 +23,8 @@
 	background: #DDD;
 	margin: 0 auto;
 	max-width: 1115px;
-	padding: 1px 0 0;
+	/*padding: 1px 0 0;*/
+	padding:0;
 }
 #content{
 	/*background: url("images/content-bg.png") repeat scroll 0 0 transparent;*/
@@ -341,7 +342,7 @@ header[role=banner],
 	height: auto;
 	overflow: hidden;
 }
-#vhinrich-mp-banner::before {
+#vhinrich-mp-banner:before {
 	content: '';
 	border-top: 1px dashed #B8B8B8;
 	width: 100%;
