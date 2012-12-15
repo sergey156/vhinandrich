@@ -311,8 +311,9 @@ header[role=banner],
 }
 #vhinrich-mp-banner ul{
 	text-align: center;
-	margin:20px 0 0 0;
+	margin:20px auto 0;
 	padding:0;
+	max-width:1080px;
 }
 #vhinrich-mp-banner ul li{
 	display:inline;
