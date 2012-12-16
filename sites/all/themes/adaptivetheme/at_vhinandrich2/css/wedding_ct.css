@@ -46,11 +46,11 @@
 }
 .wedding_ct_view_map_content{
 	padding:10px;
-	border-radius:5px;
+	border-radius:8px;
 	background:#444;
 	color:#eee;
 	margin-top:-45px;
-	opacity:.8;
+	opacity:1;
 }
 .wedding_ct_view_map_content:after{
 	border-color: #444 transparent transparent transparent;

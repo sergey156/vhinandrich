@@ -72,7 +72,7 @@
 			<?php endforeach; ?>
         </div>
         <div style="clear:both"></div>
-        <div class="wedding_ct_top_2_line" style="border:2px solid #eee"></div>
+        <div class="wedding_ct_top_2_line" style="border:1px dashed #eee"></div>
         <div class="wedding_ct_timer mqc-timer">Loading timer...</div>
         <div style="clear:both"></div>
         <div class="wedding_ct_top_2_line"></div>
