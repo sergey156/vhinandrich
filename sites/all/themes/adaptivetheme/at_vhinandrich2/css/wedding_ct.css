@@ -69,6 +69,9 @@
 .wedding_ct_date_year{
 	font-size:40px;
 }
+.wedding_ct_timer{
+	margin:0 0 20px;
+}
 
 .wedding_ct_location_container{
 	width:69%;
@@ -77,6 +80,7 @@
 	color:#999;
 	border-left:2px dashed #A7A7A7;
 	margin:0 0 15px;
+	min-height:170px;
 }
 .wedding_ct_location_church{
 	font-size:30px;

@@ -15,6 +15,28 @@
 	}
 	
 ?>
+<script>
+	jQuery(document).ready(function(e) {
+		var _timer = null;
+		
+		clearTimeout(_timer);
+		_timer = setTimeout('mqc_timer()',1000);
+		mqc_timer = function(){
+			jQuery.ajax({
+				type: 'GET',
+				url: '/mqcristobal-timer/<?php print $datetime; ?>',
+				dataType:'json',
+				cache:false,
+				beforeSend:function(){},
+				success:function(data){
+					jQuery('.mqc-timer').html(data['return']);
+					clearTimeout(_timer);
+					_timer = setTimeout('mqc_timer()',1000);
+				}
+			});
+		}
+    });
+</script>
 <div class="wedding_ct_container">
 	<div class="wedding_ct_top_1">
         <div class="wedding_ct_title_container">
@@ -37,6 +59,7 @@
             <h3 class="wedding_ct_date_month"><?php print $month; ?></h3>
             <h3 class="wedding_ct_date_day"><?php print $day; ?></h3>
             <h3 class="wedding_ct_date_year"><?php print $year; ?></h3>
+            <div class="wedding_ct_timer mqc-timer"></div>
         </div>
         <div class="wedding_ct_location_container">
         	<?php foreach($node->field_location_ref['und'] as $node_loc): ?>
