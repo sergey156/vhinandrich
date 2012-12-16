@@ -8,7 +8,10 @@ jQuery(document).ready(function(e) {
 		if(scroll_val >= 100 && scroll_val <= 450){
 			if(jQuery('.wedding_ct_view_map_box').css('opacity') <= 0){
 				jQuery('.wedding_ct_view_map_box').animate(
-					{opacity:1},500,function(){}
+					{opacity:1},500,function(){
+					}
+				).delay(5000).animate(
+					{opacity:0},100,function(){}
 				);	
 			}
 		}else{
