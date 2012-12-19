@@ -248,7 +248,34 @@
 				$node_timer = node_load($timer_nid);
 			?>
             <?php if($node_timer): ?>
-                <div style="text-align:center;border-top:1px dashed #ddd;margin:0;padding:10px 0;background:#fafafa;">
+            	<style>
+					.timer-grayed{
+						color:#999;
+						font-size:larger !important;
+					}
+					.timer-focused{
+						color:#222;
+						font-size:large !important;
+					}
+					.front-page-timer{
+						text-align:center;
+						margin:0;
+						padding:0 0 10px;
+						background:#fafafa;
+					}
+					.front-page-timer:before{
+						content: '';
+						border-top: 1px solid lightGrey;
+						width: 100%;
+						border-bottom: 1px solid white;
+						box-shadow: 0px 3px 30px #BBB;
+						display: block;
+					}
+					.wedding_ct_timer.mqc-timer{
+						margin:10px 0 !important;
+					}
+				</style>
+                <div class="front-page-timer">
                     <?php $datetime = $node_timer->field_date['und'][0]['value']; ?>
                     <script>
                         jQuery(document).ready(function(e) {
@@ -272,16 +299,6 @@
                             }
                         });
                     </script>
-                    <style>
-						.timer-grayed{
-							color:#999;
-							font-size:larger !important;
-						}
-						.timer-focused{
-							color:#222;
-							font-size:large !important;
-						}
-					</style>
         			<div class="wedding_ct_timer mqc-timer" style="font-size:larger">Loading timer...</div>
                 </div>
             <?php endif; ?>
