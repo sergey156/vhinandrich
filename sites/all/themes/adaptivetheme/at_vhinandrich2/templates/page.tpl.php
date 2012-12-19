@@ -260,7 +260,7 @@
 					.front-page-timer{
 						text-align:center;
 						margin:0;
-						padding:0 0 10px;
+						padding:0;
 						background:#fafafa;
 					}
 					.front-page-timer:before{
@@ -272,7 +272,27 @@
 						display: block;
 					}
 					.wedding_ct_timer.mqc-timer{
-						margin:10px 0 !important;
+						margin:10px 0 0 !important;
+					}
+					.wedding-timer{
+						background:#fff;
+						padding:10px;
+						margin-top:11px;
+						box-shadow:0 0 5px #ddd;
+					}
+					.wedding-will-start-in{
+						text-shadow:0px 1px #fff;
+						color:#bbb;
+					}
+					.wedding-will-start-in:after{
+						border-color: transparent transparent #fff;
+						border-style: solid;
+						border-width: 10px;
+						content: " ";
+						position: absolute;
+						right: 50%;
+						margin-top:15px;
+						width: 0;
 					}
 				</style>
                 <div class="front-page-timer">
