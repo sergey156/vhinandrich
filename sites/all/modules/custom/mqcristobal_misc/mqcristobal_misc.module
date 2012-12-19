@@ -26,6 +26,7 @@ function mqcristobal_misc_theme(){
 function mqc_timer($datetime){
 	$params = array(
 		'time_remaining' => $datetime - strtotime('now'),
+		'front_page' => $_GET['front_page'],
 	);
 	echo json_encode(array('return'=>theme('mqc_timer', $params)));
 }

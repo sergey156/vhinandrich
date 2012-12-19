@@ -17,9 +17,14 @@
 	}
 </style>
 <div>
+	<?php if($front_page): ?>
+    	<div>wedding will start in </div>
+    <?php endif; ?>
 	<?php if($days >0): ?><span><span class="timer-focused"><?php print $days; ?></span> <span class="timer-grayed">Days</span></span><?php endif; ?>
-	<span><span class="timer-focused"><?php print $hours; ?></span> <span class="timer-grayed">Hours</span></span>
-	<span><span class="timer-focused"><?php print $minutes; ?></span> <span class="timer-grayed">Minutes</span></span>
+	<?php if($hours >0): ?><span><span class="timer-focused"><?php print $hours; ?></span> <span class="timer-grayed">Hours</span></span><?php endif; ?>
+	<?php if($minutes >0): ?><span><span class="timer-focused"><?php print $minutes; ?></span> <span class="timer-grayed">Minutes</span></span><?php endif; ?>
 	<span><span class="timer-focused"><?php print $seconds; ?></span> <span class="timer-grayed">Seconds</span></span>
-    <span> remaining</span>
+    <?php if(!$front_page): ?>
+    	<span> remaining</span>
+    <?php endif; ?>
 </div>

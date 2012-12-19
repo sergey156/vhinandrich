@@ -110,165 +110,208 @@
 			$homepage_rotator_view = views_get_view_result('home_page_rotator', 'default');
 			$homepage_banner_view = views_get_view_result('home_page_banner', 'default');
 		?>
-		<div id="vhinrich-mp-rotator">
-        	<ul class="vhinrich-mp-rotator-active">
-            	<?php $i = 0; ?>
-				<?php foreach($homepage_rotator_view as $homepage_rotator): ?>
-                	<?php 
-						$hpr_node = node_load($homepage_rotator->nid);
-						$main_image_node = node_load($hpr_node->field_main_image['und'][0]['nid']); 
-						$main_image_node->field_image['und'][0]['alt'] = $hpr_node->title;
-						$img_arr = array(
-							'item' => $main_image_node->field_image['und'][0],
-							'image_style' => 'home-page-rotator-3',
-						);
-						$image_rotator = theme_image_formatter($img_arr);
-						$i++;
-					?>
-                    <?php if($i<=2): ?>
-                        <li id="hpr-active-item-<?php print $i; ?>" class="hpr-item <?php if($i == 1){ print 'active';} ?>" style="z-index:<?php print 2-$i; ?>">
+            <div id="vhinrich-mp-rotator">
+                <ul class="vhinrich-mp-rotator-active">
+                    <?php $i = 0; ?>
+                    <?php foreach($homepage_rotator_view as $homepage_rotator): ?>
+                        <?php 
+                            $hpr_node = node_load($homepage_rotator->nid);
+                            $main_image_node = node_load($hpr_node->field_main_image['und'][0]['nid']); 
+                            $main_image_node->field_image['und'][0]['alt'] = $hpr_node->title;
+                            $img_arr = array(
+                                'item' => $main_image_node->field_image['und'][0],
+                                'image_style' => 'home-page-rotator-3',
+                            );
+                            $image_rotator = theme_image_formatter($img_arr);
+                            $i++;
+                        ?>
+                        <?php if($i<=2): ?>
+                            <li id="hpr-active-item-<?php print $i; ?>" class="hpr-item <?php if($i == 1){ print 'active';} ?>" style="z-index:<?php print 2-$i; ?>">
+                                <?php print $image_rotator; ?>
+                            </li>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                </ul>
+                <ul class="vhinrich-mp-rotator"  style="display:none">
+                    <?php $i = 0; ?>
+                    <?php foreach($homepage_rotator_view as $homepage_rotator): ?>
+                        <?php 
+                            $hpr_node = node_load($homepage_rotator->nid);
+                            $main_image_node = node_load($hpr_node->field_main_image['und'][0]['nid']); 
+                            $main_image_node->field_image['und'][0]['alt'] = $hpr_node->title;
+                            $img_arr = array(
+                                'item' => $main_image_node->field_image['und'][0],
+                                'image_style' => 'home-page-rotator-3',
+                            );
+                            $image_rotator = theme_image_formatter($img_arr);
+                            $i++;
+                        ?>
+                        <li id="hpr-item-<?php print $i; ?>" class="hpr-item <?php if($i == 1){ print 'active';} ?>">
                             <?php print $image_rotator; ?>
+                            <!--
+                            <div class="hpr-content-button"><a class="hpr-show-info" href="#" title="click here to display/hide info."></a></div>
+                            <div class="hpr-content-container">
+                                <div>
+                                    <section>
+                                        <header>
+                                            <h1><?php print $hpr_node->title; ?></h1>
+                                        </header>                                    
+                                        <div style="float:right;">
+                                        <?php					
+                                            // First get all of the options for the sharethis widget from the database:
+    //										$data_options = sharethis_get_options_array();
+    //										$mPath =  url(drupal_get_path_alias('node/' . $hpr_node->nid), array('absolute' => TRUE));
+    //										$mTitle = drupal_get_title();
+    //										print sharethis_get_button_HTML($data_options, $mPath, $mTitle);
+                                        ?></div>
+                                        <?php if($hpr_node->body): ?>
+                                            <div>
+                                                <?php print $hpr_node->body['und'][0]['value']; ?>
+                                            </div>
+                                        <?php endif; ?>
+                                    </section>
+                                </div>
+                            </div>
+                            -->
                         </li>
-                    <?php endif; ?>
-                <?php endforeach; ?>
-            </ul>
-			<ul class="vhinrich-mp-rotator"  style="display:none">
-				<?php $i = 0; ?>
-				<?php foreach($homepage_rotator_view as $homepage_rotator): ?>
-					<?php 
-						$hpr_node = node_load($homepage_rotator->nid);
-						$main_image_node = node_load($hpr_node->field_main_image['und'][0]['nid']); 
-						$main_image_node->field_image['und'][0]['alt'] = $hpr_node->title;
-						$img_arr = array(
-							'item' => $main_image_node->field_image['und'][0],
-							'image_style' => 'home-page-rotator-3',
-						);
-						$image_rotator = theme_image_formatter($img_arr);
-						$i++;
-					?>
-					<li id="hpr-item-<?php print $i; ?>" class="hpr-item <?php if($i == 1){ print 'active';} ?>">
-						<?php print $image_rotator; ?>
-                        <!--
-                        <div class="hpr-content-button"><a class="hpr-show-info" href="#" title="click here to display/hide info."></a></div>
-                        <div class="hpr-content-container">
-                        	<div>
-                            	<section>
-                        			<header>
-                                		<h1><?php print $hpr_node->title; ?></h1>
-                                	</header>                                    
-                                    <div style="float:right;">
-									<?php					
-										// First get all of the options for the sharethis widget from the database:
-//										$data_options = sharethis_get_options_array();
-//										$mPath =  url(drupal_get_path_alias('node/' . $hpr_node->nid), array('absolute' => TRUE));
-//										$mTitle = drupal_get_title();
-//										print sharethis_get_button_HTML($data_options, $mPath, $mTitle);
-                                    ?></div>
-									<?php if($hpr_node->body): ?>
-                                        <div>
-                                            <?php print $hpr_node->body['und'][0]['value']; ?>
-                                        </div>
-                                    <?php endif; ?>
-                                </section>
-                        	</div>
-                        </div>
-                        -->
-                    </li>
-				<?php endforeach; ?>
-			</ul>
+                    <?php endforeach; ?>
+                </ul>
+                
+                <ul class="vhinrich-mp-rotator-nav">
+                    <?php $i = 0; ?>
+                    <?php foreach($homepage_rotator_view as $homepage_rotator): ?>
+                        <?php 
+                            $hpr_node = node_load($homepage_rotator->nid);
+                            $main_image_node = node_load($hpr_node->field_main_image['und'][0]['nid']); 
+                            $main_image_node->field_image['und'][0]['alt'] = $hpr_node->title;
+                            $img_arr = array(
+                                'item' => $main_image_node->field_image['und'][0],
+                                'image_style' => 'home-page-rotator-3',
+                            );
+                            $image_rotator = theme_image_formatter($img_arr);
+                            $i++;
+                        ?>
+                        <li id="hpr-item-nav-<?php print $i; ?>" class="hpr-item <?php if($i == 1){ print 'active';} ?>">
+                            <div class="nav-item <?php if($i == 1){ print 'active';} ?>"></div>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+                
+                <ul class="vhinrich-mp-rotator-mobile"  style="display:none">
+                    <?php $i = 0; ?>
+                    <?php foreach($homepage_rotator_view as $homepage_rotator): ?>
+                        <?php 
+                            $hpr_node = node_load($homepage_rotator->nid);
+                            $main_image_node = node_load($hpr_node->field_main_image['und'][0]['nid']); 
+                            $main_image_node->field_image['und'][0]['alt'] = $hpr_node->title;
+                            $img_arr = array(
+                                'item' => $main_image_node->field_image['und'][0],
+                                'image_style' => 'home-page-rotator-mobile',
+                            );
+                            $image_rotator = theme_image_formatter($img_arr);
+                            $i++;
+                        ?>
+                        <li id="hpr-mobile-item-<?php print $i; ?>" class="hpr-item <?php if($i == 1){ print 'active';} ?>">
+                            <?php print $image_rotator; ?>
+                            <!--
+                            <div class="hpr-content-button"><a class="hpr-show-info" href="#" title="click here to display/hide info."></a></div>
+                            <div class="hpr-content-container">
+                                <div>
+                                    <section>
+                                        <header>
+                                            <h1><?php print $hpr_node->title; ?></h1>
+                                        </header>                                    
+                                        <div style="float:right;">
+                                        <?php					
+                                            // First get all of the options for the sharethis widget from the database:
+    //										$data_options = sharethis_get_options_array();
+    //										$mPath =  url(drupal_get_path_alias('node/' . $hpr_node->nid), array('absolute' => TRUE));
+    //										$mTitle = drupal_get_title();
+    //										print sharethis_get_button_HTML($data_options, $mPath, $mTitle);
+                                        ?></div>
+                                        <?php if($hpr_node->body): ?>
+                                            <div>
+                                                <?php print $hpr_node->body['und'][0]['value']; ?>
+                                            </div>
+                                        <?php endif; ?>
+                                    </section>
+                                </div>
+                            </div>
+                            -->
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
             
-            <ul class="vhinrich-mp-rotator-nav">
-				<?php $i = 0; ?>
-				<?php foreach($homepage_rotator_view as $homepage_rotator): ?>
-					<?php 
-						$hpr_node = node_load($homepage_rotator->nid);
-						$main_image_node = node_load($hpr_node->field_main_image['und'][0]['nid']); 
-						$main_image_node->field_image['und'][0]['alt'] = $hpr_node->title;
-						$img_arr = array(
-							'item' => $main_image_node->field_image['und'][0],
-							'image_style' => 'home-page-rotator-3',
-						);
-						$image_rotator = theme_image_formatter($img_arr);
-						$i++;
-					?>
-					<li id="hpr-item-nav-<?php print $i; ?>" class="hpr-item <?php if($i == 1){ print 'active';} ?>">
-                    	<div class="nav-item <?php if($i == 1){ print 'active';} ?>"></div>
-                    </li>
-				<?php endforeach; ?>
-			</ul>
+            <?php
+				$timer_nid = 565;
+				$node_timer = node_load($timer_nid);
+			?>
+            <?php if($node_timer): ?>
+                <div style="text-align:center;border-top:1px dashed #ddd;margin:0;padding:10px 0;background:#fafafa;">
+                    <?php $datetime = $node_timer->field_date['und'][0]['value']; ?>
+                    <script>
+                        jQuery(document).ready(function(e) {
+                            var _timer = null;
+                            
+                            clearTimeout(_timer);
+                            _timer = setTimeout('mqc_timer()',1000);
+                            mqc_timer = function(){
+                                jQuery.ajax({
+                                    type: 'GET',
+                                    url: '/mqcristobal-timer/<?php print $datetime; ?>?front_page=true',
+                                    dataType:'json',
+                                    cache:false,
+                                    beforeSend:function(){},
+                                    success:function(data){
+                                        jQuery('.mqc-timer').html(data['return']);
+                                        clearTimeout(_timer);
+                                        _timer = setTimeout('mqc_timer()',1000);
+                                    }
+                                });
+                            }
+                        });
+                    </script>
+                    <style>
+						.timer-grayed{
+							color:#999;
+							font-size:larger !important;
+						}
+						.timer-focused{
+							color:#222;
+							font-size:large !important;
+						}
+					</style>
+        			<div class="wedding_ct_timer mqc-timer" style="font-size:larger">Loading timer...</div>
+                </div>
+            <?php endif; ?>
             
-            <ul class="vhinrich-mp-rotator-mobile"  style="display:none">
-				<?php $i = 0; ?>
-				<?php foreach($homepage_rotator_view as $homepage_rotator): ?>
-					<?php 
-						$hpr_node = node_load($homepage_rotator->nid);
-						$main_image_node = node_load($hpr_node->field_main_image['und'][0]['nid']); 
-						$main_image_node->field_image['und'][0]['alt'] = $hpr_node->title;
-						$img_arr = array(
-							'item' => $main_image_node->field_image['und'][0],
-							'image_style' => 'home-page-rotator-mobile',
-						);
-						$image_rotator = theme_image_formatter($img_arr);
-						$i++;
-					?>
-					<li id="hpr-mobile-item-<?php print $i; ?>" class="hpr-item <?php if($i == 1){ print 'active';} ?>">
-						<?php print $image_rotator; ?>
-                        <!--
-                        <div class="hpr-content-button"><a class="hpr-show-info" href="#" title="click here to display/hide info."></a></div>
-                        <div class="hpr-content-container">
-                        	<div>
-                            	<section>
-                        			<header>
-                                		<h1><?php print $hpr_node->title; ?></h1>
-                                	</header>                                    
-                                    <div style="float:right;">
-									<?php					
-										// First get all of the options for the sharethis widget from the database:
-//										$data_options = sharethis_get_options_array();
-//										$mPath =  url(drupal_get_path_alias('node/' . $hpr_node->nid), array('absolute' => TRUE));
-//										$mTitle = drupal_get_title();
-//										print sharethis_get_button_HTML($data_options, $mPath, $mTitle);
-                                    ?></div>
-									<?php if($hpr_node->body): ?>
-                                        <div>
-                                            <?php print $hpr_node->body['und'][0]['value']; ?>
-                                        </div>
-                                    <?php endif; ?>
-                                </section>
-                        	</div>
-                        </div>
-                        -->
-                    </li>
-				<?php endforeach; ?>
-			</ul>
-		</div>
-        
-        <div id="vhinrich-mp-banner">
-        	<ul>
-            	<?php $i=0; ?>
-            	<?php foreach($homepage_banner_view as $homepage_banner): ?>
-					<?php 
-                    	$hpb_node = node_load($homepage_banner->nid);
-						//$main_image_node = node_load($hpb_node->field_main_image['und'][0]['nid']); 
-						//$main_image_node->field_image['und'][0]['alt'] = $hpb_node->title;
-						//$img_arr = array(
-						//	'item' => $main_image_node->field_image['und'][0],
-						//	'image_style' => 'home-page-rotator-mobile',
-						//);
-						//$image_rotator = theme_image_formatter($img_arr);
-						$i++;
-                    ?>
-                    <li id="hpb-mobile-item-<?php print $i; ?>" class="hpb-mobile-item">
-                    	<a href="<?php print $hpb_node->field_url['und'][0]['value']; ?>">
-                            <h2><?php print $hpb_node->title; ?></h2>
-                            <p><?php print $hpb_node->body['und'][0]['value']; ?></p>
-                            <?php //print $image_rotator; ?>
-                        </a>
-                    </li>
-                <?php endforeach; ?>
-            </ul>
-        </div>
-        
+            <div id="vhinrich-mp-banner">
+                <ul>
+                    <?php $i=0; ?>
+                    <?php foreach($homepage_banner_view as $homepage_banner): ?>
+                        <?php 
+                            $hpb_node = node_load($homepage_banner->nid);
+                            //$main_image_node = node_load($hpb_node->field_main_image['und'][0]['nid']); 
+                            //$main_image_node->field_image['und'][0]['alt'] = $hpb_node->title;
+                            //$img_arr = array(
+                            //	'item' => $main_image_node->field_image['und'][0],
+                            //	'image_style' => 'home-page-rotator-mobile',
+                            //);
+                            //$image_rotator = theme_image_formatter($img_arr);
+                            $i++;
+                        ?>
+                        <li id="hpb-mobile-item-<?php print $i; ?>" class="hpb-mobile-item">
+                            <a href="<?php print $hpb_node->field_url['und'][0]['value']; ?>">
+                                <h2><?php print $hpb_node->title; ?></h2>
+                                <p><?php print $hpb_node->body['und'][0]['value']; ?></p>
+                                <?php //print $image_rotator; ?>
+                            </a>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+            
 		<?php endif; ?>
         
 
