@@ -278,7 +278,7 @@
 						background:#fff;
 						padding:10px;
 						margin-top:11px;
-						box-shadow:0 0 15px #ddd;
+						box-shadow:0 -20px 25px #EEE;
 					}
 					.wedding-will-start-in{
 						text-shadow:0px 1px #fff;
