@@ -250,48 +250,49 @@
             <?php if($node_timer): ?>
             	<style>
 					.timer-grayed{
-						color:#527080 !important;
+						color:#fff !important;
 						font-size:smaller !important;
 					}
 					.timer-focused{
-						color:#45A6F3 !important;
+						color:#00CCFF !important;
 						font-size:x-large !important;
 					}
 					.front-page-timer{
 						text-align:center;
 						margin:0;
 						padding:0;
-						background:#ddd;
+						background:#eee;
+						color:#bbb;
 					}
 					.front-page-timer:before{
 						content: '';
 						border-top: 1px solid lightGrey;
 						width: 100%;
 						border-bottom: 1px solid white;
-						box-shadow: 0px 3px 30px #BBB;
+						box-shadow: 0px 3px 30px #888;
 						display: block;
 					}
 					.wedding_ct_timer.mqc-timer{
 						margin:10px 0 0 !important;
 					}
 					.wedding-timer{
-						background:#333;
+						background:#4A4B53;
 						padding:10px;
 						margin-top:20px;
-						box-shadow:0 -20px 25px #EEE;
+						box-shadow: 0px 3px 20px #eee;
 					}
 					.wedding-will-start-in{
 						text-shadow:0px 1px #fff;
-						color:#999;
+						color:#bbb;
 					}
 					.wedding-will-start-in:after{
-						border-color: transparent transparent #333;
+						border-color: transparent transparent #4A4B53;
 						border-style: solid;
-						border-width: 15px;
+						border-width: 20px;
 						content: " ";
 						position:absolute;
 						left:50%;
-						margin:15px 0 0 -15px;
+						margin:5px 0 0 -20px;
 						padding:0;
 						width:auto;
 					}
