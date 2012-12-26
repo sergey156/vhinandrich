@@ -261,7 +261,7 @@
 						text-align:center;
 						margin:0;
 						padding:0;
-						background:#eee;
+						background:#ddd;
 					}
 					.front-page-timer:before{
 						content: '';
@@ -275,23 +275,23 @@
 						margin:10px 0 0 !important;
 					}
 					.wedding-timer{
-						background:#f7f7f7;
+						background:#333;
 						padding:10px;
 						margin-top:20px;
 						box-shadow:0 -20px 25px #EEE;
 					}
 					.wedding-will-start-in{
 						text-shadow:0px 1px #fff;
-						color:#bbb;
+						color:#999;
 					}
 					.wedding-will-start-in:after{
-						border-color: transparent transparent #f7f7f7;
+						border-color: transparent transparent #333;
 						border-style: solid;
 						border-width: 15px;
 						content: " ";
-						position: absolute;
-						right:50%;
-						margin:15px 0 0;
+						position:absolute;
+						left:50%;
+						margin:15px 0 0 -15px;
 						padding:0;
 						width:auto;
 					}
