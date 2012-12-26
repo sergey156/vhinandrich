@@ -4,7 +4,7 @@
 	drupal_add_css(path_to_theme() . '/../at_vhinandrich2/css/wedding_ct.responsive.css');
 	
 	$datetime = $node->field_date['und'][0]['value'];
-	$month = date('F',$datetime);
+	$month = strtoupper(date('F',$datetime));
 	$day = date('d',$datetime);
 	$day = "twenty-six";
 	$year = date('Y',$datetime);

@@ -6,8 +6,8 @@
   <header class="clearfix vhinrich-header" role="banner">
 
 	<div id="top-menu-bar">
-    	<div class="menu-up"><a href="#">▲</a></div>
-    	<div class="menu-down"><a href="#">▼</a></div>
+    	<div class="menu-up">▲</div>
+    	<div class="menu-down">▼</div>
         <div class="nav" id="primary-menu-bar"><nav class="clearfix">
         <?php 
             $main_menu = variable_get('menu_main_links_source', 'main-menu');
@@ -250,18 +250,18 @@
             <?php if($node_timer): ?>
             	<style>
 					.timer-grayed{
-						color:#999;
-						font-size:larger !important;
+						color:#527080 !important;
+						font-size:smaller !important;
 					}
 					.timer-focused{
-						color:#222;
-						font-size:large !important;
+						color:#45A6F3 !important;
+						font-size:x-large !important;
 					}
 					.front-page-timer{
 						text-align:center;
 						margin:0;
 						padding:0;
-						background:#fafafa;
+						background:#eee;
 					}
 					.front-page-timer:before{
 						content: '';
@@ -275,9 +275,9 @@
 						margin:10px 0 0 !important;
 					}
 					.wedding-timer{
-						background:#fff;
+						background:#f7f7f7;
 						padding:10px;
-						margin-top:11px;
+						margin-top:20px;
 						box-shadow:0 -20px 25px #EEE;
 					}
 					.wedding-will-start-in{
@@ -285,14 +285,15 @@
 						color:#bbb;
 					}
 					.wedding-will-start-in:after{
-						border-color: transparent transparent #fff;
+						border-color: transparent transparent #f7f7f7;
 						border-style: solid;
-						border-width: 10px;
+						border-width: 15px;
 						content: " ";
 						position: absolute;
-						right: 50%;
-						margin-top:15px;
-						width: 0;
+						right:50%;
+						margin:15px 0 0;
+						padding:0;
+						width:auto;
 					}
 				</style>
                 <div class="front-page-timer">
