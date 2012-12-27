@@ -277,15 +277,16 @@
 					}
 					.wedding-timer{
 						background:#4A4B53;
-						padding:10px;
+						padding:5px 0 25px;
 						margin-top:20px;
 						box-shadow: 0px 3px 20px #eee;
+						text-shadow:1px 1px 1px #111;
 					}
 					.wedding-will-start-in{
 						text-shadow:0px 1px #fff;
 						color:#bbb;
 					}
-					.wedding-will-start-in:after{
+					.wedding-will-start-in:before{
 						border-color: transparent transparent #4A4B53;
 						border-style: solid;
 						border-width: 20px;
@@ -295,6 +296,18 @@
 						margin:5px 0 0 -20px;
 						padding:0;
 						width:auto;
+					}
+					#vhinrich-mp-banner:before{
+						border-color: transparent transparent #EAEAEA;
+						border-style: solid;
+						border-width: 20px;
+						content: " ";
+						position:absolute;
+						left:50%;
+						margin:-59px 0 0 -20px;
+						padding:0;
+						width:auto;
+						box-shadow:none;
 					}
 				</style>
                 <div class="front-page-timer">
@@ -321,7 +334,7 @@
                             }
                         });
                     </script>
-        			<div class="wedding_ct_timer mqc-timer" style="font-size:larger">Loading timer...</div>
+        			<div class="wedding_ct_timer mqc-timer" style="font-size:larger"><span style="position:relative;z-index:99">Loading timer...</span></div>
                 </div>
             <?php endif; ?>
             
