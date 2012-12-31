@@ -35,7 +35,6 @@
 	.wedding_ct_title_container{
 	}
 	.wedding_ct_top_1_line{
-		border-bottom:4px solid #bbb;
 		width:100%;
 		margin: 60px auto 0;
 	}
@@ -78,7 +77,6 @@
 		font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
 		float:left;
 		color:#999;
-		border-left:2px dashed #A7A7A7;
 		margin:0 0 15px;
 	}
 	.wedding_ct_location_church{
@@ -92,22 +90,17 @@
 		letter-spacing:0;
 	}
 	.wedding_ct_top_2_line{
-		border-bottom:4px solid #bbb;
 		width:100%;
 		margin: 0 auto;
 	}
 	
 	
 	/* godparents */
-	.wedding_ct_godmothers{
-		float:none;
-		width:100%;	
-	}
-	.wedding_ct_godfathers{
+	.wedding_ct_godfathers, .wedding_ct_godmothers, .wedding_ct_brides_maid, .wedding_ct_grooms_men{
 		foat:none;
 		width:100%;
 	}
-	.wedding_ct_top_3 ul li{
+	.wedding_ct_top_3 ul li, .wedding_ct_top_4 ul li{
 		letter-spacing:0;
 		word-spacing:0;
 		font-size:16px;
@@ -116,7 +109,7 @@
 		display:block;
 		font-size:18px;
 	}
-	.wedding_ct_godparents_title{
+	.wedding_ct_godparents_title, .wedding_ct_entourage_title{
 		font-size:20px;
 		letter-spacing:0;
 	}
@@ -154,7 +147,6 @@
 	.wedding_ct_title_container{
 	}
 	.wedding_ct_top_1_line{
-		border-bottom:4px solid #bbb;
 		width:100%;
 		margin: 60px auto 0;
 	}
@@ -197,7 +189,6 @@
 		font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
 		float:left;
 		color:#999;
-		border-left:2px dashed #A7A7A7;
 		margin:0 0 15px;
 	}
 	.wedding_ct_location_church{
@@ -211,21 +202,16 @@
 		letter-spacing:0;
 	}
 	.wedding_ct_top_2_line{
-		border-bottom:4px solid #bbb;
 		width:100%;
 		margin: 0 auto;
 	}
 	
 	/* godparents */
-	.wedding_ct_godmothers{
-		float:none;
-		width:100%;	
-	}
-	.wedding_ct_godfathers{
+	.wedding_ct_godfathers, .wedding_ct_godmothers, .wedding_ct_brides_maid, .wedding_ct_grooms_men{
 		foat:none;
 		width:100%;
 	}
-	.wedding_ct_top_3 ul li{
+	.wedding_ct_top_3 ul li, .wedding_ct_top_4 ul li{
 		letter-spacing:0;
 		word-spacing:0;
 		font-size:16px;
@@ -234,7 +220,7 @@
 		display:block;
 		font-size:18px;
 	}
-	.wedding_ct_godparents_title{
+	.wedding_ct_godparents_title, .wedding_ct_entourage_title{
 		font-size:20px;
 		letter-spacing:0;
 	}
@@ -248,7 +234,7 @@
 		word-spacing:0;
 		font-size:18px;
 	}
-	.wedding_ct_godparents_title{
+	.wedding_ct_godparents_title, .wedding_ct_entourage_title{
 		font-size:20px;
 		letter-spacing:0;
 	}

@@ -72,9 +72,9 @@
 			<?php endforeach; ?>
         </div>
         <div style="clear:both"></div>
-        <div class="wedding_ct_top_2_line" style="border-bottom:1px dashed #eee"></div>
+        <!--<div class="wedding_ct_top_2_line" style="border-bottom:1px dashed #eee"></div>
         <div class="wedding_ct_timer mqc-timer">Loading timer...</div>
-        <div style="clear:both"></div>
+        <div style="clear:both"></div>-->
         <div class="wedding_ct_top_2_line"></div>
     </div>
     
@@ -105,22 +105,47 @@
         <div style="clear:both">
         </div>
     </div>
-    <!--<div class="wedding_ct_top_4">
+    <div class="wedding_ct_top_4">
     	<div class="wedding_ct_entourage_title">
         	<h1>ENTOURAGE</h1>
         </div>
-        <div class="wedding_ct_maid_of_honor">
-        	<h2>Maid of Honor</h2>
+        <div class="">
+        	<h3>Maid of Honor</h3>
             <div>
-            	<p><?php print $node->field_maid_of_honor['und'][0]['value']; ?></p>
+            	<ul>
+					<li><?php print $node->field_maid_of_honor['und'][0]['value']; ?></li>
+            	</ul>
             </div>
         </div>
-        <div class="wedding_ct_best_man">
-        	<h2>Best Man</h2>
+        <div class="">
+        	<h3>Best Man</h3>
             <div>
-            	<p><?php print $node->field_best_man['und'][0]['value']; ?></p>
+            	<ul>
+            	<li><?php print $node->field_best_man['und'][0]['value']; ?></li>
+            	</ul>
             </div>
         </div>
         <div style="clear:both"></div>
-    </div>-->
+        <div class="wedding_ct_brides_maid">
+        	<h3>Bride's Maid</h3>
+            <div>
+            	<ul>
+            	<?php foreach($node->field_bridesmaid['und'] as $item): ?>
+            		<li><?php print $item['value']; ?></li>
+                <?php endforeach; ?>
+                </ul>
+            </div>
+        </div>
+        <div class="wedding_ct_grooms_men">
+        	<h3>Groom's Men</h3>
+            <div>
+            	<ul>
+            	<?php foreach($node->field_groomsmen['und'] as $item): ?>
+            		<li><?php print $item['value']; ?></li>
+                <?php endforeach; ?>
+                </ul>
+            </div>
+        </div>
+        <div style="clear:both"></div>
+    </div>
 </div>
