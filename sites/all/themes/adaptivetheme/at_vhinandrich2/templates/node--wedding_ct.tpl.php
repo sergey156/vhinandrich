@@ -146,6 +146,55 @@
                 </ul>
             </div>
         </div>
+        <div>
+        	<h3>Candle</h3>
+            <div>
+            	<ul style="display:inline">
+                	<?php foreach($node->field_candle['und'] as $item): ?>
+                    	<li style="display:inline-block;margin:0 20px"><?php print $item['value']; ?></li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+        </div>
+        <div>
+        	<h3>Cord</h3>
+            <div>
+            	<ul style="display:inline">
+                	<?php foreach($node->field_cord['und'] as $item): ?>
+                    	<li style="display:inline-block;margin:0 20px"><?php print $item['value']; ?></li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+        </div>
+        <div>
+        	<h3>Veil</h3>
+            <div>
+            	<ul style="display:inline">
+                	<?php foreach($node->field_veil['und'] as $item): ?>
+                    	<li style="display:inline-block;margin:0 20px"><?php print $item['value']; ?></li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <div style="margin:10px 0">
+            	<ul style="display:inline">
+                    	<li style="display:inline-block;margin:0 20px"><h3>Bible Bearer</h3><?php print $node->field_bible_bearer['und'][0]['value']; ?></li>
+                    	<li style="display:inline-block;margin:0 20px"><h3>Coin Bearer</h3><?php print $node->field_coin_bearer['und'][0]['value']; ?></li>
+                    	<li style="display:inline-block;margin:0 20px"><h3>Ring Bearer</h3><?php print $node->field_ring_bearer['und'][0]['value']; ?></li>
+                </ul>
+            </div>
+        </div>
+        <div>
+        	<h3>Flower Girls</h3>
+            <div>
+            	<ul style="display:inline">
+                	<?php foreach($node->field_flower_girls['und'] as $item): ?>
+                    	<li style="display:inline-block;margin:0 20px"><?php print $item['value']; ?></li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+        </div>
         <div style="clear:both"></div>
     </div>
 </div>
