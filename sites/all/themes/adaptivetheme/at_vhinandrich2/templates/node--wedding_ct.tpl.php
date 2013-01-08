@@ -37,7 +37,7 @@
 			});
 		}
 		
-		jQuery('.map-link').click(function(){
+		jQuery('.map-link-x').click(function(){
 			var nid = jQuery(this).attr('id');
 			nid = nid.replace('map-link-','');
 			//alert(jQuery('#map-viewer-' + nid).html());
@@ -83,7 +83,7 @@
                 		View map
                     </div>
                 </div>
-                <h3 class="wedding_ct_location_church"><a id="map-link-<?php print $node_loc['node']->vid; ?>" class="map-link" href="<?php //print drupal_get_path_alias('node/' . $node_loc['node']->vid); ?>#"><?php print $node_loc['node']->title; ?></a></h3>
+                <h3 class="wedding_ct_location_church"><a id="map-link-<?php print $node_loc['node']->vid; ?>" class="map-link" href="<?php print drupal_get_path_alias('node/' . $node_loc['node']->vid); ?>#"><?php print $node_loc['node']->title; ?></a></h3>
                 <h3><?php print $node_loc['node']->field_location['und'][0]['street'];?>, <?php print $node_loc['node']->field_location['und'][0]['city']; ?>, <?php print $node_loc['node']->field_location['und'][0]['country_name']; ?></h3>
 				<div class="map-viewer" id="map-viewer-<?php print $node_loc['node']->vid; ?>" style="position:absolute;top:0;left:0;width:100%;visibility:hidden">
                 	<div class="map-viewer-wrapper">
