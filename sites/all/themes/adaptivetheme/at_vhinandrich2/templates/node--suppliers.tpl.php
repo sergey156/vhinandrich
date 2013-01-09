@@ -1,39 +1,10 @@
+<?php
+	drupal_add_css(path_to_theme() . '/../at_vhinandrich2/css/suppliers.css');
+	drupal_add_css(path_to_theme() . '/../at_vhinandrich2/css/suppliers.responsive.css');
+?>
+
 <style>
-	.suppliers{
-		list-style:none;
-		text-align:center;
-		margin:0 auto;
-	}
-	.suppliers li{
-		display:inline;
-		margin:0 10px;
-	}
-	.supplier-item{
-		display:inline-block;
-		vertical-align:top;
-	}
-	.supplier-type{
-		font-size:small;
-		color:#9AC2C5;
-		text-transform:uppercase;
-		margin:-8px 0 10px;
-		padding:0;
-	}
-	.supplier-name{
-		font-size:xx-large;
-		color:#5BA2AF;
-		font-family:Georgia, "Times New Roman", Times, serif;
-	}
-	.suppliers-title{
-		text-align:center;
-		border-bottom:1px dashed #ddd;
-		color:#333;
-		font-size:80px;
-	}
-	.suppliers-list{
-		margin-top:20px;
-	}
-</style>
+	</style>
 <h1 class="suppliers-title"><?php print $node->title; ?></h1>
 <div class="suppliers-list">
     <ul class="suppliers">
@@ -43,6 +14,7 @@
                 <div class="supplier-name"><?php print $node->field_supplier_name['und'][$i]['value']; ?></div>
                 <div class="supplier-type"><?php print $node->field_type['und'][$i]['value']; ?></div>
                 <div class="supplier-logo">
+                <?php if(isset($node->field_supplier_logo['und'][$i])): ?>
                 <?php
                     $tmp_node_img = node_load($node->field_supplier_logo['und'][$i]['nid']);
                     //dsm($tmp_node_img);
@@ -54,6 +26,7 @@
                     $img = theme_image_formatter($img_arr);
                     print $img;
                 ?>
+                <?php endif; ?>
                 </div>
                 <div class="supplier-website"><a href="http://<?php print $node->field_supplier_website['und'][$i]['value']; ?>" target="new"><?php print $node->field_supplier_website['und'][$i]['value']; ?></a></div>
             </div>

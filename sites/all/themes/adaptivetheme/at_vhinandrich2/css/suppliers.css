@@ -1,0 +1,34 @@
+.suppliers{
+	list-style:none;
+	text-align:center;
+	margin:0 auto;
+}
+.suppliers li{
+	display:inline;
+	margin:0 10px;
+}
+.supplier-item{
+	display:inline-block;
+	vertical-align:top;
+}
+.supplier-type{
+	font-size:small;
+	color:#9AC2C5;
+	text-transform:uppercase;
+	margin:-8px 0 10px;
+	padding:0;
+}
+.supplier-name{
+	font-size:xx-large;
+	color:#5BA2AF;
+	font-family:Georgia, "Times New Roman", Times, serif;
+}
+.suppliers-title{
+	text-align:center;
+	border-bottom:1px dashed #ddd;
+	color:#333;
+	font-size:80px;
+}
+.suppliers-list{
+	margin-top:20px;
+}
