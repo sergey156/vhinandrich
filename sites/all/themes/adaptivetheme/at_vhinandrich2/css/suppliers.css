@@ -32,7 +32,7 @@
 .suppliers-list{
 	margin-top:20px;
 }
-.supplier-name:after {
+/*.supplier-name:after {
     color: #C7D9DF;
     content: "•";
     margin: 0 5px;
@@ -41,7 +41,7 @@
     color: #C7D9DF;
     content: "•";
     margin: 0 5px;
-}
+}*/
 .supplier-website{
 	margin:-10px 0 10px;
 }
