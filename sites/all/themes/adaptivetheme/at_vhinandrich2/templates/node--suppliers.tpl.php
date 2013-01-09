@@ -11,8 +11,8 @@
     <?php for($i=0;$i<sizeof($node->field_type['und']);$i++): ?>
         <li>
         	<div class="supplier-item">
+            	<div class="supplier-type"><?php print $node->field_type['und'][$i]['value']; ?></div>
                 <div class="supplier-name"><?php print $node->field_supplier_name['und'][$i]['value']; ?></div>
-                <div class="supplier-type"><?php print $node->field_type['und'][$i]['value']; ?></div>
                 <div class="supplier-logo">
                 <?php if(isset($node->field_supplier_logo['und'][$i])): ?>
                 <?php
