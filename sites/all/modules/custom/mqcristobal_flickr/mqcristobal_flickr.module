@@ -131,7 +131,7 @@ function mqc_flickr_import_sets(){
 				$node->field_image_reference['und'][]['nid'] = $photo_node->nid;
 			}
 			$node->title = $set['title']['_content'];
-			$node->body = $set['description']['_content'];
+			$node->body['und'][] = $set['description']['_content'];
 			$node->language = LANGUAGE_NONE;
 			$node->field_flickr_set_id['und'][]['value'] = $set['id'];
 			node_save($node);
