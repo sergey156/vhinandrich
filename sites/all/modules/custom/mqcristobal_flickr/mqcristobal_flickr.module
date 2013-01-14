@@ -188,6 +188,9 @@ function _create_images_from_set($setid){
 			$path = system_retrieve_file($url, 'public://' . drupal_basename($url) . '/', TRUE);
 			//dsm($path);
 			
+			//get photo info for the description
+			$photo_info_response = flickr_photo_get_info($photo['id']);
+			
 			$node = new stdClass();
 			$node->type = variable_get('mqc_image_content_type', null);
 			node_object_prepare($node);
@@ -198,6 +201,16 @@ function _create_images_from_set($setid){
 			node_save($node);
 			$nodes[] = $node;
 			//dsm($node);
+		}else{	
+			//get photo info for the description
+			$photo_info_response = flickr_photo_get_info($photo['id']);
+		
+			$node = node_load($nid);
+			$node->title = $photo['title'];
+			$node->body = $photo_info_response['description']['_content'];
+			node_save($node);
+			$nodes[] = $node;
+			//$node->body = 
 		}
 	}
 	return $nodes;
