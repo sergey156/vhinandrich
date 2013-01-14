@@ -351,3 +351,7 @@ header[role=banner],
 	box-shadow: 0px 3px 30px #BBB;
 	display: block;
 }
+
+.field-items{
+	padding:10px 0;
+}
