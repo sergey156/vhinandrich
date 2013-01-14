@@ -207,7 +207,7 @@ function _create_images_from_set($setid){
 		
 			$node = node_load($nid);
 			$node->title = $photo['title'];
-			$node->body = $photo_info_response['description']['_content'];
+			$node->body['und'][] = $photo_info_response['description']['_content'];
 			node_save($node);
 			$nodes[] = $node;
 			//$node->body = 
