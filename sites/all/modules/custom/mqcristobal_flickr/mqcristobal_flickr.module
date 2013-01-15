@@ -204,11 +204,14 @@ function _create_images_from_set($setid){
 		}else{	
 			//get photo info for the description
 			$photo_info_response = flickr_photo_get_info($photo['id']);
-		
+			
 			$node = node_load($nid);
 			$node->title = $photo['title'];
-			$node->body['und'][] = $photo_info_response['description']['_content'];
+			$node->body['und'][0]['format'] = 'full_html';
+			$node->body['und'][0]['summary'] = $photo_info_response['description']['_content'];
+			$node->body['und'][0]['value'] = $photo_info_response['description']['_content'];
 			node_save($node);
+			
 			$nodes[] = $node;
 			//$node->body = 
 		}
