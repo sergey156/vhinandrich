@@ -28,8 +28,16 @@ jQuery(document).ready(function(e) {
 				jQuery('#logo a img').css('margin-bottom', mar_bot);
 			}
 		}else{
-			jQuery('#logo a img').css('margin-bottom', max_logo_mar_bot);	
+			jQuery('#logo a img').css('margin-bottom', max_logo_mar_bot);
 		}
+		
+		var mar_bot_pct = 90 + mar_bot;
+		if(mar_bot_pct < 100){
+			jQuery('#logo a img').css('opacity', mar_bot_pct * .01);
+		}else{
+			jQuery('#logo a img').css('opacity', 1);
+		}
+		
 	});
 	
 	jQuery(window).resize(function(){
