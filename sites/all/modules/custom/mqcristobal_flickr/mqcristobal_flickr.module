@@ -212,7 +212,7 @@ function _create_images_from_set($setid){
 			$node->body['und'][0]['value'] = $photo_info_response['description']['_content'];
 			node_save($node);
 			
-			$nodes[] = $node;
+			//$nodes[] = $node;
 			//$node->body = 
 		}
 	}
