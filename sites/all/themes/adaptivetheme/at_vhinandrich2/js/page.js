@@ -202,12 +202,6 @@ jQuery(document).ready(function(e) {
 			hpr_next_active_id = parseInt(hpr_active_id) + parseInt(1);
 		}
 		
-		jQuery('.vhinrich-mp-rotator .hpr-item').removeClass('active');
-		jQuery('.vhinrich-mp-rotator #hpr-item-' + hpr_active_id).addClass('active');
-		
-		jQuery('.vhinrich-mp-rotator-nav .hpr-item .nav-item').removeClass('active');
-		jQuery('.vhinrich-mp-rotator-nav #hpr-item-nav-' + hpr_active_id + ' .nav-item').addClass('active');
-		
 		jQuery('.vhinrich-mp-rotator-active').html('');
 		
 		var hpr_next_active_id = hpr_active_id;
@@ -232,6 +226,14 @@ jQuery(document).ready(function(e) {
 		{
 			opacity:0
 		},1000,function(){
+			
+			
+			jQuery('.vhinrich-mp-rotator .hpr-item').removeClass('active');
+			jQuery('.vhinrich-mp-rotator #hpr-item-' + hpr_active_id).addClass('active');
+			
+			jQuery('.vhinrich-mp-rotator-nav .hpr-item .nav-item').removeClass('active');
+			jQuery('.vhinrich-mp-rotator-nav #hpr-item-nav-' + hpr_active_id + ' .nav-item').addClass('active');
+			
 			
 			jQuery('.vhinrich-mp-rotator .hpr-item').removeClass('active');
 			jQuery('.vhinrich-mp-rotator #hpr-item-' + hpr_active_id).addClass('active');
@@ -259,7 +261,7 @@ jQuery(document).ready(function(e) {
 			jQuery('.vhinrich-mp-rotator-active .hpr-item').css('z-index',0);
 			jQuery('.vhinrich-mp-rotator-active .hpr-item.active').css('z-index',1);
 			
-			
+			clearInterval(hpr_timer);
 			hpr_timer = setInterval('hpr_slide()', hpr_interval);
 		});
     });
