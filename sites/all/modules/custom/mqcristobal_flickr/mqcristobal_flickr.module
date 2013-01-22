@@ -130,6 +130,16 @@ function mqc_flickr_import_sets(){
 			foreach($nodes as $photo_node){
 				$node->field_image_reference['und'][]['nid'] = $photo_node->nid;
 			}
+			$new_nid_list = array();
+			foreach($node->field_image_reference['und'] as $nids){
+				if(!in_array($nids['nid'], $new_nid_list)){
+					$new_nid_list[] = $nids['nid'];
+				}
+			}
+			$node->field_image_reference['und'] = array();
+			foreach($new_nid_list as $nid){
+				$node->field_image_reference['und'][]['nid'] = $nid;
+			}
 			$node->title = $set['title']['_content'];
 			$node->body['und'][] = $set['description']['_content'];
 			$node->language = LANGUAGE_NONE;
@@ -142,6 +152,16 @@ function mqc_flickr_import_sets(){
 			$nodes = _create_images_from_set($set['id']);
 			foreach($nodes as $photo_node){
 				$node->field_image_reference['und'][]['nid'] = $photo_node->nid;
+			}
+			$new_nid_list = array();
+			foreach($node->field_image_reference['und'] as $nids){
+				if(!in_array($nids['nid'], $new_nid_list)){
+					$new_nid_list[] = $nids['nid'];
+				}
+			}
+			$node->field_image_reference['und'] = array();
+			foreach($new_nid_list as $nid){
+				$node->field_image_reference['und'][]['nid'] = $nid;
 			}
 			node_save($node); //no update needed 16-09-2012
 			
@@ -212,7 +232,7 @@ function _create_images_from_set($setid){
 			$node->body['und'][0]['value'] = $photo_info_response['description']['_content'];
 			node_save($node);
 			
-			//$nodes[] = $node;
+			$nodes[] = $node;
 			//$node->body = 
 		}
 	}
