@@ -357,5 +357,5 @@ header[role=banner],
 }
 
 #edit-captcha-form{
-	overflow:scroll; /*not sure if correct.. don't want to mess with my responsive theme :)*/
+	overflow:auto; /*not sure if correct.. don't want to mess with my responsive theme :)*/
 }
