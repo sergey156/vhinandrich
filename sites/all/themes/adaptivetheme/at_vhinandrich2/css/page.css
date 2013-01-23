@@ -355,3 +355,7 @@ header[role=banner],
 .field-items{
 	padding:10px 0;
 }
+
+#edit-captcha-form{
+	overflow:hidden; /*not sure if correct.. don't want to mess with my responsive theme :)*/
+}
