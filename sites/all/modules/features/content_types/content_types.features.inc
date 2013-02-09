@@ -75,6 +75,14 @@ function content_types_node_info() {
       'title_label' => t('Title'),
       'help' => '',
     ),
+    'suppliers' => array(
+      'name' => t('Suppliers'),
+      'base' => 'node_content',
+      'description' => t('Suppliers'),
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
     'video' => array(
       'name' => t('Video'),
       'base' => 'node_content',

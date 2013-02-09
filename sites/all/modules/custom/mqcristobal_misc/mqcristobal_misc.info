@@ -1,0 +1,12 @@
+name = mqc Misc
+description = mqc Misc.
+package = MQC Custom
+core = 7.x
+
+files[] = mqcristobal_misc.module
+; Information added by drupal.org packaging script on 2012-02-10
+version = "7.x-1.x-dev"
+core = "7.x"
+project = "mqcristobal_misc"
+datestamp = "1328832859"
+

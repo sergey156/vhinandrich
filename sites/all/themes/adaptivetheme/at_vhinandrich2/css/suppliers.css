@@ -1,0 +1,50 @@
+.suppliers{
+	list-style:none;
+	text-align:center;
+	margin:0 auto;
+}
+.suppliers li{
+	/*display:inline;*/
+	margin:0 10px;
+}
+.supplier-item{
+	vertical-align:top;
+}
+.supplier-type{
+	font-size:small;
+	color:#5F747A;
+	text-transform:uppercase;
+	margin:10px 0 -10px;
+	padding:0;
+}
+.supplier-name{
+	font-size:xx-large;
+	color:#5BA2AF;
+	font-family:Georgia, "Times New Roman", Times, serif;
+}
+.suppliers-title{
+	text-align:center;
+	border-bottom:1px dashed #ddd;
+	color:#333;
+	font-size:80px;
+}
+.suppliers-list{
+	margin-top:20px;
+}
+/*.supplier-name:after {
+    color: #C7D9DF;
+    content: "•";
+    margin: 0 5px;
+}
+.supplier-name:before {
+    color: #C7D9DF;
+    content: "•";
+    margin: 0 5px;
+}*/
+.supplier-website{
+	margin:-10px 0 10px;
+}
+.supplier-website a{
+	font-size:12px;
+	color:#697A86;
+}
