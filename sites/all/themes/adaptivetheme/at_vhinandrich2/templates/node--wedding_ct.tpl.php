@@ -174,7 +174,7 @@
             <div>
             	<ul style="display:inline">
                 	<?php foreach($node->field_candle['und'] as $item): ?>
-                    	<li style="display:inline-block;margin:0 20px"><?php print $item['value']; ?></li>
+                    	<li style="display:inline;margin:0 20px"><?php print $item['value']; ?></li>
                     <?php endforeach; ?>
                 </ul>
             </div>
@@ -184,7 +184,7 @@
             <div>
             	<ul style="display:inline">
                 	<?php foreach($node->field_cord['und'] as $item): ?>
-                    	<li style="display:inline-block;margin:0 20px"><?php print $item['value']; ?></li>
+                    	<li style="display:inline;margin:0 20px"><?php print $item['value']; ?></li>
                     <?php endforeach; ?>
                 </ul>
             </div>
@@ -194,7 +194,7 @@
             <div>
             	<ul style="display:inline">
                 	<?php foreach($node->field_veil['und'] as $item): ?>
-                    	<li style="display:inline-block;margin:0 20px"><?php print $item['value']; ?></li>
+                    	<li style="display:inline;margin:0 20px"><?php print $item['value']; ?></li>
                     <?php endforeach; ?>
                 </ul>
             </div>
@@ -213,7 +213,7 @@
             <div>
             	<ul style="display:inline">
                 	<?php foreach($node->field_flower_girls['und'] as $item): ?>
-                    	<li style="display:inline-block;margin:0 20px"><?php print $item['value']; ?></li>
+                    	<li style="display:inline;margin:0 20px"><?php print $item['value']; ?></li>
                     <?php endforeach; ?>
                 </ul>
             </div>

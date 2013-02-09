@@ -34,33 +34,9 @@
 .wedding_ct_title_container{
 }
 .wedding_ct_top_1_line{
-	border-bottom:2px solid #eee;
+	border-bottom:4px solid #bbb;
 	width:100%;
 	margin: 0 auto;
-	max-width:99%;
-}
-.wedding_ct_view_map_box{
-	position:absolute;
-	right:25%;
-	opacity:0;
-}
-.wedding_ct_view_map_content{
-	padding:10px;
-	border-radius:8px;
-	background:#444;
-	color:#eee;
-	margin-top:-45px;
-	opacity:1;
-}
-.wedding_ct_view_map_content:after{
-	border-color: #444 transparent transparent transparent;
-	border-style: solid;
-	border-width: 10px 10px 0px 0px;
-	width: 0px;
-	position: absolute;
-	top: -6px;
-	right: 25%;
-	content:' ';
 }
 
 .wedding_ct_title2_container{
@@ -93,35 +69,28 @@
 .wedding_ct_date_year{
 	font-size:40px;
 }
-.wedding_ct_timer{
-	clear:both;
-	margin-bottom:5px;
-}
 
 .wedding_ct_location_container{
 	width:69%;
 	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
 	float:left;
 	color:#999;
-	border-left:1px dashed #eee;
+	border-left:2px dashed #A7A7A7;
 	margin:0 0 15px;
-	min-height:170px;
 }
 .wedding_ct_location_church{
 	font-size:30px;
 	color:#058FCF;	
 	letter-spacing:.5em;
-	text-transform:uppercase;
 }
 .wedding_ct_location_reception{
 	font-size:30px;
-	color:#058FCF;
+	color:#058FCF;	
 }
 .wedding_ct_top_2_line{
-	border-bottom:2px solid #eee;
+	border-bottom:4px solid #bbb;
 	width:100%;
 	margin: 0 auto;
-	max-width:99%;
 }
 
 .wedding_ct_top_3{
@@ -131,7 +100,7 @@
 
 .wedding_ct_godparents_title{
 	font-size:30px;
-	color:#54548F;
+	color:#A06AA0;
 	letter-spacing:20px;
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
@@ -168,11 +137,12 @@
 	color:#555;
 	padding:0;
 	margin:0;
+	letter-spacing:5px;
 	word-spacing:10px;
 	margin:0;
 	padding:0;
 }
-/*--.wedding_ct_top_3 ul li:before{
+.wedding_ct_top_3 ul li:before{
 	content:"•";
 	margin-right:10px;
 	color:#bbb;
@@ -181,7 +151,7 @@
 	content:"•";
 	margin-left:10px;
 	color:#bbb;
-}--*/
+}
 .wedding_ct_top_3_line{
 	border-bottom:2px solid #ccc;
 	width:100%;
@@ -191,29 +161,12 @@
 
 .wedding_ct_top_4{
 	background:#fff;
-	font-size:20px;
-	color:#555;
-	padding:0;
-	margin:0;
-	word-spacing:5px;
-}
-.wedding_ct_top_4 ul{
-	list-style:none;
-	margin:0;
-	padding:0;
-}
-.wedding_ct_top_4 h3{
-	color:#DB7CB9;
-	letter-spacing: 2px;
-	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-	font-size:18px;
-	text-transform:uppercase;
 }
 .wedding_ct_entourage_title{
+	font-size: 32px;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	color: #54548F;
-    font-family: "Lucida Sans Unicode","Lucida Grande",sans-serif;
-    font-size: 30px;
-    letter-spacing: 20px;
+	letter-spacing: 10px;
 }
 .wedding_ct_brides_maid{
 	float:left;
@@ -221,10 +174,6 @@
 }
 .wedding_ct_maid_of_honor{
 	float:left;	
-	width:50%;
-}
-.wedding_ct_grooms_men{
-	float:left;
 	width:50%;
 }
 .wedding_ct_best_man{

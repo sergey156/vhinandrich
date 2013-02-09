@@ -130,18 +130,8 @@ function mqc_flickr_import_sets(){
 			foreach($nodes as $photo_node){
 				$node->field_image_reference['und'][]['nid'] = $photo_node->nid;
 			}
-			$new_nid_list = array();
-			foreach($node->field_image_reference['und'] as $nids){
-				if(!in_array($nids['nid'], $new_nid_list)){
-					$new_nid_list[] = $nids['nid'];
-				}
-			}
-			$node->field_image_reference['und'] = array();
-			foreach($new_nid_list as $nid){
-				$node->field_image_reference['und'][]['nid'] = $nid;
-			}
 			$node->title = $set['title']['_content'];
-			$node->body['und'][] = $set['description']['_content'];
+			$node->body = $set['description']['_content'];
 			$node->language = LANGUAGE_NONE;
 			$node->field_flickr_set_id['und'][]['value'] = $set['id'];
 			node_save($node);
@@ -152,16 +142,6 @@ function mqc_flickr_import_sets(){
 			$nodes = _create_images_from_set($set['id']);
 			foreach($nodes as $photo_node){
 				$node->field_image_reference['und'][]['nid'] = $photo_node->nid;
-			}
-			$new_nid_list = array();
-			foreach($node->field_image_reference['und'] as $nids){
-				if(!in_array($nids['nid'], $new_nid_list)){
-					$new_nid_list[] = $nids['nid'];
-				}
-			}
-			$node->field_image_reference['und'] = array();
-			foreach($new_nid_list as $nid){
-				$node->field_image_reference['und'][]['nid'] = $nid;
 			}
 			node_save($node); //no update needed 16-09-2012
 			
@@ -208,9 +188,6 @@ function _create_images_from_set($setid){
 			$path = system_retrieve_file($url, 'public://' . drupal_basename($url) . '/', TRUE);
 			//dsm($path);
 			
-			//get photo info for the description
-			$photo_info_response = flickr_photo_get_info($photo['id']);
-			
 			$node = new stdClass();
 			$node->type = variable_get('mqc_image_content_type', null);
 			node_object_prepare($node);
@@ -221,19 +198,6 @@ function _create_images_from_set($setid){
 			node_save($node);
 			$nodes[] = $node;
 			//dsm($node);
-		}else{	
-			//get photo info for the description
-			$photo_info_response = flickr_photo_get_info($photo['id']);
-			
-			$node = node_load($nid);
-			$node->title = $photo['title'];
-			$node->body['und'][0]['format'] = 'full_html';
-			$node->body['und'][0]['summary'] = $photo_info_response['description']['_content'];
-			$node->body['und'][0]['value'] = $photo_info_response['description']['_content'];
-			node_save($node);
-			
-			$nodes[] = $node;
-			//$node->body = 
 		}
 	}
 	return $nodes;

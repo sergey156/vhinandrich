@@ -72,7 +72,7 @@
 h1#page-title {
 	color: #6D6D6D;
 	font-size: 24px;
-	margin: 0 10px 5px;
+	margin: 20px 10px 5px;
 	text-transform: uppercase;
 	text-shadow: 0 1px 0px #EEE;
 }
@@ -307,13 +307,12 @@ header[role=banner],
 
 /* homepage banner */
 #vhinrich-mp-banner{
-	/*border-top:1px dashed #D1D1D1;*/
+	border-top:1px dashed #D1D1D1;
 }
 #vhinrich-mp-banner ul{
 	text-align: center;
-	margin:20px auto 0;
+	margin:20px 0 0 0;
 	padding:0;
-	max-width:1080px;
 }
 #vhinrich-mp-banner ul li{
 	display:inline;
@@ -345,17 +344,9 @@ header[role=banner],
 }
 #vhinrich-mp-banner:before {
 	content: '';
-	border-top: 1px solid #B8B8B8;
+	border-top: 1px dashed #B8B8B8;
 	width: 100%;
-	border-bottom: 1px solid white;
+	border-bottom: 1px dashed white;
 	box-shadow: 0px 3px 30px #BBB;
 	display: block;
-}
-
-.field-items{
-	padding:10px 0;
-}
-
-#edit-captcha-form{
-	overflow:auto; /*not sure if correct.. don't want to mess with my responsive theme :)*/
 }
