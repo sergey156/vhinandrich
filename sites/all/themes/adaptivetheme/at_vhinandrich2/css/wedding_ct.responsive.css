@@ -114,7 +114,7 @@
 		letter-spacing:0;
 	}
 	.entourage-basic-list-item{
-		display:inline-block;
+		display:block;
 	}
 }
 
@@ -228,7 +228,7 @@
 		letter-spacing:0;
 	}
 	.entourage-basic-list-item{
-		display:inline-block;
+		display:block;
 	}
 }
 
@@ -245,7 +245,7 @@
 		letter-spacing:0;
 	}
 	.entourage-basic-list-item{
-		display:inline-block;
+		display:block;
 	}
 }
 
