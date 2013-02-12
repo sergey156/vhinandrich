@@ -174,7 +174,7 @@
             <div>
             	<ul style="display:inline">
                 	<?php foreach($node->field_candle['und'] as $item): ?>
-                    	<li style="display:inline;margin:0 20px"><?php print $item['value']; ?></li>
+                    	<li class="entourage-basic-list-item"><?php print $item['value']; ?></li>
                     <?php endforeach; ?>
                 </ul>
             </div>
@@ -184,7 +184,7 @@
             <div>
             	<ul style="display:inline">
                 	<?php foreach($node->field_cord['und'] as $item): ?>
-                    	<li style="display:inline;margin:0 20px"><?php print $item['value']; ?></li>
+                    	<li class="entourage-basic-list-item"><?php print $item['value']; ?></li>
                     <?php endforeach; ?>
                 </ul>
             </div>
@@ -194,7 +194,7 @@
             <div>
             	<ul style="display:inline">
                 	<?php foreach($node->field_veil['und'] as $item): ?>
-                    	<li style="display:inline;margin:0 20px"><?php print $item['value']; ?></li>
+                    	<li class="entourage-basic-list-item"><?php print $item['value']; ?></li>
                     <?php endforeach; ?>
                 </ul>
             </div>
@@ -202,9 +202,9 @@
         <div>
             <div style="margin:10px 0">
             	<ul style="display:inline">
-                    	<li style="display:inline-block;margin:0 20px"><h3>Bible Bearer</h3><?php print $node->field_bible_bearer['und'][0]['value']; ?></li>
-                    	<li style="display:inline-block;margin:0 20px"><h3>Coin Bearer</h3><?php print $node->field_coin_bearer['und'][0]['value']; ?></li>
-                    	<li style="display:inline-block;margin:0 20px"><h3>Ring Bearer</h3><?php print $node->field_ring_bearer['und'][0]['value']; ?></li>
+                    	<li class="entourage-basic-list-item" style="display:inline-block"><h3>Bible Bearer</h3><?php print $node->field_bible_bearer['und'][0]['value']; ?></li>
+                    	<li class="entourage-basic-list-item" style="display:inline-block"><h3>Coin Bearer</h3><?php print $node->field_coin_bearer['und'][0]['value']; ?></li>
+                    	<li class="entourage-basic-list-item" style="display:inline-block"><h3>Ring Bearer</h3><?php print $node->field_ring_bearer['und'][0]['value']; ?></li>
                 </ul>
             </div>
         </div>
@@ -213,7 +213,7 @@
             <div>
             	<ul style="display:inline">
                 	<?php foreach($node->field_flower_girls['und'] as $item): ?>
-                    	<li style="display:inline;margin:0 20px"><?php print $item['value']; ?></li>
+                    	<li class="entourage-basic-list-item"><?php print $item['value']; ?></li>
                     <?php endforeach; ?>
                 </ul>
             </div>

@@ -113,6 +113,9 @@
 		font-size:20px;
 		letter-spacing:0;
 	}
+	.entourage-basic-list-item{
+		display:inline-block;
+	}
 }
 
 
@@ -224,6 +227,9 @@
 		font-size:20px;
 		letter-spacing:0;
 	}
+	.entourage-basic-list-item{
+		display:inline-block;
+	}
 }
 
 /* Tablet portrait */
@@ -238,4 +244,12 @@
 		font-size:20px;
 		letter-spacing:0;
 	}
+	.entourage-basic-list-item{
+		display:inline-block;
+	}
+}
+
+/* Tablet landscape */
+@media only screen and (min-width:769px) and (max-width:1024px) {
+	
 }
