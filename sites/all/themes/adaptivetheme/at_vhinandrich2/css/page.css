@@ -323,7 +323,7 @@ header[role=banner],
 	content: '';
 	border-left: 1px solid #D1D1D1;
 	border-right: 1px solid #F3F3F3;
-	margin: 0 5px;
+	margin: 0 5px 15px;
 	padding:0;
 	height: 80px;
 	display: inline-block;
