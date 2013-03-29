@@ -415,7 +415,55 @@ jQuery(document).ready(function(e) {
 function swipeMobile(){
 	jQuery(".vhinrich-mp-rotator-mobile").swipe({
 		//Generic swipe handler for all directions
-		swipe:function(event, direction, distance, duration, fingerCount) {
+		swipeLeft:function(event, direction, distance, duration, fingerCount) {
+			try{
+				
+			clearInterval(hpr_timer);
+			
+			if(direction=='left'||direction=='right'){
+			$active_item = jQuery('.vhinrich-mp-rotator-mobile .hpr-item.active');
+			$active_item_id = jQuery($active_item).attr('id');
+			$active_item_id = parseInt($active_item_id.replace('hpr-mobile-item-',''));
+			//console.log('test',$active_item.position().left);
+			//console.log('test',$rotator_width * (($active_item_id-1) * -1));
+			$dont_animate = false;
+			$item_add = 1;
+			if(direction=='left'){
+				if($active_item_id==jQuery('.vhinrich-mp-rotator-mobile').children().length){
+					$dont_animate = true;
+				}else{
+					$item_add = 1;
+				}
+				
+			}
+			else if(direction=='right'){
+				if($active_item_id==1){
+					$dont_animate = true;
+				}else{
+					$item_add = -1;
+				}
+			}
+			
+			if($dont_animate==false){
+				jQuery('.vhinrich-mp-rotator-mobile .hpr-item').removeClass('active');
+				jQuery('.vhinrich-mp-rotator-mobile #hpr-mobile-item-' + ($active_item_id+$item_add)).addClass('active');
+				
+				jQuery('.vhinrich-mp-rotator-mobile-nav .hpr-item').removeClass('active');
+				jQuery('.vhinrich-mp-rotator-mobile-nav .hpr-item .nav-item').removeClass('active');
+				jQuery('.vhinrich-mp-rotator-mobile-nav #hpr-item-nav-' + ($active_item_id+$item_add)).addClass('active');
+				jQuery('.vhinrich-mp-rotator-mobile-nav .hpr-item.active .nav-item').addClass('active');
+				
+				$new_active_item = jQuery('.vhinrich-mp-rotator-mobile .hpr-item.active');
+				jQuery('.vhinrich-mp-rotator-mobile').stop().animate(
+					{left:($new_active_item.position().left * -1)},'fast',function(){
+						hpr_timer = setInterval('hpr_slide()', hpr_interval);
+					}
+				);
+			}
+			}
+			}catch(e){}
+		},
+		swipeRight:function(event, direction, distance, duration, fingerCount) {
 			try{
 				
 			clearInterval(hpr_timer);
