@@ -14,10 +14,12 @@ jQuery(document).ready(function(e) {
 		jQuery('.vhinrich-mp-rotator-active').css('display','none');
 		jQuery('.vhinrich-mp-rotator-nav').css('display','none');
 		jQuery('.vhinrich-mp-rotator-mobile').css('display','block');
+		jQuery('.vhinrich-mp-rotator-mobile-nav').css('display','block');
 	}else{
 		jQuery('.vhinrich-mp-rotator-active').css('display','block');
 		jQuery('.vhinrich-mp-rotator-nav').css('display','block');
 		jQuery('.vhinrich-mp-rotator-mobile').css('display','none');
+		jQuery('.vhinrich-mp-rotator-mobile-nav').css('display','none');
 	}
 	
 	jQuery(window).scroll(function(e) {
@@ -47,11 +49,25 @@ jQuery(document).ready(function(e) {
 			jQuery('.vhinrich-mp-rotator-active').css('display','none');
 			jQuery('.vhinrich-mp-rotator-nav').css('display','none');
 			jQuery('.vhinrich-mp-rotator-mobile').css('display','block');
+			jQuery('.vhinrich-mp-rotator-mobile-nav').css('display','block');
 		}else{
 			jQuery('.vhinrich-mp-rotator-active').css('display','block');
 			jQuery('.vhinrich-mp-rotator-nav').css('display','block');
 			jQuery('.vhinrich-mp-rotator-mobile').css('display','none');
+			jQuery('.vhinrich-mp-rotator-mobile-nav').css('display','none');
 		}
+		
+		$rotator_width = jQuery('#vhinrich-mp-rotator').width();
+		$mobile_rotator_width = (jQuery('.vhinrich-mp-rotator-mobile').children().length * ($rotator_width+4)) ;
+		jQuery('.vhinrich-mp-rotator-mobile').css('width',$mobile_rotator_width);
+		jQuery('.vhinrich-mp-rotator-mobile li').css('width',$rotator_width);
+		
+		$new_active_item = jQuery('.vhinrich-mp-rotator-mobile .hpr-item.active');
+		jQuery('.vhinrich-mp-rotator-mobile').stop().animate(
+			{left:($new_active_item.position().left * -1)},'fast'
+		);
+		
+		swipeMobile();
 	});
 	
 	if(jQuery('.pager-load-more').length == 0){
@@ -343,6 +359,30 @@ hpr_slide = function(){
 				);
 			}
 		);*/
+	}else{
+		$rotator_width = jQuery('#vhinrich-mp-rotator').width();
+		$active_item = jQuery('.vhinrich-mp-rotator-mobile .hpr-item.active');
+		$active_item_id = jQuery($active_item).attr('id');
+		$active_item_id = parseInt($active_item_id.replace('hpr-mobile-item-',''));
+		//console.log('test',$active_item.position().left);
+		//console.log('test',$rotator_width * (($active_item_id-1) * -1));
+		if($active_item_id==jQuery('.vhinrich-mp-rotator-mobile').children().length)
+			$active_item_id=0;
+		
+		jQuery('.vhinrich-mp-rotator-mobile .hpr-item').removeClass('active');
+		jQuery('.vhinrich-mp-rotator-mobile #hpr-mobile-item-' + ($active_item_id+1)).addClass('active');
+		
+		jQuery('.vhinrich-mp-rotator-mobile-nav .hpr-item').removeClass('active');
+		jQuery('.vhinrich-mp-rotator-mobile-nav .hpr-item .nav-item').removeClass('active');
+		jQuery('.vhinrich-mp-rotator-mobile-nav #hpr-item-nav-' + ($active_item_id+1)).addClass('active');
+		jQuery('.vhinrich-mp-rotator-mobile-nav .hpr-item.active .nav-item').addClass('active');
+		
+		$new_active_item = jQuery('.vhinrich-mp-rotator-mobile .hpr-item.active');
+		jQuery('.vhinrich-mp-rotator-mobile').stop().animate(
+			{left:($new_active_item.position().left * -1)},'fast'
+		);
+		
+		swipeMobile();
 	}
 }
 
@@ -360,4 +400,64 @@ jQuery(document).ready(function(e) {
 	
 		};
 	}(jQuery));
+});
+
+function swipeMobile(){
+	jQuery(".vhinrich-mp-rotator-mobile").swipe({
+		//Generic swipe handler for all directions
+		swipe:function(event, direction, distance, duration, fingerCount) {
+			try{
+				
+			clearInterval(hpr_timer);
+			console.log("You swiped ", distance);
+			
+			
+			$active_item = jQuery('.vhinrich-mp-rotator-mobile .hpr-item.active');
+			$active_item_id = jQuery($active_item).attr('id');
+			$active_item_id = parseInt($active_item_id.replace('hpr-mobile-item-',''));
+			//console.log('test',$active_item.position().left);
+			//console.log('test',$rotator_width * (($active_item_id-1) * -1));
+			$dont_animate = false;
+			$item_add = 1;
+			if(direction=='left'){
+				if($active_item_id==jQuery('.vhinrich-mp-rotator-mobile').children().length){
+					$dont_animate = true;
+				}else{
+					$item_add = 1;
+				}
+				
+			}
+			else if(direction=='right'){
+				if($active_item_id==1){
+					$dont_animate = true;
+				}else{
+					$item_add = -1;
+				}
+			}
+			
+			if($dont_animate==false){
+				jQuery('.vhinrich-mp-rotator-mobile .hpr-item').removeClass('active');
+				jQuery('.vhinrich-mp-rotator-mobile #hpr-mobile-item-' + ($active_item_id+$item_add)).addClass('active');
+				
+				jQuery('.vhinrich-mp-rotator-mobile-nav .hpr-item').removeClass('active');
+				jQuery('.vhinrich-mp-rotator-mobile-nav .hpr-item .nav-item').removeClass('active');
+				jQuery('.vhinrich-mp-rotator-mobile-nav #hpr-item-nav-' + ($active_item_id+$item_add)).addClass('active');
+				jQuery('.vhinrich-mp-rotator-mobile-nav .hpr-item.active .nav-item').addClass('active');
+				
+				$new_active_item = jQuery('.vhinrich-mp-rotator-mobile .hpr-item.active');
+				jQuery('.vhinrich-mp-rotator-mobile').stop().animate(
+					{left:($new_active_item.position().left * -1)},'fast',function(){
+						hpr_timer = setInterval('hpr_slide()', hpr_interval);
+					}
+				);
+			}
+			}catch(e){}
+		},
+		//Default is 75px, set to 0 for demo so any distance triggers swipe
+	   threshold:75
+	});
+}
+
+jQuery(window).load(function(){
+	swipeMobile();
 });

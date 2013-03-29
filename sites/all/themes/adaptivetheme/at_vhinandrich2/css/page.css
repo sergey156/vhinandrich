@@ -166,6 +166,9 @@ header[role=banner],
   word-wrap: break-word;
 }
 
+#vhinrich-mp-rotator{
+	overflow:hidden;
+}
 
 .vhinrich-mp-rotator-active{
 	list-style:none;
@@ -185,7 +188,8 @@ header[role=banner],
 	display:block;
 }
 
-.vhinrich-mp-rotator-nav{
+.vhinrich-mp-rotator-nav,
+.vhinrich-mp-rotator-mobile-nav{
 	list-style:none;
 	margin:20px auto;
 	padding:0;
@@ -194,13 +198,16 @@ header[role=banner],
 	display:block;
 	text-align:center;
 }
-.vhinrich-mp-rotator-nav li{
+.vhinrich-mp-rotator-nav li,
+.vhinrich-mp-rotator-mobile-nav li{
 	display:inline-block;
 }
-.vhinrich-mp-rotator-nav li div.active{
+.vhinrich-mp-rotator-nav li div.active,
+.vhinrich-mp-rotator-mobile-nav li div.active{
 	background-position:-21px center;
 }
-.vhinrich-mp-rotator-nav li div{
+.vhinrich-mp-rotator-nav li div,
+.vhinrich-mp-rotator-mobile-nav li div{
 	background:url(images/rotator-nav-button.png) no-repeat 0 center;
 	height:15px;
 	width:19px;
@@ -224,13 +231,14 @@ header[role=banner],
 	list-style:none;
 	margin:20px auto;
 	padding:0;
-	max-width:1024px;
+	position:relative;
+	/*max-width:1024px;*/
 }
 .vhinrich-mp-rotator-mobile li{
-	display:block;
+	display:inline-block;
 }
 .vhinrich-mp-rotator-mobile li.active{
-	display:block;
+	display:inline-block;
 }
 
 .view-id-videos thead{

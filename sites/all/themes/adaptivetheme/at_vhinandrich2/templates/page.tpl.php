@@ -1,4 +1,5 @@
 <?php
+	drupal_add_js(path_to_theme() . '/js/jquery.touchSwipe.min.js');
 	drupal_add_js(path_to_theme() . '/js/page.js');
 ?>
 
@@ -238,6 +239,26 @@
                                 </div>
                             </div>
                             -->
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+                
+                <ul class="vhinrich-mp-rotator-mobile-nav">
+                    <?php $i = 0; ?>
+                    <?php foreach($homepage_rotator_view as $homepage_rotator): ?>
+                        <?php 
+                            $hpr_node = node_load($homepage_rotator->nid);
+                            $main_image_node = node_load($hpr_node->field_main_image['und'][0]['nid']); 
+                            $main_image_node->field_image['und'][0]['alt'] = $hpr_node->title;
+                            $img_arr = array(
+                                'item' => $main_image_node->field_image['und'][0],
+                                'image_style' => 'home-page-rotator-3',
+                            );
+                            $image_rotator = theme_image_formatter($img_arr);
+                            $i++;
+                        ?>
+                        <li id="hpr-item-nav-<?php print $i; ?>" class="hpr-item <?php if($i == 1){ print 'active';} ?>">
+                            <div class="nav-item <?php if($i == 1){ print 'active';} ?>"></div>
                         </li>
                     <?php endforeach; ?>
                 </ul>
