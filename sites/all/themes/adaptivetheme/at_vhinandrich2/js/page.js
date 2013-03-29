@@ -67,7 +67,7 @@ jQuery(document).ready(function(e) {
 			{left:($new_active_item.position().left * -1)},'fast'
 		);
 		
-		swipeMobile();
+		//swipeMobile();
 	});
 	
 	if(jQuery('.pager-load-more').length == 0){
@@ -382,7 +382,7 @@ hpr_slide = function(){
 			{left:($new_active_item.position().left * -1)},'fast'
 		);
 		
-		swipeMobile();
+		//swipeMobile();
 	}
 }
 
@@ -399,6 +399,16 @@ jQuery(document).ready(function(e) {
 			}
 	
 		};
+		
+		/*$('.vhinrich-mp-rotator-mobile').draggable({
+			 drag: function(event, ui) {
+				if(ui.position.top!==0) { ui.position.top = 0; }
+				//if(ui.position.left>0) { ui.position.left = 0; }
+				if(ui.position.left>100){
+					ui.position.left=0;
+				}
+			  }
+		});*/
 	}(jQuery));
 });
 
@@ -409,9 +419,8 @@ function swipeMobile(){
 			try{
 				
 			clearInterval(hpr_timer);
-			console.log("You swiped ", distance);
 			
-			
+			if(direction=='left'||direction=='right'){
 			$active_item = jQuery('.vhinrich-mp-rotator-mobile .hpr-item.active');
 			$active_item_id = jQuery($active_item).attr('id');
 			$active_item_id = parseInt($active_item_id.replace('hpr-mobile-item-',''));
@@ -450,6 +459,7 @@ function swipeMobile(){
 						hpr_timer = setInterval('hpr_slide()', hpr_interval);
 					}
 				);
+			}
 			}
 			}catch(e){}
 		},
