@@ -442,6 +442,16 @@ function swipeMobile(){
 			if(direction=='left'){
 				if($active_item_id==jQuery('.vhinrich-mp-rotator-mobile').children().length){
 					$dont_animate = true;
+					$orig_left = jQuery(this).position().left;
+					jQuery('.vhinrich-mp-rotator-mobile').stop().animate(
+						{left:($orig_left - 100)},'fast',function(){
+							jQuery('.vhinrich-mp-rotator-mobile').animate(
+							{left:$orig_left},'fast',function(){
+								hpr_timer = setInterval('hpr_slide()', hpr_interval);
+							}
+							);
+						}
+					);
 				}else{
 					$item_add = 1;
 				}
@@ -450,6 +460,16 @@ function swipeMobile(){
 			else if(direction=='right'){
 				if($active_item_id==1){
 					$dont_animate = true;
+					$orig_left = jQuery(this).position().left;
+					jQuery('.vhinrich-mp-rotator-mobile').stop().animate(
+						{left:($orig_left + 100)},'fast',function(){
+							jQuery('.vhinrich-mp-rotator-mobile').animate(
+							{left:$orig_left},'fast',function(){
+								hpr_timer = setInterval('hpr_slide()', hpr_interval);
+							}
+							);
+						}
+					);
 				}else{
 					$item_add = -1;
 				}
@@ -490,6 +510,16 @@ function swipeMobile(){
 			if(direction=='left'){
 				if($active_item_id==jQuery('.vhinrich-mp-rotator-mobile').children().length){
 					$dont_animate = true;
+					$orig_left = jQuery(this).position().left;
+					jQuery('.vhinrich-mp-rotator-mobile').stop().animate(
+						{left:($orig_left - 100)},'fast',function(){
+							jQuery('.vhinrich-mp-rotator-mobile').animate(
+							{left:$orig_left},'fast',function(){
+								hpr_timer = setInterval('hpr_slide()', hpr_interval);
+							}
+							);
+						}
+					);
 				}else{
 					$item_add = 1;
 				}
@@ -498,6 +528,16 @@ function swipeMobile(){
 			else if(direction=='right'){
 				if($active_item_id==1){
 					$dont_animate = true;
+					$orig_left = jQuery(this).position().left;
+					jQuery('.vhinrich-mp-rotator-mobile').stop().animate(
+						{left:($orig_left + 100)},'fast',function(){
+							jQuery('.vhinrich-mp-rotator-mobile').animate(
+							{left:$orig_left},'fast',function(){
+								hpr_timer = setInterval('hpr_slide()', hpr_interval);
+							}
+							);
+						}
+					);
 				}else{
 					$item_add = -1;
 				}
