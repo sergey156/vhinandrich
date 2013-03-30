@@ -15,12 +15,23 @@ jQuery(document).ready(function(e) {
 		jQuery('.vhinrich-mp-rotator-nav').css('display','none');
 		jQuery('.vhinrich-mp-rotator-mobile').css('display','block');
 		jQuery('.vhinrich-mp-rotator-mobile-nav').css('display','block');
+		
 	}else{
 		jQuery('.vhinrich-mp-rotator-active').css('display','block');
 		jQuery('.vhinrich-mp-rotator-nav').css('display','block');
 		jQuery('.vhinrich-mp-rotator-mobile').css('display','none');
 		jQuery('.vhinrich-mp-rotator-mobile-nav').css('display','none');
 	}
+	
+	$rotator_width = jQuery('#vhinrich-mp-rotator').width();
+	$mobile_rotator_width = (jQuery('.vhinrich-mp-rotator-mobile').children().length * ($rotator_width+4)) ;
+	jQuery('.vhinrich-mp-rotator-mobile').css('width',$mobile_rotator_width);
+	jQuery('.vhinrich-mp-rotator-mobile li').css('width',$rotator_width);
+	
+	$new_active_item = jQuery('.vhinrich-mp-rotator-mobile .hpr-item.active');
+	jQuery('.vhinrich-mp-rotator-mobile').stop().animate(
+		{left:($new_active_item.position().left * -1)},'fast'
+	);
 	
 	jQuery(window).scroll(function(e) {
 		//alert(jQuery(this).scrollTop());
