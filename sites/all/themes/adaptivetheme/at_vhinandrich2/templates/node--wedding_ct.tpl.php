@@ -103,6 +103,32 @@
     
     <div class="wedding_ct_top_3">
     	<div class="wedding_ct_godparents_title">
+        	<h1>PARENTS</h1>
+        </div>
+        <div class="wedding_ct_godmothers">
+        	<div>
+                <ul>
+					<?php foreach($node->field_father['und'] as $godmother): ?>
+                        <li><?php print $godmother['value']; ?></li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+        </div>
+        <div class="wedding_ct_godfathers">
+        	<div>
+                <ul>
+					<?php foreach($node->field_mother['und'] as $godfather): ?>
+                        <li><?php print $godfather['value']; ?></li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+        </div>
+        <div style="clear:both">
+        </div>
+    </div>
+    
+    <div class="wedding_ct_top_3">
+    	<div class="wedding_ct_godparents_title">
         	<h1>GODPARENTS</h1>
         </div>
         <div class="wedding_ct_godmothers">
