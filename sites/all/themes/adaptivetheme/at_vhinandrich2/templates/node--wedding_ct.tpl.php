@@ -107,6 +107,7 @@
         </div>
         <div class="wedding_ct_godmothers">
         	<div>
+            	<h3 class="wedding_ct_godparent_h3">FATHERS</h3>
                 <ul>
 					<?php foreach($node->field_father['und'] as $godmother): ?>
                         <li><?php print $godmother['value']; ?></li>
@@ -116,6 +117,7 @@
         </div>
         <div class="wedding_ct_godfathers">
         	<div>
+            	<h3 class="wedding_ct_godparent_h3">MOTHERS</h3>
                 <ul>
 					<?php foreach($node->field_mother['und'] as $godfather): ?>
                         <li><?php print $godfather['value']; ?></li>
