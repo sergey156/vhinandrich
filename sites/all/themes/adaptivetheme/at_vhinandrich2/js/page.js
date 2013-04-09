@@ -432,7 +432,31 @@ jQuery(document).ready(function(e) {
 });
 
 function swipeMobile(){
-	jQuery(".vhinrich-mp-rotator-mobile").swipe({
+	
+	var newDistance = 0;
+	jQuery(".vhinrich-mp-rotator-mobile").swipe({	
+		swipeStatus:function(event, phase, direction, distance, duration, fingerCount)
+		{
+			console.log('phase',phase);
+			if(phase=='start'){
+				newDistance = jQuery('.vhinrich-mp-rotator-mobile').position().left;
+				//jQuery('.vhinrich-mp-rotator-mobile').css('left',newDistance)
+				console.log('newDistance',newDistance);
+			}
+			if(phase=='move'){
+				console.log('test',newDistance);
+				var tmpDistance = (distance);
+				if(direction=='left'){
+					tmpDistance *= -1;
+				}
+				if(direction=='right'){
+					tmpDistance *= 1;
+				}
+				var myDistance = newDistance + tmpDistance;
+				jQuery('.vhinrich-mp-rotator-mobile').css('left',myDistance);
+				//console.log('test', distance);
+			}
+		},
 		//Generic swipe handler for all directions
 		swipeLeft:function(event, direction, distance, duration, fingerCount) {
 			try{
