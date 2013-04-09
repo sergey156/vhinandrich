@@ -434,17 +434,18 @@ jQuery(document).ready(function(e) {
 function swipeMobile(){
 	
 	var newDistance = 0;
+	var myDistance = 0;
+	var dontSwipe = false;
 	jQuery(".vhinrich-mp-rotator-mobile").swipe({	
 		swipeStatus:function(event, phase, direction, distance, duration, fingerCount)
 		{
-			console.log('phase',phase);
+			dontSwipe = false;
 			if(phase=='start'){
 				newDistance = jQuery('.vhinrich-mp-rotator-mobile').position().left;
 				//jQuery('.vhinrich-mp-rotator-mobile').css('left',newDistance)
-				console.log('newDistance',newDistance);
+				//console.log('newDistance',newDistance);
 			}
 			if(phase=='move'){
-				console.log('test',newDistance);
 				var tmpDistance = (distance);
 				if(direction=='left'){
 					tmpDistance *= -1;
@@ -452,13 +453,39 @@ function swipeMobile(){
 				if(direction=='right'){
 					tmpDistance *= 1;
 				}
-				var myDistance = newDistance + tmpDistance;
-				jQuery('.vhinrich-mp-rotator-mobile').css('left',myDistance);
-				//console.log('test', distance);
+				if(direction=='left'||direction=='right'){
+					myDistance = newDistance + tmpDistance;
+					jQuery('.vhinrich-mp-rotator-mobile').css('left',myDistance);
+					//console.log('test', distance);
+				}
+			}
+			if(phase=='end' || phase=='cancel'){
+				if(direction=='right'){
+					if(myDistance>0){
+						//jQuery('.vhinrich-mp-rotator-mobile').css('left',0);
+						dontSwipe = true;
+						jQuery('.vhinrich-mp-rotator-mobile').animate(
+							{left:0},'fast',function(){
+							}
+						);
+					}
+				}
+				if(direction=='left'){
+					var max_left = (jQuery('.vhinrich-mp-rotator-mobile').width() - jQuery('.vhinrich-mp-rotator-mobile .hpr-item').first().width())*-1;
+					max_left += 10;
+					if(myDistance<max_left){
+						dontSwipe = true;
+						jQuery('.vhinrich-mp-rotator-mobile').animate(
+							{left:max_left},'fast',function(){
+							}
+						);
+					}
+				}
 			}
 		},
 		//Generic swipe handler for all directions
 		swipeLeft:function(event, direction, distance, duration, fingerCount) {
+			if(!dontSwipe){
 			try{
 				
 			clearInterval(hpr_timer);
@@ -527,8 +554,10 @@ function swipeMobile(){
 			}
 			}
 			}catch(e){}
+			}
 		},
 		swipeRight:function(event, direction, distance, duration, fingerCount) {
+			if(!dontSwipe){
 			try{
 				
 			clearInterval(hpr_timer);
@@ -597,6 +626,7 @@ function swipeMobile(){
 			}
 			}
 			}catch(e){}
+			}
 		},
 		//Default is 75px, set to 0 for demo so any distance triggers swipe
 	   threshold:75
