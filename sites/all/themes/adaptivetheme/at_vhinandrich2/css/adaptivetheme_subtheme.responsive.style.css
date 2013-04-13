@@ -189,6 +189,12 @@
 	}
 }
 
+@media only screen and (max-width:1024px){
+	.views-field.views-field-field-addthis-1 .addthis_toolbox{
+		float: left;
+	}
+}
+
 /* Standard layout */
 @media only screen and (min-width:1025px) {
 	.images-listing .views-field.views-field-title{

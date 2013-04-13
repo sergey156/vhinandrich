@@ -367,3 +367,8 @@ header[role=banner],
 #edit-captcha-form{
 	overflow:auto; /*not sure if correct.. don't want to mess with my responsive theme :)*/
 }
+
+.addthis_toolbox a{
+	width: 80px;
+	overflow: hidden;
+}

@@ -68,8 +68,8 @@ function addthis_displays_addthis_display_markup__addthis_basic_toolbox($options
         break;
       case 'google_plusone':
         $items[$service]['#attributes'] += array(
-          'g:plusone:size' => ($orientation ? 'standard' : 'tall')
-        );
+          'g:plusone:size' => ($orientation ? 'medium' : 'tall')
+        ); //mark - changed 'standard' to 'medium' to change the button size
         break;
       case 'tweet':
         $items[$service]['#attributes'] += array(
