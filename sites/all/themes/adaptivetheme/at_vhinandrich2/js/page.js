@@ -415,8 +415,16 @@ jQuery(document).ready(function(e) {
 				var script = 'http://s7.addthis.com/js/250/addthis_widget.js#domready=1';
 				if (window.addthis) {
 					window.addthis = null;
+					window._adr = null;
+					window._atc = null;
+					window._atd = null;
+					window._ate = null;
+					window._atr = null;
+					window._atw = null;  
 				}
-				$.getScript(script);
+				$.getScript(script,function(data, textStatus, jqxhr) {
+					addthis.init();
+});
 	
 			}
 	
