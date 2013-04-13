@@ -76,9 +76,11 @@ jQuery(document).ready(function(e) {
 		jQuery('.vhinrich-mp-rotator-mobile li').css('width',$rotator_width);
 		
 		$new_active_item = jQuery('.vhinrich-mp-rotator-mobile .hpr-item.active');
-		jQuery('.vhinrich-mp-rotator-mobile').stop().animate(
-			{left:($new_active_item.position().left * -1)},'fast'
-		);
+		if(jQuery('.vhinrich-mp-rotator-mobile').length > 0){
+			jQuery('.vhinrich-mp-rotator-mobile').stop().animate(
+				{left:($new_active_item.position().left * -1)},'fast'
+			);
+		}
 		
 		//swipeMobile();
 	});
@@ -409,6 +411,7 @@ jQuery(document).ready(function(e) {
 	(function ($) {
 		Drupal.behaviors.slider = {
 			attach:function(context) {
+				
 				var script = 'http://s7.addthis.com/js/250/addthis_widget.js#domready=1';
 				if (window.addthis) {
 					window.addthis = null;
