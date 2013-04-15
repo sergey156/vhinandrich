@@ -333,7 +333,7 @@
             <?php if($node_timer && $node_timer->type=='wedding_ct'): ?>
             	<style>
 					#vhinrich-mp-banner:before{
-						border-color: transparent transparent #E5E5E5;
+						border-color: transparent transparent #EDEDED;
 					}
 				</style>
                 <div class="front-page-timer">
@@ -365,13 +365,23 @@
             <?php elseif($node_timer): ?>
             	<style>
 					#vhinrich-mp-banner:before{
-						border-color: transparent transparent #E8E8E8;
+						border-color: transparent transparent #EDEDED;
+					}
+					.timer-focused a{
+						color: #00CCFF !important;
+					}
+					.timer-focused a:hover{
+						color: #88EEFF !important;
 					}
 				</style>
                 <div class="front-page-timer">
-                	<div class="wedding-will-start-in" style="margin-top:10px"><?php print $node_timer->title; ?></div>
-                    <div class="wedding-timer">
+                	<div class="wedding-will-start-in" style="margin-top:10px">FEATURED</div>
+                    <div class="wedding-timer" style="margin-top:26px">
             			<div style="max-width:800px;margin:0 auto">
+                        	<div class="timer-focused" style="text-align:left;margin:0 5px">
+								<div><?php print l($node_timer->title,'node/' . $node_timer->vid); ?></div>
+                                <div class="timer-grayed" style="font-size:9pt !important"><?php print date('m-d-Y h:i:s A',$node_timer->changed); ?></div>
+                            </div>
 							<div style="width:97%;margin:0 auto"><?php print drupal_render(node_view($node_timer,'front_page_featured')); ?></div>
                         </div>
             		</div>
