@@ -318,7 +318,7 @@
 					width:auto;
 				}
 				#vhinrich-mp-banner:before{
-					border-color: transparent transparent #EAEAEA;
+					border-color: transparent transparent #E3E3E3;
 					border-style: solid;
 					border-width: 20px;
 					content: " ";
