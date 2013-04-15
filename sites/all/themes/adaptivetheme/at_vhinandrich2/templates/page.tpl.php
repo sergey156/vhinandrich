@@ -365,7 +365,7 @@
             <?php elseif($node_timer): ?>
             	<style>
 					#vhinrich-mp-banner:before{
-						border-color: transparent transparent #E5E5E5;
+						border-color: transparent transparent #E8E8E8;
 					}
 				</style>
                 <div class="front-page-timer">
