@@ -265,72 +265,72 @@
             </div>
             
             <?php
-				$timer_nid = 565;
+				$timer_nid = variable_get('mqc_featured_node',0);
 				$node_timer = node_load($timer_nid);
 			?>
-            <?php if($node_timer): ?>
-            	<style>
-					.timer-grayed{
-						color:#fff !important;
-						font-size:smaller !important;
-					}
-					.timer-focused{
-						color:#00CCFF !important;
-						font-size:x-large !important;
-					}
-					.front-page-timer{
-						text-align:center;
-						margin:0;
-						padding:0;
-						background:#eee;
-						color:#bbb;
-					}
-					.front-page-timer:before{
-						content: '';
-						border-top: 1px solid lightGrey;
-						width: 100%;
-						border-bottom: 1px solid white;
-						box-shadow: 0px 3px 30px #888;
-						display: block;
-					}
-					.wedding_ct_timer.mqc-timer{
-						margin:10px 0 0 !important;
-					}
-					.wedding-timer{
-						background:#4A4B53;
-						padding:5px 0 25px;
-						margin-top:20px;
-						box-shadow: 0px 3px 20px #eee;
-						text-shadow:1px 1px 1px #111;
-					}
-					.wedding-will-start-in{
-						text-shadow:0px 1px #fff;
-						color:#bbb;
-					}
-					.wedding-will-start-in:before{
-						border-color: transparent transparent #4A4B53;
-						border-style: solid;
-						border-width: 20px;
-						content: " ";
-						position:absolute;
-						left:50%;
-						margin:5px 0 0 -20px;
-						padding:0;
-						width:auto;
-					}
-					#vhinrich-mp-banner:before{
-						border-color: transparent transparent #EAEAEA;
-						border-style: solid;
-						border-width: 20px;
-						content: " ";
-						position:absolute;
-						left:50%;
-						margin:-59px 0 0 -20px;
-						padding:0;
-						width:auto;
-						box-shadow:none;
-					}
-				</style>
+            <style>
+				.timer-grayed{
+					color:#fff !important;
+					font-size:smaller !important;
+				}
+				.timer-focused{
+					color:#00CCFF !important;
+					font-size:x-large !important;
+				}
+				.front-page-timer{
+					text-align:center;
+					margin:0;
+					padding:0;
+					background:#eee;
+					color:#bbb;
+				}
+				.front-page-timer:before{
+					content: '';
+					border-top: 1px solid lightGrey;
+					width: 100%;
+					border-bottom: 1px solid white;
+					box-shadow: 0px 3px 30px #888;
+					display: block;
+				}
+				.wedding_ct_timer.mqc-timer{
+					margin:10px 0 0 !important;
+				}
+				.wedding-timer{
+					background:#4A4B53;
+					padding:5px 0 25px;
+					margin-top:20px;
+					box-shadow: 0px 3px 20px #eee;
+					text-shadow:1px 1px 1px #111;
+				}
+				.wedding-will-start-in{
+					text-shadow:0px 1px #fff;
+					color:#bbb;
+				}
+				.wedding-will-start-in:before{
+					border-color: transparent transparent #4A4B53;
+					border-style: solid;
+					border-width: 20px;
+					content: " ";
+					position:absolute;
+					left:50%;
+					margin:5px 0 0 -20px;
+					padding:0;
+					width:auto;
+				}
+				#vhinrich-mp-banner:before{
+					border-color: transparent transparent #EAEAEA;
+					border-style: solid;
+					border-width: 20px;
+					content: " ";
+					position:absolute;
+					left:50%;
+					margin:-59px 0 0 -20px;
+					padding:0;
+					width:auto;
+					box-shadow:none;
+				}
+			</style>
+            <?php if($node_timer && $node_timer->type=='wedding_ct'): ?>
                 <div class="front-page-timer">
                     <?php $datetime = $node_timer->field_date['und'][0]['value']; ?>
                     <script>
@@ -357,7 +357,16 @@
                     </script>
         			<div class="wedding_ct_timer mqc-timer" style="font-size:larger"><span style="position:relative;z-index:99">Loading timer...</span></div>
                 </div>
-            <?php endif; ?>
+            <?php elseif($node_timer): ?>
+                <div class="front-page-timer">
+                	<div class="wedding-will-start-in" style="margin-top:10px"><?php print $node_timer->title; ?></div>
+                    <div class="wedding-timer">
+            			<div style="max-width:800px;margin:0 auto">
+							<div style="width:97%;margin:0 auto"><?php print drupal_render(node_view($node_timer,'front_page_featured')); ?></div>
+                        </div>
+            		</div>
+                </div>
+			<?php endif; ?>
             
             <div id="vhinrich-mp-banner">
                 <ul>

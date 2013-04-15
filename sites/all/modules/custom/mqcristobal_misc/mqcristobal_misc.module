@@ -9,7 +9,25 @@ function mqcristobal_misc_menu(){
 		'title' => t('mqc_timer'),
 		'access arguments' => array('access content'),
 	);
+	$items['admin/content/misc'] = array(
+		'menu_name' => 'mqc_misc_config',
+		'page callback' => 'drupal_get_form',
+		'page arguments' => array('misc_config_form'),
+		'title' => t('Misc Config'),
+		'access arguments' => array('administer access control'),
+		'type' => MENU_LOCAL_TASK,
+	);
 	return $items;
+}
+
+function misc_config_form(){
+	$form['mqc_featured_node'] = array(
+		'#type' => 'textfield',
+		'#title' => 'Featured node',
+		'#description' => 'Featured node in front page',
+		'#default_value' => variable_get('mqc_featured_node'),
+	);
+	return system_settings_form($form);
 }
 
 /** hook_theme **/
@@ -29,4 +47,14 @@ function mqc_timer($datetime){
 		'front_page' => $_GET['front_page'],
 	);
 	echo json_encode(array('return'=>theme('mqc_timer', $params)));
+}
+
+/**
+* Implements hook_entity_info_alter().
+*/
+function mqcristobal_misc_entity_info_alter(&$entity_info) {
+  $entity_info['node']['view modes']['front_page_featured'] = array(
+    'label' => t('Front Page Featured'),
+    'custom settings' => TRUE,
+  );
 }
