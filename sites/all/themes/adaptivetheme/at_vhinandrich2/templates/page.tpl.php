@@ -331,6 +331,11 @@
 				}
 			</style>
             <?php if($node_timer && $node_timer->type=='wedding_ct'): ?>
+            	<style>
+					#vhinrich-mp-banner:before{
+						border-color: transparent transparent #E5E5E5;
+					}
+				</style>
                 <div class="front-page-timer">
                     <?php $datetime = $node_timer->field_date['und'][0]['value']; ?>
                     <script>
@@ -358,6 +363,11 @@
         			<div class="wedding_ct_timer mqc-timer" style="font-size:larger"><span style="position:relative;z-index:99">Loading timer...</span></div>
                 </div>
             <?php elseif($node_timer): ?>
+            	<style>
+					#vhinrich-mp-banner:before{
+						border-color: transparent transparent #E5E5E5;
+					}
+				</style>
                 <div class="front-page-timer">
                 	<div class="wedding-will-start-in" style="margin-top:10px"><?php print $node_timer->title; ?></div>
                     <div class="wedding-timer">
