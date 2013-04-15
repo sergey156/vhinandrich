@@ -469,6 +469,9 @@ function swipeMobile(){
 					jQuery('.vhinrich-mp-rotator-mobile').css('left',myDistance);
 					//console.log('test', distance);
 				}
+				if(direction=='up' || direction=='down'){
+					event.preventDefault();
+				}
 			}
 			if(phase=='end' || phase=='cancel'){
 				if(direction=='right'){
@@ -640,7 +643,8 @@ function swipeMobile(){
 			}
 		},
 		//Default is 75px, set to 0 for demo so any distance triggers swipe
-	   threshold: 0
+	   threshold: 0,
+	   allowPageScroll:"vertical"
 	});
 }
 
