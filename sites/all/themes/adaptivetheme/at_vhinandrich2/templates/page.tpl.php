@@ -377,7 +377,7 @@
                 <div class="front-page-timer">
                 	<div class="wedding-will-start-in" style="margin-top:10px">FEATURED</div>
                     <div class="wedding-timer" style="margin-top:26px">
-            			<div style="max-width:800px;margin:0 auto">
+            			<div style="max-width:950px;margin:0 auto">
                         	<div class="timer-focused" style="text-align:left;margin:0 5px">
 								<div><?php print l($node_timer->title,'node/' . $node_timer->vid); ?></div>
                                 <div class="timer-grayed" style="font-size:9pt !important"><?php print date('m-d-Y h:i:s A',$node_timer->changed); ?></div>
