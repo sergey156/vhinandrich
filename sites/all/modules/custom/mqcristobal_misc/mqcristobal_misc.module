@@ -66,7 +66,7 @@ function mqcristobal_misc_node_view($node, $view_mode, $langcode){
 			 '#tag' => 'meta',
 			 '#attributes' => array(
 			  'name' => 'fb_image',
-			  'content' => file_create_url($node->field_image['und'][0]['uri']),
+			  'content' => image_style_url('thumbnail',$node->field_image['und'][0]['uri']),
 				'property' => 'og:image',
 				)
 		  );
@@ -77,7 +77,7 @@ function mqcristobal_misc_node_view($node, $view_mode, $langcode){
 		$file = file_load($node->field_video['und'][0]['fid']);
 		
 		// Set up the settings array with your image style
-		$display['settings'] = array('image_style' => 'large');
+		$display['settings'] = array('image_style' => 'thumbnail');
 		// Get the render array for the thumbnail image
 		$image_render_array = media_youtube_file_formatter_image_view($file, $display, LANGUAGE_NONE);
 		
@@ -86,7 +86,7 @@ function mqcristobal_misc_node_view($node, $view_mode, $langcode){
 			 '#tag' => 'meta',
 			 '#attributes' => array(
 			  'name' => 'fb_image',
-			  'content' => file_create_url($image_render_array['#path']),
+			  'content' => image_style_url('thumbnail',$image_render_array['#path']),
 				'property' => 'og:image',
 				)
 		  );
