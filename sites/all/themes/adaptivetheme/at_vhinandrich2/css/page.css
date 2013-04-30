@@ -375,7 +375,7 @@ header[role=banner],
 
 .addthis_button_facebook_like{
 	position: relative;
-	top: -3px;
+	/*top: -3px;*/
 	margin-right: 10px;
 }
 .addthis_button_tweet{
