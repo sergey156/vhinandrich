@@ -450,52 +450,52 @@ function swipeMobile(){
 	jQuery(".vhinrich-mp-rotator-mobile").swipe({	
 		swipeStatus:function(event, phase, direction, distance, duration, fingerCount)
 		{
-			dontSwipe = false;
-			if(phase=='start'){
-				newDistance = jQuery('.vhinrich-mp-rotator-mobile').position().left;
-				//jQuery('.vhinrich-mp-rotator-mobile').css('left',newDistance)
-				//console.log('newDistance',newDistance);
-			}
-			if(phase=='move'){
-				var tmpDistance = (distance);
-				if(direction=='left'){
-					tmpDistance *= -1;
-				}
-				if(direction=='right'){
-					tmpDistance *= 1;
-				}
-				if(direction=='left'||direction=='right'){
-					myDistance = newDistance + tmpDistance;
-					jQuery('.vhinrich-mp-rotator-mobile').css('left',myDistance);
-					//console.log('test', distance);
-				}
-				if(direction=='up' || direction=='down'){
-					event.preventDefault();
-				}
-			}
-			if(phase=='end' || phase=='cancel'){
-				if(direction=='right'){
-					if(myDistance>0){
-						//jQuery('.vhinrich-mp-rotator-mobile').css('left',0);
-						dontSwipe = true;
-						jQuery('.vhinrich-mp-rotator-mobile').animate(
-							{left:0},'fast',function(){
-							}
-						);
-					}
-				}
-				if(direction=='left'){
-					var max_left = (jQuery('.vhinrich-mp-rotator-mobile').width() - jQuery('.vhinrich-mp-rotator-mobile .hpr-item').first().width())*-1;
-					max_left += 10;
-					if(myDistance<max_left){
-						dontSwipe = true;
-						jQuery('.vhinrich-mp-rotator-mobile').animate(
-							{left:max_left},'fast',function(){
-							}
-						);
-					}
-				}
-			}
+			//dontSwipe = false;
+			//if(phase=='start'){
+			//	newDistance = jQuery('.vhinrich-mp-rotator-mobile').position().left;
+			//	//jQuery('.vhinrich-mp-rotator-mobile').css('left',newDistance)
+			//	//console.log('newDistance',newDistance);
+			//}
+			//if(phase=='move'){
+			//	var tmpDistance = (distance);
+			//	if(direction=='left'){
+			//		tmpDistance *= -1;
+			//	}
+			//	if(direction=='right'){
+			//		tmpDistance *= 1;
+			//	}
+			//	if(direction=='left'||direction=='right'){
+			//		myDistance = newDistance + tmpDistance;
+			//		jQuery('.vhinrich-mp-rotator-mobile').css('left',myDistance);
+			//		//console.log('test', distance);
+			//	}
+			//	if(direction=='up' || direction=='down'){
+			//		event.preventDefault();
+			//	}
+			//}
+			//if(phase=='end' || phase=='cancel'){
+			//	if(direction=='right'){
+			//		if(myDistance>0){
+			//			//jQuery('.vhinrich-mp-rotator-mobile').css('left',0);
+			//			dontSwipe = true;
+			//			jQuery('.vhinrich-mp-rotator-mobile').animate(
+			//				{left:0},'fast',function(){
+			//				}
+			//			);
+			//		}
+			//	}
+			//	if(direction=='left'){
+			//		var max_left = (jQuery('.vhinrich-mp-rotator-mobile').width() - jQuery('.vhinrich-mp-rotator-mobile .hpr-item').first().width())*-1;
+			//		max_left += 10;
+			//		if(myDistance<max_left){
+			//			dontSwipe = true;
+			//			jQuery('.vhinrich-mp-rotator-mobile').animate(
+			//				{left:max_left},'fast',function(){
+			//				}
+			//			);
+			//		}
+			//	}
+			//}
 		},
 		//Generic swipe handler for all directions
 		swipeLeft:function(event, direction, distance, duration, fingerCount) {
