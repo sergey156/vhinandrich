@@ -382,7 +382,7 @@
 								<div><?php print l($node_timer->title,'node/' . $node_timer->vid); ?></div>
                                 <div class="timer-grayed" style="font-size:9pt !important"><?php print date('m-d-Y h:i:s A',$node_timer->changed); ?></div>
                             </div>
-							<div style="width:97%;margin:0 auto"><?php print drupal_render(node_view($node_timer,'front_page_featured')); ?></div>
+							<div style="width:97%;margin:0 auto" id="node-<?php print $node_timer->vid; ?>"><?php print drupal_render(node_view($node_timer,'front_page_featured')); ?></div>
                         </div>
             		</div>
                 </div>
