@@ -6,3 +6,4 @@ php.ini
 # Ignore paths that contain user-generated content.
 sites/*/files
 sites/*/private
+mqcristobal/sites/default/settings.php
