@@ -1,6 +1,4 @@
 <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-
-
   <header>
     <?php print render($title_prefix); ?>
     <?php if (!$page && $title): ?>
@@ -8,7 +6,7 @@
     <?php endif; ?>
     <?php print render($title_suffix); ?>
 
-    <?php if ($display_submitted): ?>
+    <?php if (false && $display_submitted): ?>
       <span class="submitted">
         <?php print $user_picture; ?>
         <?php print $submitted; ?>
