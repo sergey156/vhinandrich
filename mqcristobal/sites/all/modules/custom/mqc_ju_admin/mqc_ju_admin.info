@@ -1,0 +1,12 @@
+name = JQuery Update Admin
+description = JQuery Update fix for Admin
+package = MQC Customs
+core = 7.x
+
+files[] = mqc_ju_admin.module
+; Information added by drupal.org packaging script on 2012-02-10
+version = "7.x-1.x-dev"
+core = "7.x"
+project = "mqc_ju_admin"
+datestamp = "1328832859"
+
