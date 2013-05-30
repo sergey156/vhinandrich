@@ -9,8 +9,7 @@
 	text-align: center;
 	font-size: 0px;
 }
-.block-views .view-instagram-photos .views-row.views-row-first,
-.block-views .view-instagram-photos .views-row.views-row-last{
+.block-views .view-instagram-photos .views-row.views-row-first{
 	width: 300px;
 }
 .block-views .view-instagram-photos .views-row{
