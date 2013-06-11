@@ -1,12 +1,11 @@
 <?php
 /**
  * @file
- *
  *  Provides the views plugin information.
  */
 
 /**
- * Implements hook_views_plugins().
+ * Implements hook_views_plugins
  */
 function views_load_more_views_plugins() {
   return array(

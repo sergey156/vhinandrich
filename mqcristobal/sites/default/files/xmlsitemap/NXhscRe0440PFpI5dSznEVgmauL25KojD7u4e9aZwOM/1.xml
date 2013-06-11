@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="/vhinandrich/mqcristobal/sitemap.xsl"?>
+<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>http://localhost:8888/vhinandrich/mqcristobal/</loc><changefreq>daily</changefreq><priority>1.0</priority></url>
+<url><loc>http://mqcristobal.vhinandrich.com/</loc><changefreq>daily</changefreq><priority>1.0</priority></url>
+<url><loc>http://mqcristobal.vhinandrich.com/node/1</loc><lastmod>2013-05-30T15:11Z</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
+<url><loc>http://mqcristobal.vhinandrich.com/taxonomy/term/1</loc></url>
+<url><loc>http://mqcristobal.vhinandrich.com/taxonomy/term/2</loc></url>
+<url><loc>http://mqcristobal.vhinandrich.com/taxonomy/term/3</loc></url>
+<url><loc>http://mqcristobal.vhinandrich.com/taxonomy/term/4</loc></url>
 </urlset>
