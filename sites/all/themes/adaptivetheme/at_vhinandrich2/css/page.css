@@ -382,3 +382,41 @@ header[role=banner],
 	position: relative;
 	margin-right: -20px;
 }
+
+
+#block-views-latest-content-block:before,
+#block-views-latest-content-block-1:before{
+	content: '';
+	border-top: 1px solid rgb(224, 224, 224);
+	border-bottom: 1px solid rgb(255, 255, 255);
+	display: block;
+	margin-bottom: 15px;
+}
+.view-latest-content{
+	text-align: center;
+}
+.view-latest-content .views-row{
+	display: inline-block;
+	max-width: 33%;
+	border: none;
+	vertical-align: bottom;
+	text-align: left;
+}
+.view-latest-content .views-row img{
+	width: 100%;
+}
+
+/* Tablet portrait */
+@media only screen and (max-width:620px){	
+	.view-latest-content{
+		text-align: center;
+	}
+	.view-latest-content .views-row{
+		display: block;
+		max-width: 100%;
+		border: none;
+		vertical-align: top;
+		text-align: left;
+		padding: 0;
+	}
+}
