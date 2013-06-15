@@ -397,7 +397,7 @@ header[role=banner],
 	text-align: center;
 	text-shadow: 0 1px 1px rgb(255, 255, 255);
 }
-.view-latest-content .views-field-title a, .views-field-title-1 a{
+.view-latest-content .views-field-title a{
 	font-size: 13px;
 }
 .view-latest-content{
