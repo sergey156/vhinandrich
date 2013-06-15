@@ -392,6 +392,14 @@ header[role=banner],
 	display: block;
 	margin-bottom: 15px;
 }
+#block-views-latest-content-block h2.block-title,
+#block-views-latest-content-block-1 h2.block-title{
+	text-align: center;
+	text-shadow: 0 1px 1px rgb(255, 255, 255);
+}
+.view-latest-content .views-field-title a, .views-field-title-1 a{
+	font-size: 13px;
+}
 .view-latest-content{
 	text-align: center;
 }
@@ -401,6 +409,7 @@ header[role=banner],
 	border: none;
 	vertical-align: bottom;
 	text-align: left;
+	padding: 10px 0;
 }
 .view-latest-content .views-row img{
 	width: 100%;
