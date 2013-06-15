@@ -423,9 +423,9 @@ header[role=banner],
 	}
 	.view-latest-content .views-row{
 		display: block;
-		max-width: 100%;
+		width: 100%;
 		border: none;
-		vertical-align: top;
+		vertical-align: bottom;
 		text-align: left;
 		padding: 0;
 	}
