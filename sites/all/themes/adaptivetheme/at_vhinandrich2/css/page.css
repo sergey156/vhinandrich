@@ -402,10 +402,11 @@ header[role=banner],
 }
 .view-latest-content{
 	text-align: center;
+	width: 100%;
 }
 .view-latest-content .views-row{
 	display: inline-block;
-	max-width: 33%;
+	width: 33%;
 	border: none;
 	vertical-align: bottom;
 	text-align: left;
