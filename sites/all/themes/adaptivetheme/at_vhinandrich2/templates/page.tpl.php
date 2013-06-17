@@ -404,7 +404,7 @@
                             $i++;
                         ?>
                         <li id="hpb-mobile-item-<?php print $i; ?>" class="hpb-mobile-item">
-                            <a href="<?php print $hpb_node->field_url['und'][0]['value']; ?>">
+                            <a href="/<?php print $hpb_node->field_url['und'][0]['value']; ?>">
                                 <h2><?php print $hpb_node->title; ?></h2>
                                 <p><?php print $hpb_node->body['und'][0]['value']; ?></p>
                                 <?php //print $image_rotator; ?>
