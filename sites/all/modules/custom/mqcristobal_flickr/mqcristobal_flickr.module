@@ -142,6 +142,7 @@ function mqc_flickr_import_sets(){
 			}
 			$node->title = $set['title']['_content'];
 			$node->body['und'][] = $set['description']['_content'];
+			$node->body['und'][0]['format'] = 'full_html';
 			$node->language = LANGUAGE_NONE;
 			$node->field_flickr_set_id['und'][]['value'] = $set['id'];
 			node_save($node);
@@ -203,7 +204,8 @@ function _create_images_from_set($setid){
 			//dsm($photo);
 			$photo_size_response = flickr_photo_get_sizes($photo['id']);
 			//dsm($photo_size_response);
-			$url = $photo_size_response[sizeof($photo_size_response) - 1]['source'];
+			//$url = $photo_size_response[sizeof($photo_size_response) - 1]['source'];
+			$url = $photo_size_response[9]['source'];
 			//dsm( 	drupal_basename($url));
 			$path = system_retrieve_file($url, 'public://' . drupal_basename($url) . '/', TRUE);
 			//dsm($path);
