@@ -430,3 +430,7 @@ header[role=banner],
 		padding: 0;
 	}
 }
+
+.view-id-images .views-row{
+	margin-left: 15px;
+}
