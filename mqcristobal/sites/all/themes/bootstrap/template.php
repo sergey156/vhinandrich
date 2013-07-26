@@ -76,6 +76,9 @@ function bootstrap_theme(&$existing, $type, $theme, $path) {
     'bootstrap_search_form_wrapper' => array(
       'render element' => 'element',
     ),
+    'bootstrap_append_element' => array(
+      'render element' => 'element',
+    ),
   );
 }
 
@@ -224,17 +227,6 @@ function bootstrap_menu_local_action($variables) {
   $output .= "</li>\n";
 
   return $output;
-}
-
-/**
- * Preprocess variables for node.tpl.php
- *
- * @see node.tpl.php
- */
-function bootstrap_preprocess_node(&$variables) {
-  if ($variables['teaser']) {
-    $variables['classes_array'][] = 'row-fluid';
-  }
 }
 
 /**
